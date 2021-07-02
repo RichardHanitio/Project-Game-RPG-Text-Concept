@@ -1,17 +1,15 @@
-package subclassplayer;
+package playersubclasses;
 import java.util.Random;
+import mainclasses.Player;
 
-import mainclass.*;
+public class Ranger extends Player{
+    public int attSTR = 45;
 
-
-public class Wizard extends Player{
-    public int attINT = 5;
-
-    public Wizard(String name){
+    public Ranger(String name){
         //Nama berasal dari player
-        //health awal   : 100
-        //mana awal     : 10
-        super(name,100,10);
+        //health awal   : 50
+        //mana awal     : 0
+        super(name,60,0);
         
     }
 
@@ -22,25 +20,25 @@ public class Wizard extends Player{
     }
 
     @Override
-    //Meteor
+    //ShockDart
     public void skill1() {
 
     }
 
     @Override
-    //LifeDrain
+    //ChargeShot
     public void skill2() {
 
     }
 
     @Override
-    //LightningSpell
+    //MultiShoot
     public void skill3() {
 
     }
 
     @Override
-    //Mirror
+    //EMPTY
     public void skill4() {
   
     }
@@ -52,5 +50,4 @@ public class Wizard extends Player{
         
         return 0;
     }
-    
 }

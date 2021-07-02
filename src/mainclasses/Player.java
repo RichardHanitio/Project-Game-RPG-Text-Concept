@@ -1,4 +1,4 @@
-package mainclass;
+package mainclasses;
 
 public abstract class Player{
     String name;

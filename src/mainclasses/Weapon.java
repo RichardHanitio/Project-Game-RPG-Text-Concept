@@ -1,4 +1,4 @@
-package mainclass;
+package mainclasses;
 public class Weapon {
     
 }

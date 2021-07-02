@@ -1,10 +1,10 @@
-package subclassenemy;
-import mainclass.*;
+package enemysubclasses;
+import mainclasses.Enemy;
 
-public class Yeti extends Enemy{
+public class Ogre extends Enemy{
     @Override
     public void attack() {
-
+        
     }
 
     @Override
