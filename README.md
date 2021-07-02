@@ -1,14 +1,11 @@
-## Getting Started
+## Final Project Group SRRC
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+### Topik : Turned Based RPG (text concept game)
 
-## Folder Structure
+### Anggota :
+1. Calvin Wendy (03082200010) [Github](https://github.com/Calvinwen10)
+2. Ricky (03082200012) [Github](https://github.com/tobaracing1)
+3. Richard Hanitio (03082200014) [Github](https://github.com/RichardHanitio)
+4. Setiawan Junior (03082180037) [Github](https://github.com/Silverlake86)
 
-The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
