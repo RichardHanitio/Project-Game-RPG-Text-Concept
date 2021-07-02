@@ -1,5 +1,5 @@
-package SubclassEnemy;
-import MainClass.*;
+package subclassenemy;
+import mainclass.*;
 
 public class Yeti extends Enemy{
     @Override

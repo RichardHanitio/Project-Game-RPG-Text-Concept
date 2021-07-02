@@ -1,6 +1,7 @@
-package SubclassPlayer;
+package subclassplayer;
 import java.util.Random;
-import MainClass.*;
+
+import mainclass.*;
 
 public class Ranger extends Player{
     public int attSTR = 45;

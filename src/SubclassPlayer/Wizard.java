@@ -1,6 +1,7 @@
-package SubclassPlayer;
+package subclassplayer;
 import java.util.Random;
-import MainClass.*;
+
+import mainclass.*;
 
 
 public class Wizard extends Player{

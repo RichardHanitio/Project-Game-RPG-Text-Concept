@@ -1,4 +1,4 @@
-package MainClass;
+package mainclass;
 public abstract class Enemy {
     //properties
     private String name;
