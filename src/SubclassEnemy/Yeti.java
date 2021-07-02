@@ -1,7 +1,10 @@
-public class Ogre extends Enemy{
+package SubclassEnemy;
+import MainClass.*;
+
+public class Yeti extends Enemy{
     @Override
     public void attack() {
-        
+
     }
 
     @Override

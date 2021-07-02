@@ -1,4 +1,7 @@
-public class Yeti extends Enemy{
+package SubclassEnemy;
+import MainClass.*;
+
+public class Orochi extends Enemy{
     @Override
     public void attack() {
 

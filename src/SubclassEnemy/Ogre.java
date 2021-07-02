@@ -1,7 +1,11 @@
-public class Orochi extends Enemy{
+package SubclassEnemy;
+import MainClass.*;
+
+
+public class Ogre extends Enemy{
     @Override
     public void attack() {
-
+        
     }
 
     @Override

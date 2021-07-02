@@ -1,3 +1,4 @@
+package MainClass;
 
 public abstract class Player{
     String name;
@@ -47,9 +48,9 @@ public abstract class Player{
     }
 
     //Constructor empty untuk player
-    Player(){}
+    public Player(){}
 
-    Player(String name,int health,int mana){
+    public Player(String name,int health,int mana){
         this.name = name;
         this.health = health;
         this.mana = mana;

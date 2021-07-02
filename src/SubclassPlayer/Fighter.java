@@ -1,4 +1,6 @@
+package SubclassPlayer;
 import java.util.Random;
+import MainClass.*;
 
 public class Fighter extends Player {
     public int attSTR = 25;
