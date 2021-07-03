@@ -47,7 +47,10 @@ public class Ranger extends Player{
     @Override
     //Multiplier untuk Ranger
     public int multiplier() {
+        Random rand = new Random();
+        //multi memiliki nilai minimum 3 dan maksimum 6
+        int multi = rand.nextInt(3) + 4 ;
+        return multi;
         
-        return 0;
     }
 }

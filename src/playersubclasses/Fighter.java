@@ -16,7 +16,7 @@ public class Fighter extends Player {
 
     @Override
     public void attack() {
-    
+        
     }
 
     @Override
@@ -47,8 +47,10 @@ public class Fighter extends Player {
     @Override
     //Multiplier untuk Fighter
     public int multiplier() {
-        
-        return 0;
+        Random rand = new Random();
+        //multi memiliki nilai minimum 1 dan maksimum 6
+        int multi = rand.nextInt(6) + 1;
+        return multi;
     }
     
 }

@@ -48,8 +48,10 @@ public class Wizard extends Player{
     @Override
     //Multiplier untuk Ranger
     public int multiplier() {
-        
-        return 0;
+        Random rand = new Random();
+        //multi memiliki nilai minimum 1 dan maksimum 6
+        int multi = rand.nextInt(6) + 1;
+        return multi;
     }
     
 }
