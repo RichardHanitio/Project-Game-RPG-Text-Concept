@@ -57,11 +57,11 @@ public abstract class Player{
     }
 
     //Method serangan player
-    public abstract void attack();
-    public abstract void skill1();
-    public abstract void skill2();
-    public abstract void skill3();
-    public abstract void skill4();
+    public void attack(){}
+    public void skill1(){}
+    public void skill2(){}
+    public void skill3(){}
+    public void skill4(){}
     
     //Multiplier empty player
     public abstract int multiplier();

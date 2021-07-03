@@ -14,31 +14,25 @@ public class Wizard extends Player{
         
     }
 
-
-    @Override
     public void attack() {
     
     }
 
-    @Override
     //Meteor
     public void skill1() {
 
     }
 
-    @Override
     //LifeDrain
     public void skill2() {
 
     }
 
-    @Override
     //LightningSpell
     public void skill3() {
 
     }
 
-    @Override
     //Mirror
     public void skill4() {
   

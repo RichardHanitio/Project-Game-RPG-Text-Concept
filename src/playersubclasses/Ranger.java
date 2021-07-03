@@ -14,30 +14,25 @@ public class Ranger extends Player{
     }
 
 
-    @Override
     public void attack() {
     
     }
 
-    @Override
     //ShockDart
     public void skill1() {
 
     }
 
-    @Override
     //ChargeShot
     public void skill2() {
 
     }
-
-    @Override
+    
     //MultiShoot
     public void skill3() {
 
     }
 
-    @Override
     //EMPTY
     public void skill4() {
   
@@ -51,6 +46,6 @@ public class Ranger extends Player{
         //multi memiliki nilai minimum 3 dan maksimum 6
         int multi = rand.nextInt(3) + 4 ;
         return multi;
-        
+    
     }
 }
