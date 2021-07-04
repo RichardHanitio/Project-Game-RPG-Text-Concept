@@ -1,11 +1,11 @@
 package mainclasses;
 
 public abstract class Player{
-    String name;
-    int health;
-    int mana;
-    Backpack backpack;
-    int gold;
+    private String name;
+    private int health;
+    private int mana;
+    private Backpack backpack;
+    private int gold;
 
     public String getName() {
         return this.name;
