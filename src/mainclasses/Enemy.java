@@ -4,19 +4,19 @@ public abstract class Enemy {
     private String name;
     private int health;
     private int attackPower;
-    private int resistStr;
-    private int resistInt;
+    private int resistSTR;
+    private int resistINT;
 
     //constructor
     public Enemy() {
     }
 
-    public Enemy(String name, int health, int attackPower, int resistStr, int resistInt) {
+    public Enemy(String name, int health, int attackPower, int resistSTR, int resistINT) {
         this.name = name;
         this.health = health;
         this.attackPower = attackPower;
-        this.resistStr = resistStr;
-        this.resistInt = resistInt;
+        this.resistSTR = resistSTR;
+        this.resistINT = resistINT;
     }
     
 
@@ -45,20 +45,20 @@ public abstract class Enemy {
         this.attackPower = attackPower;
     }
 
-    public int getResistStr() {
-        return this.resistStr;
+    public int getResistSTR() {
+        return this.resistSTR;
     }
 
-    public void setResistStr(int resistStr) {
-        this.resistStr = resistStr;
+    public void setResistSTR(int resistSTR) {
+        this.resistSTR = resistSTR;
     }
 
-    public int getResistInt() {
-        return this.resistInt;
+    public int getResistINT() {
+        return this.resistINT;
     }
 
-    public void setResistInt(int resistInt) {
-        this.resistInt = resistInt;
+    public void setResistINT(int resistINT) {
+        this.resistINT = resistINT;
     }
 
     //methods

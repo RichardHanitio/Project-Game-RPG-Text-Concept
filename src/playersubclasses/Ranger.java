@@ -11,7 +11,7 @@ public class Ranger extends Player{
         //health awal   : 60
         //mana awal     : 0
         super(name,60,0);
-        
+        super.setClassID(2);
     }
 
 

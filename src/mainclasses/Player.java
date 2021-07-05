@@ -6,6 +6,8 @@ public abstract class Player{
     private int mana;
     private Backpack backpack;
     private int gold;
+    private int currentStage = 1;
+    private static int classID;
 
     public String getName() {
         return this.name;
@@ -45,6 +47,22 @@ public abstract class Player{
 
     public void setGold(int gold) {
         this.gold = gold;
+    }
+
+    public int getCurrentStage() {
+        return this.currentStage;
+    }
+
+    public void setCurrentStage(int currentStage) {
+        this.currentStage = currentStage;
+    }
+
+    public static int getClassID() {
+        return classID;
+    }
+
+    public void setClassID(int aClassID) {
+        classID = aClassID;
     }
 
     //Constructor empty untuk player

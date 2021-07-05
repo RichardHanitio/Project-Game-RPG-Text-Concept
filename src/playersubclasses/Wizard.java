@@ -12,7 +12,7 @@ public class Wizard extends Player{
         //health awal   : 100
         //mana awal     : 10
         super(name,100,10);
-        
+        super.setClassID(3);
     }
 
     public void attack(int turnCounter,Enemy enemy) {

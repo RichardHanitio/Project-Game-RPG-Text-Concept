@@ -11,7 +11,7 @@ public class Fighter extends Player {
         //health awal   : 200
         //mana awal     : 0
         super(name,200,0);
-        
+        super.setClassID(1);
     }
 
     public void attack(int turnCounter,Enemy enemy) {
