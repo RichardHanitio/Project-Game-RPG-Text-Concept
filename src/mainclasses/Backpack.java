@@ -35,10 +35,21 @@ public class Backpack {
     }
 
     public void usePotionHealth() {
-
+        Player.getHealth() += 8;
+        healthPotion--;
     }
 
     public void usePotionMana() {
-        
+        Player.getMana() += 3;
+        manaPotion--;
+    }
+
+    public void openBackpack() {
+       switch(pilihan){
+            case 1:
+                usePotionHealth();
+            case 2:
+                usePotionMana();
+       }
     }
 }
