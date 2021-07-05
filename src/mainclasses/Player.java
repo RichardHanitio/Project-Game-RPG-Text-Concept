@@ -65,6 +65,16 @@ public abstract class Player{
         classID = aClassID;
     }
 
+    public void usePotionHealth(){
+        health += 8;
+        backpack.healthPotion--;
+    }
+
+    public void usePotionMana(){
+        mana += 3;
+        backpack.manaPotion--;
+    }
+
     //Constructor empty untuk player
     public Player(){}
 
