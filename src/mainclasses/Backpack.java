@@ -35,7 +35,7 @@ public class Backpack {
     }
 
     public void usePotionHealth() {
-        Player.getHealth() += 8;
+        int Health = Player.getHealth();
         healthPotion--;
     }
 
