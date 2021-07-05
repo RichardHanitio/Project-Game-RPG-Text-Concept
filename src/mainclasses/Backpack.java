@@ -41,4 +41,13 @@ public class Backpack {
     public void usePotionMana() {
         
     }
+
+    public void openBackpack() {
+       switch(pilihan){
+            case 1:
+                usePotionHealth();
+            case 2:
+                usePotionMana();
+       }
+    }
 }
