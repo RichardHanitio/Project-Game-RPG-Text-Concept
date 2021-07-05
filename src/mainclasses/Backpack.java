@@ -3,7 +3,7 @@ package mainclasses;
 public class Backpack {
     int healthPotion = 5;
     int manaPotion = 3;
-    String Weapon;
+    Weapon weapon;
 
 
     public Backpack() {
@@ -26,12 +26,12 @@ public class Backpack {
         this.manaPotion = manaPotion;
     }
 
-    public String getWeapon() {
-        return this.Weapon;
+    public Weapon getWeapon() {
+        return this.weapon;
     }
 
-    public void setWeapon(String Weapon) {
-        this.Weapon = Weapon;
+    public void setWeapon(Weapon Weapon) {
+        this.weapon = Weapon;
     }
 
     public void usePotionHealth() {
