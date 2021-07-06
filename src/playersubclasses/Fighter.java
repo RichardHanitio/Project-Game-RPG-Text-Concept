@@ -31,12 +31,9 @@ public class Fighter extends Player {
             System.out.println("Skill 1 : Heal (Actived)");
             Double persenan = 0.15;
             int tambahHealth = (int)(this.getHealth()*persenan);
-            int finalHealth = this.getHealth()+tambahHealth;
-            this.setHealth(finalHealth);
+            setHealth(getHealth()+tambahHealth);
             System.out.println("Your health has been healed");
-            int manaAwal = this.getMana();
-            int manaBaru = manaAwal - manaCost;
-            setMana(manaBaru);
+            setMana(getMana()-manaCost);
             turnCounter++;
         }
         else{
@@ -52,13 +49,11 @@ public class Fighter extends Player {
         if(this.getMana() >= 3){
             int manaCost = 3;
             System.out.println("Skill 2 : WarCry (Actived)");
-            int counter = turnCounter+2;
+            int counter = turnCounter+6;
             Double persenan = 0.20;
             int tambahAttSTR = (int) (attSTR * persenan);
             int finaltambahSTR = attSTR + tambahAttSTR;
-            int manaAwal = this.getMana();
-            int manaBaru = manaAwal - manaCost;
-            setMana(manaBaru);
+            setMana(getMana()-manaCost);
             while(turnCounter != counter){
                 attSTR = finaltambahSTR;
             }
@@ -74,12 +69,8 @@ public class Fighter extends Player {
         if(this.getMana() >= 7){
             int manaCost = 7;
             System.out.println("Skill 3 : OnePUNCH");
-            int enemyHealth = enemy.getHealth();
-            int finalenemyHealth = enemyHealth - (attSTR * 6);
-            enemy.setHealth(finalenemyHealth);
-            int manaAwal = this.getMana();
-            int manaBaru = manaAwal - manaCost;
-            setMana(manaBaru);
+            enemy.setHealth(enemy.getHealth()-(attSTR * 6));
+            setMana(getMana()-manaCost);
             turnCounter++;
         }
     }

@@ -8,9 +8,9 @@ public class Ranger extends Player{
 
     public Ranger(String name){
         //Nama berasal dari player
-        //health awal   : 60
+        //health awal   : 80
         //mana awal     : 0
-        super(name,60,0);
+        super(name,80,0);
         super.setClassID(2);
     }
 
@@ -24,14 +24,16 @@ public class Ranger extends Player{
     //ShockDart
     public void skill1(int turnCounter, Enemy enemy) {
         if(this.getMana() >= 3){
+            int manaCost = 3;
             System.out.println("Skill 1 : ShockDart (Actived)");
-            int enemyHealth = enemy.getHealth();
-            int attack = enemyHealth - attSTR;
-            enemy.setHealth(attack);
-            int counter = turnCounter + 1;
+            enemy.setHealth(enemy.getHealth()-attSTR);
+            setMana(getMana()-manaCost);
+
+            int counter = turnCounter + 2;
             while(turnCounter != counter){
                 turnCounter++;
             }
+    
         }
         else{
             System.out.println("Your mana is not enough to use this skill");
@@ -41,10 +43,10 @@ public class Ranger extends Player{
     //ChargeShot
     public void skill2(int turnCounter, Enemy enemy) {
         if(this.getMana() >= 5){
+            int manaCost = 5;
             System.out.println("Skill 2 : ChargeShot (Actived)");
-            int enemyHealth = enemy.getHealth();
-            int attack = enemyHealth - (attSTR * 5);
-            enemy.setHealth(attack);
+            enemy.setHealth(enemy.getHealth() - (attSTR * 5));
+            setMana(getMana()-manaCost);
             turnCounter++;
         }
         else{
@@ -55,9 +57,10 @@ public class Ranger extends Player{
     //MultiShoot
     public void skill3(int turnCounter,Enemy enemy) {
         if(this.getMana() >= 8){
-            int enemyHealth = enemy.getHealth();
-            int attack = enemyHealth - (attSTR * 2 * multiplier());
-            enemy.setHealth(attack);
+            int manaCost = 8;
+            System.out.println("Skill 3 : Multishot (Actived)");
+            enemy.setHealth(enemy.getHealth() - (attSTR * 2 * multiplier()));
+            setMana(getMana() - manaCost);
             turnCounter++;
         }
         else{

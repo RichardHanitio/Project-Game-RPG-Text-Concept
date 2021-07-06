@@ -10,7 +10,7 @@ public class Shop {
     int pilih = 1234;
     public Shop(Player player){
         this.player = player;
-        while(pilih != 4){
+        while(pilih != 3){
             menu();
         }
     }
@@ -21,11 +21,11 @@ public class Shop {
         System.out.println("");
         System.out.println("1. Buy Health Potion                                            Price   : 10 Golds");
         System.out.println("2. Buy Mana Potion                                              Price   : 10 Golds");
-        System.out.println("3. Upgrade Weapon (Enchance player damage and health)           Price   : 10 Golds");
-        System.out.println("4. Exit from shop");
+        System.out.println("3. Exit from shop");
         System.out.println("----------------------------------------------------------------------------------");
         System.out.print("Choose : ");
         pilih = in.nextInt();
+        
         if(pilih == 1){
             int healthPCost = 10;
             if(playerMoney < healthPCost){
@@ -40,6 +40,7 @@ public class Shop {
                 player.setGold(afterBuy);
             }
         }
+
         else if(pilih == 2){
             int manaPCost = 10;
             if(playerMoney < manaPCost){
@@ -55,18 +56,6 @@ public class Shop {
             }
         }
 
-        else if(pilih == 3){
-            int weaponCost = 10;
-            if(playerMoney < weaponCost){
-                System.out.println("Sorry sir,your money is not enough to buy this Health Potion");
-            }
-            else{
-                Weapon playerWeapon = playerBP.getWeapon();
-                playerWeapon.upgradeWeapon();
-                System.out.println("Congratulation now your weapon has been UPGRADED");
-                System.out.println("Your weapon name is : " + playerWeapon.toString());
-            }
-        }
         else{
             System.out.println("Your input is invalid please try again . . . ");
             System.out.println("");
