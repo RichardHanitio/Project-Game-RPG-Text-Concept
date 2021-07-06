@@ -55,8 +55,8 @@ public class Battle {
     }
 
     public void beginBattle(){
-        player.toString();
-        enemy.toString();
+        System.out.println(player.toString());
+        System.out.println(enemy.toString());
         turnCounter++;
     }
 
@@ -64,29 +64,38 @@ public class Battle {
         int pilihan = 123;
         int enemyPilihan = 12313;
         if(evenChecker() == false){
-            player.toString();
+            System.out.println(player.toString());
+            player.playerMenu();
             pilihan = in.nextInt();
+            System.out.println("");
 
             switch(pilihan){
                 case 1:
                     player.attack(turnCounter,enemy);
+                    System.out.println("");
+
                     break;
 
                 case 2:
                     player.skill1(turnCounter, enemy);
+                    System.out.println("");
                     break;
 
                 case 3:
                     player.skill2(turnCounter, enemy);
+                    System.out.println("");
                     break;
                 case 4:
                     player.skill3(turnCounter, enemy);
+                    System.out.println("");
                     break;
                 case 5:
                     player.skill4(turnCounter, enemy);
+                    System.out.println("");
                     break;
                 case 6:
                     player.openBackpack();
+                    System.out.println("");
                     break;
                 case 7:
                     System.out.println("GAME OVER");
@@ -95,18 +104,21 @@ public class Battle {
         }
 
         else if(evenChecker() == true){
-            enemy.toString();
+            System.out.println(enemy.toString());
             enemyPilihan = enemy.decisionPick();
 
             switch(enemyPilihan){
                 case 1:
                     enemy.attack(turnCounter, player);
+                    System.out.println("");
                     break;
                 case 2:
                     enemy.skill1(turnCounter, player);
+                    System.out.println("");
                     break;
                 case 3:
                     enemy.skill2(turnCounter, player);
+                    System.out.println("");
                     break;
             }
         }

@@ -6,6 +6,14 @@ import mainclasses.Battle;
 public class Ranger extends Player{
     public int attSTR = 45;
 
+    public int getAttSTR() {
+        return this.attSTR;
+    }
+
+    public void setAttSTR(int attSTR) {
+        this.attSTR = attSTR;
+    }
+
     public Ranger(String name){
         //Nama berasal dari player
         //health awal   : 80
@@ -85,5 +93,25 @@ public class Ranger extends Player{
         int multi = rand.nextInt(3) + 4 ;
         return multi;
     
+    }
+    @Override
+    public String toString() {
+        return 
+        "Player Stats   : \n" + 
+        "Nama           : " + getName() + "\n" +
+        "Health         : " + getHealth() + "\n" +
+        "Mana           : " + getMana() + "\n" +
+        "Attack Power   : " + getAttSTR() + "\n";
+    }
+
+    public void playerMenu(){
+        System.out.println("-------------------------------------------------------");
+        System.out.println("|                      Menu                           |");
+        System.out.println("| 1.Attack                        2.ShockDart     (3) |");
+        System.out.println("| 3.ChargeShot    (5)             4.MultiShot     (8) |");
+        System.out.println("| 5.EMPTY                         6.Open Backpack     |");
+        System.out.println("|              7.Surrender (Warning)                  |");
+        System.out.println("-------------------------------------------------------");
+        System.out.print(" Choose  : ");
     }
 }

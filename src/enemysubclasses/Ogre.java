@@ -37,4 +37,17 @@ public class Ogre extends Enemy{
         player.setHealth(player.getHealth()-25);
         Battle.setTurnCounter(turnCounter += 1);
     }
+
+
+    @Override
+    public String toString() {
+        return 
+        "Enemy  Stats   : \n" + 
+        "Nama           : " + getName() + "\n" +
+        "Health         : " + getHealth() + "\n" +
+        "Resist STR     : " + getResistSTR() + "\n" +
+        "Resist INT     : " + getResistINT() + "\n" + 
+        "Attack Power   : " + getAttackPower() + "\n";
+    }
+
 }

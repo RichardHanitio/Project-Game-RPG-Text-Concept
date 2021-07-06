@@ -6,6 +6,14 @@ import mainclasses.Battle;
 public class Fighter extends Player {
     public int attSTR = 25;
 
+    public int getAttSTR() {
+        return this.attSTR;
+    }
+
+    public void setAttSTR(int attSTR) {
+        this.attSTR = attSTR;
+    }
+
     public Fighter(String name){
         //Nama berasal dari player
         //health awal   : 200
@@ -89,6 +97,30 @@ public class Fighter extends Player {
         //multi memiliki nilai minimum 1 dan maksimum 6
         int multi = rand.nextInt(6) + 1;
         return multi;
+    }
+
+
+    @Override
+    public String toString() {
+        return 
+        "Player Stats   : \n" + 
+        "Nama           : " + getName() + "\n" +
+        "Health         : " + getHealth() + "\n" +
+        "Mana           : " + getMana() + "\n" +
+        "Attack Power   : " + getAttSTR() + "\n";
+
+    }
+
+    public void playerMenu(){
+        System.out.println("------------------------------------------------------");
+        System.out.println("|                     Menu                           |");
+        System.out.println("| 1.Attack                        2.Heal         (2) |");
+        System.out.println("| 3.WarCry    (3)                 4.OnePUNCH     (7) |");
+        System.out.println("| 5.EMPTY                         6.Open Backpack    |");
+        System.out.println("|             7.Surrender (Warning)                  |");
+        System.out.println("------------------------------------------------------");
+        System.out.print(" Choose  : ");
+
     }
     
 }

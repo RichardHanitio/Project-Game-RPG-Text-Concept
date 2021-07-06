@@ -116,4 +116,6 @@ public abstract class Player{
     //Multiplier empty player
     public abstract int multiplier();
 
+    public void playerMenu(){}
+
 }

@@ -7,6 +7,14 @@ import mainclasses.Battle;
 public class Wizard extends Player{
     public int attINT = 5;
 
+
+    public int getAttINT() {
+        return this.attINT;
+    }
+
+    public void setAttINT(int attINT) {
+        this.attINT = attINT;
+    }
     public Wizard(String name){
         //Nama berasal dari player
         //health awal   : 100
@@ -100,4 +108,28 @@ public class Wizard extends Player{
         int multi = rand.nextInt(6) + 1;
         return multi;
     }
+
+
+    @Override
+    public String toString() {
+        return 
+        "Player Stats   : \n" + 
+        "Nama           : " + getName() + "\n" +
+        "Health         : " + getHealth() + "\n" +
+        "Mana           : " + getMana() + "\n" +
+        "Attack Power   : " + getAttINT() + "\n";
+    }
+
+    public void playerMenu(){
+        System.out.println("---------------------------------------------------------");
+        System.out.println("|                       Menu                             |");
+        System.out.println("| 1.Meteor                           2.LifeDrain     (3) |");
+        System.out.println("| 3.LightningSpell   (5)             4.MultiShot     (8) |");
+        System.out.println("| 5.EMPTY                            6.Open Backpack     |");
+        System.out.println("|              7.Surrender (Warning)                     |");
+        System.out.println("----------------------------------------------------------");
+        System.out.print(" Choose  : ");
+
+    }
+
 }

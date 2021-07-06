@@ -35,4 +35,15 @@ public class Orochi extends Enemy{
         System.out.println("Orochi skill 2 : Mad Snake");
         Battle.setTurnCounter(turnCounter += 1);
     }
+
+    @Override
+    public String toString() {
+        return 
+        "Enemy  Stats   : \n" + 
+        "Nama           : " + getName() + "\n" +
+        "Health         : " + getHealth() + "\n" +
+        "Resist STR     : " + getResistSTR() + "\n" +
+        "Resist INT     : " + getResistINT() + "\n" + 
+        "Attack Power   : " + getAttackPower() + "\n";
+    }
 }
