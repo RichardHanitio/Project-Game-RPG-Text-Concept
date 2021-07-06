@@ -1,5 +1,7 @@
 package mainclasses;
 
+import java.util.Scanner;
+
 public abstract class Player{
     private String name;
     private int health;
@@ -8,6 +10,8 @@ public abstract class Player{
     private int gold;
     private int currentStage = 1;
     private static int classID;
+
+    Scanner masukan = new Scanner(System.in);
 
     public String getName() {
         return this.name;
@@ -65,26 +69,32 @@ public abstract class Player{
         classID = aClassID;
     }
 
-    public void usePotionHealth(){
-        health += 8;
-        backpack.healthPotion--;
-    }
-
-    public void usePotionMana(){
-        mana += 3;
-        backpack.manaPotion--;
-    }
-
     public void openBackpack() {
-        int pilihan = 1;
-        switch(pilihan){
-            case 1:
-                    health += 8;
-                    backpack.healthPotion--;
-            case 2:
-                    mana += 3;
-                    backpack.manaPotion--;
-       }
+        System.out.println("Menu Backpack :");
+        int pilih;
+
+        System.out.print("Pilih no : ");
+        pilih = masukan.nextInt();
+        
+        
+        if (pilih == 1){
+            System.out.println("Health potion digunakan.");
+            System.out.println("Health : +8 ");
+            health += 8;
+            backpack.healthPotion--;
+        }
+        else if(pilih == 2){
+            System.out.println("Mana potion digunakan.");
+            System.out.println("Mana : +3 ");
+            mana += 3;
+            backpack.manaPotion--;
+        }
+        else if(pilih == 3){
+            System.out.println("Keluar");
+        }
+        else{
+            System.out.println("Pilihan anda salah");
+        }
     }
 
     //Constructor empty untuk player
