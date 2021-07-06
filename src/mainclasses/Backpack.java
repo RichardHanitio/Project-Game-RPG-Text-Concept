@@ -34,13 +34,4 @@ public class Backpack {
         this.weapon = Weapon;
     }
 
-    public void openBackpack() {
-        int pilihan;
-        switch(pilihan){
-            case 1:
-                Player.usePotionHealth();
-            case 2:
-                Player.usePotionMana();
-       }
-    }
 }
