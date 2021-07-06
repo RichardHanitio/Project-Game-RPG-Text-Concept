@@ -50,6 +50,7 @@ public class Battle {
         }
         else if (enemy.getHealth() < 0 ){
             System.out.println(enemy.getName() + " has been slain . . .");
+            player.setCurrentStage(player.getCurrentStage() + 1);
         }
     }
 
@@ -61,6 +62,7 @@ public class Battle {
 
     public void midBattle(){
         int pilihan = 123;
+        int enemyPilihan = 12313;
         if(evenChecker() == false){
             player.toString();
             pilihan = in.nextInt();
@@ -89,6 +91,23 @@ public class Battle {
                 case 7:
                     System.out.println("GAME OVER");
                     System.exit(0);
+            }
+        }
+
+        else if(evenChecker() == true){
+            enemy.toString();
+            enemyPilihan = enemy.decisionPick();
+
+            switch(enemyPilihan){
+                case 1:
+                    enemy.attack(turnCounter, player);
+                    break;
+                case 2:
+                    enemy.skill1(turnCounter, player);
+                    break;
+                case 3:
+                    enemy.skill2(turnCounter, player);
+                    break;
             }
         }
     }

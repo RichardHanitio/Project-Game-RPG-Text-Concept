@@ -1,6 +1,7 @@
 package enemysubclasses;
 import mainclasses.Enemy;
 import mainclasses.Player;
+import mainclasses.Battle;
 
 public class Ogre extends Enemy{
     public Ogre() {
@@ -18,7 +19,7 @@ public class Ogre extends Enemy{
     public void attack(int turnCounter, Player player) {
         System.out.println("Ogre Attacks Player");
         player.setHealth(player.getHealth()-10);
-        turnCounter++;
+        Battle.setTurnCounter(turnCounter += 1);
     }
 
     @Override
@@ -26,7 +27,7 @@ public class Ogre extends Enemy{
     public void skill1(int turnCounter, Player player) {
         System.out.println("Ogre Skill 1 : Tornado Spin");
         player.setHealth(player.getHealth()-20);
-        turnCounter++;
+        Battle.setTurnCounter(turnCounter += 1);
     }
 
     @Override
@@ -34,6 +35,6 @@ public class Ogre extends Enemy{
     public void skill2(int turnCounter, Player player) {
         System.out.println("Ogre Skill 2 : Full Power");
         player.setHealth(player.getHealth()-25);
-        turnCounter++;
+        Battle.setTurnCounter(turnCounter += 1);
     }
 }

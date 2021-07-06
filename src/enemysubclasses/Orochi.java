@@ -1,6 +1,7 @@
 package enemysubclasses;
 import mainclasses.Enemy;
 import mainclasses.Player;
+import mainclasses.Battle;
 
 public class Orochi extends Enemy{
     public Orochi() {
@@ -18,20 +19,20 @@ public class Orochi extends Enemy{
     public void attack(int turnCounter, Player player) {
         System.out.println("Orochi Attacks Player");
         player.setHealth(player.getHealth()-40);    
-        turnCounter++;
+        Battle.setTurnCounter(turnCounter += 1);
     }
 
     @Override
     //Snake Bite : 
     public void skill1(int turnCounter, Player player) {
         System.out.println("Orochi skill 1 : Snake Bite");       
-        turnCounter++; 
+        Battle.setTurnCounter(turnCounter += 1);
     }
 
     @Override
     //Mad Snake : 
     public void skill2(int turnCounter, Player player) {
         System.out.println("Orochi skill 2 : Mad Snake");
-        turnCounter++;
+        Battle.setTurnCounter(turnCounter += 1);
     }
 }

@@ -1,6 +1,7 @@
 package enemysubclasses;
 import mainclasses.Enemy;
 import mainclasses.Player;
+import mainclasses.Battle;
 
 public class Yeti extends Enemy{
 
@@ -20,7 +21,7 @@ public class Yeti extends Enemy{
     public void attack(int turnCounter, Player player) {
         System.out.println("Yeti Attacks Player");
         player.setHealth(player.getHealth()-20);
-        turnCounter++;
+        Battle.setTurnCounter(turnCounter += 1);
     }
 
     @Override
@@ -28,7 +29,7 @@ public class Yeti extends Enemy{
     public void skill1(int turnCounter, Player player) {
         System.out.println("Yeti Skill 1 : Yeti Punch");
         player.setHealth(player.getHealth()-30);
-        turnCounter++;     
+        Battle.setTurnCounter(turnCounter += 1);   
     }
 
     @Override
@@ -36,7 +37,7 @@ public class Yeti extends Enemy{
     public void skill2(int turnCounter, Player player) {
         System.out.println("Yeti Skill 2 : Yeti Punch");
         player.setHealth(player.getHealth() - 35);
-        turnCounter++;
+        Battle.setTurnCounter(turnCounter += 1);
     }
 
 }
