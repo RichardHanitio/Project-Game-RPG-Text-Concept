@@ -74,17 +74,20 @@ public abstract class Player{
         int pilih;
 
         System.out.print("Pilih no : ");
+        System.out.print("1.Use Health Potion");
+        System.out.print("2.Use Mana Potion");
+        System.out.print("3.Exit");
         pilih = masukan.nextInt();
         
         
         if (pilih == 1){
-            System.out.println("Health potion digunakan.");
+            System.out.println("Using health potion.");
             System.out.println("Health : +8 ");
             health += 8;
             backpack.healthPotion--;
         }
         else if(pilih == 2){
-            System.out.println("Mana potion digunakan.");
+            System.out.println("Using mana potion.");
             System.out.println("Mana : +3 ");
             mana += 3;
             backpack.manaPotion--;
