@@ -76,7 +76,7 @@ public abstract class Player{
     }
 
     public void openBackpack() {
-        int pilihan;
+        int pilihan = 1;
         switch(pilihan){
             case 1:
                     health += 8;
