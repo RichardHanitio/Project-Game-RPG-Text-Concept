@@ -75,6 +75,18 @@ public abstract class Player{
         backpack.manaPotion--;
     }
 
+    public void openBackpack() {
+        int pilihan;
+        switch(pilihan){
+            case 1:
+                    health += 8;
+                    backpack.healthPotion--;
+            case 2:
+                    mana += 3;
+                    backpack.manaPotion--;
+       }
+    }
+
     //Constructor empty untuk player
     public Player(){}
 
