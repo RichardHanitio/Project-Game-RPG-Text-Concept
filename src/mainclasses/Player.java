@@ -65,16 +65,6 @@ public abstract class Player{
         classID = aClassID;
     }
 
-    public void usePotionHealth(){
-        health += 8;
-        backpack.healthPotion--;
-    }
-
-    public void usePotionMana(){
-        mana += 3;
-        backpack.manaPotion--;
-    }
-
     public void openBackpack() {
         int pilihan = 1;
         switch(pilihan){
