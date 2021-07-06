@@ -2,7 +2,7 @@ package playersubclasses;
 import java.util.Random;
 import mainclasses.Enemy;
 import mainclasses.Player;
-
+import mainclasses.Battle;
 public class Fighter extends Player {
     public int attSTR = 25;
 
@@ -18,13 +18,14 @@ public class Fighter extends Player {
         System.out.println("You attacking enemy with basic attack ");
         enemy.setHealth(enemy.getHealth() - (attSTR * multiplier()));
         if(this.getMana()<10) setMana(super.getMana()+1);
-        turnCounter++;
+        Battle.setTurnCounter(turnCounter += 1);
+        
     }
 
 
     //Heal
     //sementara memakai turnCount karena mekanisme battle belum terbuat
-    public void skill1(int turnCounter) {
+    public void skill1(int turnCounter, Enemy enemy) {
 
         if (this.getMana() >= 2){
             int manaCost = 2;
@@ -34,7 +35,8 @@ public class Fighter extends Player {
             setHealth(getHealth()+tambahHealth);
             System.out.println("Your health has been healed");
             setMana(getMana()-manaCost);
-            turnCounter++;
+            Battle.setTurnCounter(turnCounter += 1);
+
         }
         else{
             System.out.println("Your mana is not enough to use this skill");
@@ -44,7 +46,7 @@ public class Fighter extends Player {
     
     //WarCry
     //sementara memakai turnCount karena mekanisme battle belum terbuat
-    public void skill2(int turnCounter) {
+    public void skill2(int turnCounter, Enemy enemy) {
 
         if(this.getMana() >= 3){
             int manaCost = 3;
@@ -57,7 +59,8 @@ public class Fighter extends Player {
             while(turnCounter != counter){
                 attSTR = finaltambahSTR;
             }
-            turnCounter++;
+            Battle.setTurnCounter(turnCounter += 1);
+            
         }
         else{
             System.out.println("Your mana is not enough to use this skill");
@@ -71,12 +74,12 @@ public class Fighter extends Player {
             System.out.println("Skill 3 : OnePUNCH");
             enemy.setHealth(enemy.getHealth()-(attSTR * 6));
             setMana(getMana()-manaCost);
-            turnCounter++;
+            Battle.setTurnCounter(turnCounter += 1);
         }
     }
 
     //EMPTY
-    public void skill4() {
+    public void skill4(int turnCounter, Enemy enemy) {
         System.out.println("Your class doesn't this skill");
     }
 
