@@ -2,7 +2,7 @@ package playersubclasses;
 import java.util.Random;
 import mainclasses.Enemy;
 import mainclasses.Player;
-
+import mainclasses.Battle;
 public class Ranger extends Player{
     public int attSTR = 45;
 
@@ -18,7 +18,8 @@ public class Ranger extends Player{
         System.out.println("You attacking enemy with basic attack ");
         enemy.setHealth(enemy.getHealth() - (attSTR * multiplier()));
         if (this.getMana() < 10) setMana(super.getMana() + 1);
-        turnCounter++;
+        Battle.setTurnCounter(turnCounter += 1);
+        
     }
 
     //ShockDart
@@ -31,7 +32,7 @@ public class Ranger extends Player{
 
             int counter = turnCounter + 2;
             while(turnCounter != counter){
-                turnCounter++;
+                Battle.setTurnCounter(turnCounter += 1);
             }
     
         }
@@ -47,7 +48,8 @@ public class Ranger extends Player{
             System.out.println("Skill 2 : ChargeShot (Actived)");
             enemy.setHealth(enemy.getHealth() - (attSTR * 5));
             setMana(getMana()-manaCost);
-            turnCounter++;
+            Battle.setTurnCounter(turnCounter += 1);
+            
         }
         else{
             System.out.println("Your mana is not enough to use this skill");
@@ -61,7 +63,8 @@ public class Ranger extends Player{
             System.out.println("Skill 3 : Multishot (Actived)");
             enemy.setHealth(enemy.getHealth() - (attSTR * 2 * multiplier()));
             setMana(getMana() - manaCost);
-            turnCounter++;
+            Battle.setTurnCounter(turnCounter += 1);
+
         }
         else{
             System.out.println("Your mana is not enough to use this skill");
@@ -69,7 +72,7 @@ public class Ranger extends Player{
     }
 
     //EMPTY
-    public void skill4() {
+    public void skill4(int turnCounter, Enemy enemy) {
         System.out.println("Your class doesn't this skill");
     }
 

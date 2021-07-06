@@ -2,7 +2,7 @@ package playersubclasses;
 import java.util.Random;
 import mainclasses.Player;
 import mainclasses.Enemy;
-
+import mainclasses.Battle;
 
 public class Wizard extends Player{
     public int attINT = 5;
@@ -19,7 +19,8 @@ public class Wizard extends Player{
         System.out.println("You attacking enemy with basic attack ");
         enemy.setHealth(enemy.getHealth() - (attINT * multiplier()));
         if(getMana() < 10) setMana(getMana() + 1);
-        turnCounter++;
+        Battle.setTurnCounter(turnCounter += 1);
+
     }
 
     //Meteor
@@ -29,7 +30,8 @@ public class Wizard extends Player{
             System.out.println("Skill 1 : Meteor (Actived)");
             enemy.setHealth(enemy.getHealth() - ((attINT + 30 ) * multiplier()));
             setMana(getMana()-manaCost);
-            turnCounter++;
+            Battle.setTurnCounter(turnCounter += 1);
+
 
         }
         else{
@@ -50,7 +52,8 @@ public class Wizard extends Player{
             setHealth(getHealth() + persenanEnemyHealth);
             setMana(getMana()-manaCost);
 
-            turnCounter++;
+            Battle.setTurnCounter(turnCounter += 1);
+
 
         }
         else{
@@ -65,7 +68,8 @@ public class Wizard extends Player{
             System.out.println("Skill 3 : LightingSpell (Actived)");
             enemy.setHealth(enemy.getHealth() - ((attINT * 50) * multiplier() * getMana()));
             setMana(getMana()-manaCost);
-            turnCounter++;
+            Battle.setTurnCounter(turnCounter += 1);
+
         }
         else{
             System.out.println("Your mana is not enough to use this skill");
@@ -79,7 +83,8 @@ public class Wizard extends Player{
             System.out.println("Skill 4 : Mirror (Actived)");
             enemy.setHealth(enemy.getHealth() - (enemy.getAttackPower() * multiplier()));
             setMana(getMana()-manaCost);
-            turnCounter++;
+            Battle.setTurnCounter(turnCounter += 1);
+
         }
         else{
             System.out.println("Your mana is not enough to use this skill");
