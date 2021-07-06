@@ -1,4 +1,5 @@
 package mainclasses;
+import java.lang.Math;
 public abstract class Enemy {
     //properties
     private String name;
@@ -62,12 +63,11 @@ public abstract class Enemy {
     }
 
     //methods
-    public abstract void attack();
-    public abstract void skill1();
-    public abstract void skill2();
-    public abstract void skill3();
+    public abstract void attack(int turnCounter, Player player);
+    public abstract void skill1(int turnCounter, Player player);
+    public abstract void skill2(int turnCounter, Player player);
     
     public int decisionPick() {
-        return 0;
+        return (int)Math.floor(Math.random()*(3-1+1)+1);
     }
 }

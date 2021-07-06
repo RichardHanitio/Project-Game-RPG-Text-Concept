@@ -14,25 +14,11 @@ public class Ranger extends Player{
         super.setClassID(2);
     }
 
-
     public void attack(int turnCounter,Enemy enemy) {
-        if (this.getMana() >= 10){
-            System.out.println("You attacking enemy with basic attack ");
-            int enemyHealth = enemy.getHealth();
-            int attackingEnemy = enemyHealth - (attSTR * multiplier());
-            enemy.setHealth(attackingEnemy);
-            turnCounter++;
-        }
-        else{
-            System.out.println("You attacking enemy with basic attack ");
-            int enemyHealth = enemy.getHealth();
-            int attackingEnemy = enemyHealth - (attSTR * multiplier());
-            enemy.setHealth(attackingEnemy);
-            int manaAwal = this.getMana();
-            int manaBaru = manaAwal++;
-            setMana(manaBaru);
-            turnCounter++;
-        }
+        System.out.println("You attacking enemy with basic attack ");
+        enemy.setHealth(enemy.getHealth() - (attSTR * multiplier()));
+        if (this.getMana() < 10) setMana(super.getMana() + 1);
+        turnCounter++;
     }
 
     //ShockDart
