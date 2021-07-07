@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Shop {
     Player player;
     Scanner in = new Scanner(System.in);
-    Backpack playerBP = player.getBackpack();
     int playerMoney = player.getGold();
 
     int pilih = 1234;
@@ -32,14 +31,12 @@ public class Shop {
                 System.out.println("Sorry sir,your money is not enough to buy this Health Potion");
             }
             else{
-                if (playerBP.getHealthPotion() >= 5){
+                if (Backpack.healthPotion >= 5){
                     System.out.println("HealthPotion Full");
                 }
                 else {
-                    int playerHealthP = playerBP.getHealthPotion();
-                    playerHealthP =+ 1;
-                    playerBP.setHealthPotion(playerHealthP);
-                    System.out.println("Your have " + playerHealthP + "Health Potion now");
+                    Backpack.healthPotion += 1;
+                    System.out.println("Your have " + Backpack.healthPotion + "Health Potion now");
                     int afterBuy = playerMoney - healthPCost;
                     player.setGold(afterBuy);
                 }
@@ -52,14 +49,12 @@ public class Shop {
                 System.out.println("Sorry sir,your money is not enough to buy this Health Potion");
             }
             else{
-                if (playerBP.getManaPotion() >= 3){
+                if (Backpack.manaPotion >= 3){
                     System.out.println("ManaPotion Full");
                 }
                 else {
-                    int playerManaP = playerBP.getManaPotion();
-                    playerManaP =+ 1;
-                    playerBP.setManaPotion(playerManaP);
-                    System.out.println("Your have " + playerManaP + "Mana Potion now");
+                    Backpack.manaPotion += 1;
+                    System.out.println("Your have " + Backpack.manaPotion + "Mana Potion now");
                     int afterBuy = playerMoney - manaPCost;
                     player.setGold(afterBuy);
                 }

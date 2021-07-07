@@ -120,13 +120,13 @@ public class Wizard extends Player{
     }
 
     public void playerMenu(){
-        System.out.println("---------------------------------------------------------");
-        System.out.println("|                       Menu                             |");
-        System.out.println("| 1.Meteor                           2.LifeDrain     (3) |");
-        System.out.println("| 3.LightningSpell   (5)             4.MultiShot     (8) |");
-        System.out.println("| 5.EMPTY                            6.Open Backpack     |");
-        System.out.println("|              7.Surrender (Warning)                     |");
-        System.out.println("----------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("|                       Menu                                 |");
+        System.out.println("| 1.Attack                          2.Meteor             (3) |");
+        System.out.println("| 3.LifeDrain   (5)                 4.LightningSpell     (8) |");
+        System.out.println("| 5.Mirror                          6.Open Backpack          |");
+        System.out.println("|              7.Surrender (Warning)                         |");
+        System.out.println("--------------------------------------------------------------");
         System.out.print(" Choose  : ");
 
     }
