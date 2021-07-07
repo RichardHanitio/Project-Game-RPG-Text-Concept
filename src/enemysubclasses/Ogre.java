@@ -7,12 +7,12 @@ public class Ogre extends Enemy{
     public Ogre() {
         /*
             Ogre
-            Health : 100
+            Health : 400
             Attack Power : 10
-            ResistINT : 1
-            ResistSTR : 1
+            ResistINT : 10
+            ResistSTR : 20
         */
-        super("Ogre", 100, 10, 1, 1);
+        super("Ogre", 400, 10, 10, 20);
     }
 
     @Override

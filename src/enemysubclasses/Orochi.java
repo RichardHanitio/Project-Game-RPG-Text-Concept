@@ -7,12 +7,12 @@ public class Orochi extends Enemy{
     public Orochi() {
         /*
             Orochi
-            Health : 500
+            Health : 800
             Attack Power : 40
-            ResistINT : 1
-            ResistSTR : 1
+            ResistINT : 50
+            ResistSTR : 50
         */
-        super("Yamata no Orochi", 500, 40, 1, 1);
+        super("Yamata no Orochi", 800, 40, 50, 50);
     }
 
     @Override
@@ -23,16 +23,19 @@ public class Orochi extends Enemy{
     }
 
     @Override
-    //Snake Bite : 
+    //Lifesteal : 
     public void skill1(int turnCounter, Player player) {
-        System.out.println("Orochi skill 1 : Snake Bite");       
+        System.out.println("Orochi skill 1 : Lifesteal");  
+        player.setHealth(player.getHealth()-40);
+        setHealth(getHealth()+20);      
         Battle.setTurnCounter(turnCounter += 1);
     }
 
     @Override
-    //Mad Snake : 
+    //Snake Bite : 
     public void skill2(int turnCounter, Player player) {
-        System.out.println("Orochi skill 2 : Mad Snake");
+        System.out.println("Orochi skill 2 : Snake Bite");
+        player.setHealth(player.getHealth()-80);
         Battle.setTurnCounter(turnCounter += 1);
     }
 

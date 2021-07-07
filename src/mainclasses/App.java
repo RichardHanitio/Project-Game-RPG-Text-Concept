@@ -8,7 +8,7 @@ public class App {
         Player player1 = new Fighter("Laplace");
         Enemy enemy1 = new Ogre();
         Battle battle = new Battle(player1, enemy1);
-
+        
     //     Scanner scanner = new Scanner(System.in);
     //     int choice;
     //     String charName = null;

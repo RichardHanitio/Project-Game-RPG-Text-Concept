@@ -62,7 +62,6 @@ public class Wizard extends Player{
 
             Battle.setTurnCounter(turnCounter += 1);
 
-
         }
         else{
             System.out.println("Your mana is not enough to use this skill");
@@ -104,8 +103,8 @@ public class Wizard extends Player{
     //Multiplier untuk Ranger
     public int multiplier() {
         Random rand = new Random();
-        //multi memiliki nilai minimum 1 dan maksimum 6
-        int multi = rand.nextInt(6) + 1;
+        //multi memiliki nilai minimum 1 dan maksimum 4
+        int multi = rand.nextInt(3) + 1;
         return multi;
     }
 

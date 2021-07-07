@@ -27,32 +27,42 @@ public class Shop {
         pilih = in.nextInt();
         
         if(pilih == 1){
-            int healthPCost = 10;
+            int healthPCost = 200;
             if(playerMoney < healthPCost){
                 System.out.println("Sorry sir,your money is not enough to buy this Health Potion");
             }
             else{
-                int playerHealthP = playerBP.getHealthPotion();
-                playerHealthP =+ 1;
-                playerBP.setHealthPotion(playerHealthP);
-                System.out.println("Your have " + playerHealthP + "Health Potion now");
-                int afterBuy = playerMoney - healthPCost;
-                player.setGold(afterBuy);
+                if (playerBP.getHealthPotion() >= 5){
+                    System.out.println("HealthPotion Full");
+                }
+                else {
+                    int playerHealthP = playerBP.getHealthPotion();
+                    playerHealthP =+ 1;
+                    playerBP.setHealthPotion(playerHealthP);
+                    System.out.println("Your have " + playerHealthP + "Health Potion now");
+                    int afterBuy = playerMoney - healthPCost;
+                    player.setGold(afterBuy);
+                }
             }
         }
 
         else if(pilih == 2){
-            int manaPCost = 10;
+            int manaPCost = 100;
             if(playerMoney < manaPCost){
                 System.out.println("Sorry sir,your money is not enough to buy this Health Potion");
             }
             else{
-                int playerManaP = playerBP.getManaPotion();
-                playerManaP =+ 1;
-                playerBP.setManaPotion(playerManaP);
-                System.out.println("Your have " + playerManaP + "Mana Potion now");
-                int afterBuy = playerMoney - manaPCost;
-                player.setGold(afterBuy);
+                if (playerBP.getManaPotion() >= 3){
+                    System.out.println("ManaPotion Full");
+                }
+                else {
+                    int playerManaP = playerBP.getManaPotion();
+                    playerManaP =+ 1;
+                    playerBP.setManaPotion(playerManaP);
+                    System.out.println("Your have " + playerManaP + "Mana Potion now");
+                    int afterBuy = playerMoney - manaPCost;
+                    player.setGold(afterBuy);
+                }
             }
         }
 

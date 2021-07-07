@@ -84,17 +84,15 @@ public abstract class Player{
             System.out.println("Using health potion.");
             System.out.println("Health : +8 ");
             setHealth(getHealth()+80);
-            backpack.healthPotion--;
         }
         else if(pilih == 2){
             System.out.println("Using mana potion.");
             System.out.println("Mana : +3 ");
             setMana(getMana()+3);
-            backpack.manaPotion--;
         }
         else if(pilih == 3){
             System.out.println("Already exit");
-            System.out.println();
+            System.out.println("");
         }
         else{
             System.out.println("Pilihan anda salah");

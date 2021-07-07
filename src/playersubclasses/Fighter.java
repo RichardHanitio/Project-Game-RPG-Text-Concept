@@ -98,7 +98,7 @@ public class Fighter extends Player {
     public int multiplier() {
         Random rand = new Random();
         //multi memiliki nilai minimum 1 dan maksimum 6
-        int multi = rand.nextInt(6) + 1;
+        int multi = rand.nextInt(4) + 1;
         return multi;
     }
 

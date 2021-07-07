@@ -50,7 +50,8 @@ public class Battle {
         }
         else if (enemy.getHealth() < 0 ){
             System.out.println(enemy.getName() + " has been slain . . .");
-            player.setCurrentStage(player.getCurrentStage() + 1);
+            player.setGold(player.getGold()+enemy.getHealth());
+            player.setCurrentStage(player.getCurrentStage() + 1); 
         }
     }
 

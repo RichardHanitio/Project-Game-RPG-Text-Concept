@@ -89,8 +89,8 @@ public class Ranger extends Player{
     //Multiplier untuk Ranger
     public int multiplier() {
         Random rand = new Random();
-        //multi memiliki nilai minimum 3 dan maksimum 6
-        int multi = rand.nextInt(3) + 4 ;
+        //multi memiliki nilai minimum 2 dan maksimum 5
+        int multi = rand.nextInt(3) + 2 ;
         return multi;
     
     }
