@@ -84,6 +84,7 @@ public abstract class Player{
             System.out.println("Using health potion.");
             System.out.println("Health : +8 ");
             setHealth(getHealth()+80);
+            backpack.setHealthPotion(backpack.getHealthPotion()-1);
         }
         else if(pilih == 2){
             System.out.println("Using mana potion.");
