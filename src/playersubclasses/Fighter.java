@@ -84,6 +84,9 @@ public class Fighter extends Player {
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);
         }
+        else{
+            System.out.println("Your mana is not enough to use this skill");
+        }
     }
 
     //EMPTY
