@@ -4,26 +4,16 @@ import mainclasses.Enemy;
 import mainclasses.Player;
 import mainclasses.Battle;
 public class Fighter extends Player {
-    public int attSTR = 25;
-
-    public int getAttSTR() {
-        return this.attSTR;
-    }
-
-    public void setAttSTR(int attSTR) {
-        this.attSTR = attSTR;
-    }
-
     public Fighter(String name){
         //Nama berasal dari player
         //health awal   : 200
         //mana awal     : 0
-        super(name,200,0);
+        super(name,200,0,25,0);
         super.setClassID(1);
     }
 
     public void attack(int turnCounter, Enemy enemy) {
-        System.out.println("You attacking enemy with basic attack ");
+        System.out.println("{ You attack enemy with basic attack }");
         enemy.setHealth(enemy.getHealth() - (attSTR * multiplier()));
         if(this.getMana()<10) setMana(super.getMana()+1);
         Battle.setTurnCounter(turnCounter += 1);
@@ -37,7 +27,7 @@ public class Fighter extends Player {
 
         if (this.getMana() >= 2){
             int manaCost = 2;
-            System.out.println("Skill 1 : Heal (Actived)");
+            System.out.println("{ You use Skill 1 : Heal (Actived) }");
             Double persenan = 0.15;
             int tambahHealth = (int)(this.getHealth()*persenan);
             setHealth(getHealth()+tambahHealth);
@@ -58,7 +48,7 @@ public class Fighter extends Player {
 
         if(this.getMana() >= 3){
             int manaCost = 3;
-            System.out.println("Skill 2 : WarCry (Actived)");
+            System.out.println("{ You use Skill 2 : War Cry (Actived) }");
             int counter = turnCounter+6;
             Double persenan = 0.20;
             int tambahAttSTR = (int) (attSTR * persenan);
@@ -79,7 +69,7 @@ public class Fighter extends Player {
     public void skill3(int turnCounter,Enemy enemy) {
         if(this.getMana() >= 7){
             int manaCost = 7;
-            System.out.println("Skill 3 : OnePUNCH");
+            System.out.println("{ You use Skill 3 : OnePUNCH }");
             enemy.setHealth(enemy.getHealth()-(attSTR * 6));
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);

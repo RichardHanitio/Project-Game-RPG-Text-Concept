@@ -1,14 +1,14 @@
 package mainclasses;
 
 public class Backpack {
-    int healthPotion = 5;
-    int manaPotion = 3;
-    Weapon weapon;
+    private int healthPotion = 5;
+    private int manaPotion = 3;
+    private Weapon weapon;
 
 
     public Backpack() {
-    }
 
+    }
 
     public int getHealthPotion() {
         return this.healthPotion;
@@ -34,4 +34,7 @@ public class Backpack {
         this.weapon = Weapon;
     }
 
+    public void useHealthPotion(){
+        this.healthPotion --;
+    }
 }

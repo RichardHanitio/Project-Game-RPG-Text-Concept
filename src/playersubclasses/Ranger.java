@@ -4,21 +4,12 @@ import mainclasses.Enemy;
 import mainclasses.Player;
 import mainclasses.Battle;
 public class Ranger extends Player{
-    public int attSTR = 45;
-
-    public int getAttSTR() {
-        return this.attSTR;
-    }
-
-    public void setAttSTR(int attSTR) {
-        this.attSTR = attSTR;
-    }
 
     public Ranger(String name){
         //Nama berasal dari player
         //health awal   : 80
         //mana awal     : 0
-        super(name,80,0);
+        super(name,80,0,45,0);
         super.setClassID(2);
     }
 

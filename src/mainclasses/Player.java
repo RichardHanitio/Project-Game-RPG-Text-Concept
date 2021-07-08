@@ -6,10 +6,12 @@ public abstract class Player{
     private String name;
     private int health;
     private int mana;
-    private Backpack backpack;
+    private Backpack backpack = new Backpack();
     private int gold;
     private int currentStage = 1;
-    private static int classID;
+    private int attSTR;
+    private int attINT;
+    private int classID;
 
     Scanner masukan = new Scanner(System.in);
 
@@ -61,20 +63,37 @@ public abstract class Player{
         this.currentStage = currentStage;
     }
 
-    public static int getClassID() {
-        return classID;
+    public int getClassID() {
+        return this.classID;
     }
 
-    public void setClassID(int aClassID) {
-        classID = aClassID;
+    public void setClassID(int classID) {
+        this.classID = classID;
+    }
+
+    public int getAttSTR() {
+        return this.attSTR;
+    }
+
+    public void setAttSTR(int attSTR) {
+        this.attSTR = attSTR;
+    }
+
+
+    public int getAttINT() {
+        return this.attINT;
+    }
+
+    public void setAttINT(int attINT) {
+        this.attINT = attINT;
     }
 
     public void openBackpack() {
         System.out.println("Menu Backpack :");
         int pilih;
 
-        System.out.println("1.Use Health Potion");
-        System.out.println("2.Use Mana Potion");
+        System.out.println("1.Use Health Potion ("+backpack.getHealthPotion()+" left)");
+        System.out.println("2.Use Mana Potion ("+backpack.getManaPotion()+" left");
         System.out.println("3.Exit");
         System.out.print("Choose number : ");
         pilih = masukan.nextInt();
@@ -82,14 +101,14 @@ public abstract class Player{
         
         if (pilih == 1){
             System.out.println("Using health potion.");
-            System.out.println("Health : +8 ");
+            System.out.println("Health : +80 ");
             setHealth(getHealth()+80);
             backpack.setHealthPotion(backpack.getHealthPotion()-1);
         }
         else if(pilih == 2){
             System.out.println("Using mana potion.");
             System.out.println("Mana : +3 ");
-            setMana(getMana()+3);
+            backpack.setManaPotion(backpack.getManaPotion()-1);
         }
         else if(pilih == 3){
             System.out.println("Already exit");
@@ -103,10 +122,12 @@ public abstract class Player{
     //Constructor empty untuk player
     public Player(){}
 
-    public Player(String name,int health,int mana){
+    public Player(String name,int health,int mana,int attSTR, int attINT){
         this.name = name;
         this.health = health;
         this.mana = mana;
+        this.attSTR = attSTR;
+        this.attINT = attINT;
     }
 
     //Method serangan player

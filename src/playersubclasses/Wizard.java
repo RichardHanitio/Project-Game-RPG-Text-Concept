@@ -5,21 +5,12 @@ import mainclasses.Enemy;
 import mainclasses.Battle;
 
 public class Wizard extends Player{
-    public int attINT = 5;
-
-
-    public int getAttINT() {
-        return this.attINT;
-    }
-
-    public void setAttINT(int attINT) {
-        this.attINT = attINT;
-    }
+    
     public Wizard(String name){
         //Nama berasal dari player
         //health awal   : 100
         //mana awal     : 10
-        super(name,100,10);
+        super(name,100,10,0,5);
         super.setClassID(3);
     }
 
