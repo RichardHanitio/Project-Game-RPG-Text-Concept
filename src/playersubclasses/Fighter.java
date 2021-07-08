@@ -4,6 +4,8 @@ import mainclasses.Enemy;
 import mainclasses.Player;
 import mainclasses.Battle;
 public class Fighter extends Player {
+    
+
     public Fighter(String name){
         //Nama berasal dari player
         //health awal   : 200
@@ -13,8 +15,8 @@ public class Fighter extends Player {
     }
 
     public void attack(int turnCounter, Enemy enemy) {
-        System.out.println("{ You attack enemy with basic attack }");
-        enemy.setHealth(enemy.getHealth() - (attSTR * multiplier()));
+        System.out.println("{ You are attack enemy with basic attack }");
+        enemy.setHealth(enemy.getHealth() - (getAttSTR() * multiplier()));
         if(this.getMana()<10) setMana(super.getMana()+1);
         Battle.setTurnCounter(turnCounter += 1);
         
@@ -48,14 +50,18 @@ public class Fighter extends Player {
 
         if(this.getMana() >= 3){
             int manaCost = 3;
+            int replace = getAttSTR();
             System.out.println("{ You use Skill 2 : War Cry (Actived) }");
             int counter = turnCounter+6;
             Double persenan = 0.20;
-            int tambahAttSTR = (int) (attSTR * persenan);
-            int finaltambahSTR = attSTR + tambahAttSTR;
+            int tambahAttSTR = (int) (getAttSTR() * persenan);
+            int finaltambahSTR = getAttSTR() + tambahAttSTR;
             setMana(getMana()-manaCost);
             while(turnCounter != counter){
-                attSTR = finaltambahSTR;
+                setAttSTR(finaltambahSTR);
+            }
+            if(turnCounter == counter){
+                setAttSTR(replace);
             }
             Battle.setTurnCounter(turnCounter += 1);
             
@@ -70,7 +76,7 @@ public class Fighter extends Player {
         if(this.getMana() >= 7){
             int manaCost = 7;
             System.out.println("{ You use Skill 3 : OnePUNCH }");
-            enemy.setHealth(enemy.getHealth()-(attSTR * 6));
+            enemy.setHealth(enemy.getHealth()-(getAttSTR() * 6));
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);
         }
@@ -100,7 +106,8 @@ public class Fighter extends Player {
         "Nama           : " + getName() + "\n" +
         "Health         : " + getHealth() + "\n" +
         "Mana           : " + getMana() + "\n" +
-        "Attack Power   : " + getAttSTR() + "\n";
+        "Attack Power   : " + getAttSTR() + "\n"+
+        "Weapon         : " + getBackpack().getWeapon().toString();
 
     }
 

@@ -15,8 +15,8 @@ public class Wizard extends Player{
     }
 
     public void attack(int turnCounter,Enemy enemy) {
-        System.out.println("You attacking enemy with basic attack ");
-        enemy.setHealth(enemy.getHealth() - (attINT * multiplier()));
+        System.out.println("You are attacking enemy with basic attack ");
+        enemy.setHealth(enemy.getHealth() - (getAttINT() * multiplier()));
         if(getMana() < 10) setMana(getMana() + 1);
         Battle.setTurnCounter(turnCounter += 1);
 
@@ -27,7 +27,7 @@ public class Wizard extends Player{
         if(this.getMana() >= 2){
             int manaCost = 2;
             System.out.println("Skill 1 : Meteor (Actived)");
-            enemy.setHealth(enemy.getHealth() - ((attINT + 30 ) * multiplier()));
+            enemy.setHealth(enemy.getHealth() - ((getAttINT() + 30 ) * multiplier()));
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);
 
@@ -64,7 +64,7 @@ public class Wizard extends Player{
         if(this.getMana() >= 3){
             int manaCost = 3;
             System.out.println("Skill 3 : LightingSpell (Actived)");
-            enemy.setHealth(enemy.getHealth() - ((attINT * 50) * multiplier() * getMana()));
+            enemy.setHealth(enemy.getHealth() - ((getAttINT() * 50) * multiplier() * getMana()));
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);
 
@@ -107,7 +107,8 @@ public class Wizard extends Player{
         "Nama           : " + getName() + "\n" +
         "Health         : " + getHealth() + "\n" +
         "Mana           : " + getMana() + "\n" +
-        "Attack Power   : " + getAttINT() + "\n";
+        "Attack Power   : " + getAttINT() + "\n"+
+        "Weapon         : " + getBackpack().getWeapon().toString();
     }
 
     public void playerMenu(){

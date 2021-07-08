@@ -14,8 +14,8 @@ public class Ranger extends Player{
     }
 
     public void attack(int turnCounter,Enemy enemy) {
-        System.out.println("You attacking enemy with basic attack ");
-        enemy.setHealth(enemy.getHealth() - (attSTR * multiplier()));
+        System.out.println("You are attacking enemy with basic attack ");
+        enemy.setHealth(enemy.getHealth() - (getAttSTR() * multiplier()));
         if (this.getMana() < 10) setMana(super.getMana() + 1);
         Battle.setTurnCounter(turnCounter += 1);
         
@@ -26,7 +26,7 @@ public class Ranger extends Player{
         if(this.getMana() >= 3){
             int manaCost = 3;
             System.out.println("Skill 1 : ShockDart (Actived)");
-            enemy.setHealth(enemy.getHealth()-attSTR);
+            enemy.setHealth(enemy.getHealth()-getAttSTR());
             setMana(getMana()-manaCost);
 
             int counter = turnCounter + 2;
@@ -45,7 +45,7 @@ public class Ranger extends Player{
         if(this.getMana() >= 5){
             int manaCost = 5;
             System.out.println("Skill 2 : ChargeShot (Actived)");
-            enemy.setHealth(enemy.getHealth() - (attSTR * 5));
+            enemy.setHealth(enemy.getHealth() - (getAttSTR() * 5));
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);
             
@@ -60,7 +60,7 @@ public class Ranger extends Player{
         if(this.getMana() >= 8){
             int manaCost = 8;
             System.out.println("Skill 3 : Multishot (Actived)");
-            enemy.setHealth(enemy.getHealth() - (attSTR * 2 * multiplier()));
+            enemy.setHealth(enemy.getHealth() - (getAttSTR() * 2 * multiplier()));
             setMana(getMana() - manaCost);
             Battle.setTurnCounter(turnCounter += 1);
 
@@ -92,7 +92,8 @@ public class Ranger extends Player{
         "Nama           : " + getName() + "\n" +
         "Health         : " + getHealth() + "\n" +
         "Mana           : " + getMana() + "\n" +
-        "Attack Power   : " + getAttSTR() + "\n";
+        "Attack Power   : " + getAttSTR() + "\n"+
+        "Weapon         : " + getBackpack().getWeapon().toString();
     }
 
     public void playerMenu(){
