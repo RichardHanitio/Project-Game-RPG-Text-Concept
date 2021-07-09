@@ -2,19 +2,22 @@ package playersubclasses;
 import java.util.Random;
 import mainclasses.Enemy;
 import mainclasses.Player;
+import mainclasses.Weapon;
 import mainclasses.Battle;
 public class Ranger extends Player{
-
+    private Weapon weapon;
     public Ranger(String name){
         //Nama berasal dari player
         //health awal   : 80
         //mana awal     : 0
         super(name,80,0,45,0);
         super.setClassID(2);
+        this.weapon = new Weapon(getClassID());
+        super.setWeapon(weapon);
     }
 
     public void attack(int turnCounter,Enemy enemy) {
-        System.out.println("You are attacking enemy with basic attack ");
+        System.out.println("{ You attack enemy with basic attack } ");
         enemy.setHealth(enemy.getHealth() - (getAttSTR() * multiplier()));
         if (this.getMana() < 10) setMana(super.getMana() + 1);
         Battle.setTurnCounter(turnCounter += 1);
@@ -25,7 +28,7 @@ public class Ranger extends Player{
     public void skill1(int turnCounter, Enemy enemy) {
         if(this.getMana() >= 3){
             int manaCost = 3;
-            System.out.println("Skill 1 : ShockDart (Actived)");
+            System.out.println("{ You Use Skill 1 : ShockDart (Actived) }");
             enemy.setHealth(enemy.getHealth()-getAttSTR());
             setMana(getMana()-manaCost);
 
@@ -44,7 +47,7 @@ public class Ranger extends Player{
     public void skill2(int turnCounter, Enemy enemy) {
         if(this.getMana() >= 5){
             int manaCost = 5;
-            System.out.println("Skill 2 : ChargeShot (Actived)");
+            System.out.println("{ You Use Skill 2 : ChargeShot (Actived) }");
             enemy.setHealth(enemy.getHealth() - (getAttSTR() * 5));
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);
@@ -59,7 +62,7 @@ public class Ranger extends Player{
     public void skill3(int turnCounter,Enemy enemy) {
         if(this.getMana() >= 8){
             int manaCost = 8;
-            System.out.println("Skill 3 : Multishot (Actived)");
+            System.out.println("{ You Use Skill 3 : Multishot (Actived) }");
             enemy.setHealth(enemy.getHealth() - (getAttSTR() * 2 * multiplier()));
             setMana(getMana() - manaCost);
             Battle.setTurnCounter(turnCounter += 1);
@@ -93,7 +96,7 @@ public class Ranger extends Player{
         "Health         : " + getHealth() + "\n" +
         "Mana           : " + getMana() + "\n" +
         "Attack Power   : " + getAttSTR() + "\n"+
-        "Weapon         : " + getBackpack().getWeapon().toString();
+        "Weapon         : " + weapon.toString() + "\n";
     }
 
     public void playerMenu(){

@@ -4,13 +4,14 @@ import java.util.Scanner;
 
 public abstract class Player{
     private String name;
-    private int health;
+    private static int health;
     private int mana;
     private Backpack backpack = new Backpack();
+    private Weapon weapon;
     private int gold;
     private int currentStage = 1;
-    private int attSTR;
-    private int attINT;
+    private static int attSTR;
+    private static int attINT;
     private int classID;
 
     Scanner masukan = new Scanner(System.in);
@@ -23,12 +24,12 @@ public abstract class Player{
         this.name = name;
     }
 
-    public int getHealth() {
-        return this.health;
+    public static int getHealth() {
+        return health;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public static void setHealth(int hp) {
+        health = hp;
     }
 
     public int getMana() {
@@ -71,21 +72,29 @@ public abstract class Player{
         this.classID = classID;
     }
 
-    public int getAttSTR() {
-        return this.attSTR;
+    public static int getAttSTR() {
+        return attSTR;
     }
 
-    public void setAttSTR(int attSTR) {
-        this.attSTR = attSTR;
+    public static void setAttSTR(int attStrength) {
+        attSTR = attStrength;
     }
 
 
-    public int getAttINT() {
-        return this.attINT;
+    public static int getAttINT() {
+        return attINT;
     }
 
-    public void setAttINT(int attINT) {
-        this.attINT = attINT;
+    public static void setAttINT(int attIntelligence) {
+        attINT = attIntelligence;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public Weapon getWeapon() {
+        return this.weapon;
     }
 
     public void openBackpack() {
@@ -121,12 +130,12 @@ public abstract class Player{
     //Constructor empty untuk player
     public Player(){}
 
-    public Player(String name,int health,int mana,int attSTR, int attINT){
+    public Player(String name,int hp,int mana,int STR, int INT){
         this.name = name;
-        this.health = health;
+        health = hp;
         this.mana = mana;
-        this.attSTR = attSTR;
-        this.attINT = attINT;
+        attSTR = STR;
+        attINT = INT;
     }
 
     //Method serangan player

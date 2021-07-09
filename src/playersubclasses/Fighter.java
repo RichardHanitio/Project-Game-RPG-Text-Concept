@@ -2,9 +2,10 @@ package playersubclasses;
 import java.util.Random;
 import mainclasses.Enemy;
 import mainclasses.Player;
+import mainclasses.Weapon;
 import mainclasses.Battle;
 public class Fighter extends Player {
-    
+    private Weapon weapon;
 
     public Fighter(String name){
         //Nama berasal dari player
@@ -12,10 +13,12 @@ public class Fighter extends Player {
         //mana awal     : 0
         super(name,200,0,25,0);
         super.setClassID(1);
+        this.weapon = new Weapon(getClassID());
+        super.setWeapon(weapon);
     }
 
     public void attack(int turnCounter, Enemy enemy) {
-        System.out.println("{ You are attack enemy with basic attack }");
+        System.out.println("{ You attack enemy with basic attack }");
         enemy.setHealth(enemy.getHealth() - (getAttSTR() * multiplier()));
         if(this.getMana()<10) setMana(super.getMana()+1);
         Battle.setTurnCounter(turnCounter += 1);
@@ -31,7 +34,7 @@ public class Fighter extends Player {
             int manaCost = 2;
             System.out.println("{ You use Skill 1 : Heal (Actived) }");
             Double persenan = 0.15;
-            int tambahHealth = (int)(this.getHealth()*persenan);
+            int tambahHealth = (int)(getHealth()*persenan);
             setHealth(getHealth()+tambahHealth);
             System.out.println("Your health has been healed");
             setMana(getMana()-manaCost);
@@ -107,7 +110,7 @@ public class Fighter extends Player {
         "Health         : " + getHealth() + "\n" +
         "Mana           : " + getMana() + "\n" +
         "Attack Power   : " + getAttSTR() + "\n"+
-        "Weapon         : " + getBackpack().getWeapon().toString();
+        "Weapon         : " + weapon.toString();
 
     }
 

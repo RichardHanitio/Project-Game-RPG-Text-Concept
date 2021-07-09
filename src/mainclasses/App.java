@@ -5,10 +5,11 @@ import enemysubclasses.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Player player1 = new Fighter("Laplace");
+        Player player1 = new Ranger("Laplace");
+        
         Enemy enemy1 = new Ogre();
         Battle battle = new Battle(player1, enemy1);
-        // Shop shop = new Shop(player1);
+        Shop shop = new Shop(player1);
         
         // Scanner scanner = new Scanner(System.in);
         // int choice;

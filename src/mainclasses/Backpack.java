@@ -1,10 +1,9 @@
 package mainclasses;
 
 public class Backpack {
+    
     private int healthPotion = 5;
     private int manaPotion = 3;
-    private Weapon weapon;
-
 
     public Backpack() {
 
@@ -24,14 +23,6 @@ public class Backpack {
 
     public void setManaPotion(int manaPotion) {
         this.manaPotion = manaPotion;
-    }
-
-    public Weapon getWeapon() {
-        return this.weapon;
-    }
-
-    public void setWeapon(Weapon Weapon) {
-        this.weapon = Weapon;
     }
 
     public void useHealthPotion(){
