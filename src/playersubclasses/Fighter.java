@@ -90,7 +90,7 @@ public class Fighter extends Player {
 
     //EMPTY
     public void skill4(int turnCounter, Enemy enemy) {
-        System.out.println("Your class doesn't this skill");
+        System.out.println("Your class doesn't have this skill");
     }
 
     //Multiplier untuk Fighter

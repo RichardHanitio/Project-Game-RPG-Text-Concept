@@ -8,7 +8,7 @@ public abstract class Player{
     private int mana;
     private Backpack backpack = new Backpack();
     private Weapon weapon;
-    private int gold;
+    private int gold = 100;
     private int currentStage = 1;
     private static int attSTR;
     private static int attINT;
@@ -102,7 +102,7 @@ public abstract class Player{
         int pilih;
 
         System.out.println("1.Use Health Potion ("+backpack.getHealthPotion()+" left)");
-        System.out.println("2.Use Mana Potion ("+backpack.getManaPotion()+" left");
+        System.out.println("2.Use Mana Potion ("+backpack.getManaPotion()+" left)");
         System.out.println("3.Exit");
         System.out.print("Choose number : ");
         pilih = masukan.nextInt();
@@ -111,12 +111,16 @@ public abstract class Player{
         if (pilih == 1){
             System.out.println("Using health potion.");
             System.out.println("Health : +80 ");
-            backpack.setManaPotion(backpack.getManaPotion() - 1);
+            health+=80;
+            backpack.setHealthPotion(backpack.getHealthPotion() - 1);
+            Battle.setTurnCounter(Battle.getTurnCounter()+1);
         }
         else if(pilih == 2){
             System.out.println("Using mana potion.");
             System.out.println("Mana : +3 ");
+            mana+=80;
             backpack.setManaPotion(backpack.getManaPotion()-1);
+            Battle.setTurnCounter(Battle.getTurnCounter()+1);
         }
         else if(pilih == 3){
             System.out.println("Already exit");

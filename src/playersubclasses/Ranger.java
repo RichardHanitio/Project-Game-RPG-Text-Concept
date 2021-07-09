@@ -26,6 +26,7 @@ public class Ranger extends Player{
 
     //ShockDart
     public void skill1(int turnCounter, Enemy enemy) {
+        System.out.println(getMana());
         if(this.getMana() >= 3){
             int manaCost = 3;
             System.out.println("{ You Use Skill 1 : ShockDart (Actived) }");
@@ -75,7 +76,7 @@ public class Ranger extends Player{
 
     //EMPTY
     public void skill4(int turnCounter, Enemy enemy) {
-        System.out.println("Your class doesn't this skill");
+        System.out.println("Your class doesn't have this skill");
     }
 
 

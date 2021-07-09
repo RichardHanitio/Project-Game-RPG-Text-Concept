@@ -8,9 +8,10 @@ public class App {
         Player player1 = new Ranger("Laplace");
         
         Enemy enemy1 = new Ogre();
+        Enemy enemy2 = new Yeti();
         Battle battle = new Battle(player1, enemy1);
         Shop shop = new Shop(player1);
-        
+        Battle battle1 = new Battle(player1,enemy2);
         // Scanner scanner = new Scanner(System.in);
         // int choice;
         // String charName = null;

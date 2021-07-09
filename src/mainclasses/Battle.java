@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Battle {
     private Player player;
     private Enemy enemy;
+    
     private static int turnCounter = 0;
     Scanner in = new Scanner(System.in);
 
@@ -40,6 +41,7 @@ public class Battle {
         this.player = player;
         this.enemy  = enemy;
         beginBattle();
+
         while (player.getHealth() > 0 && enemy.getHealth() > 0){
             midBattle();
         }
@@ -129,6 +131,11 @@ public class Battle {
     public boolean evenChecker(){
         if(turnCounter % 2 == 1) return false;
         else return true;
+    }
+    public void clearScreen() {
+        //to clear screen
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
 

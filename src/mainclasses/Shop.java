@@ -1,15 +1,16 @@
 package mainclasses;
 import java.util.Scanner;
 
+
+
 public class Shop {
     Player player;
     Scanner in = new Scanner(System.in);
-    int playerMoney = player.getGold();
-    Backpack playerBP = player.getBackpack();
 
     int pilih = 1234;
-    public Shop(Player player){
-        this.player = player;
+    public Shop(Player players){
+        this.player = players;
+
         while(pilih != 3){
             menu();
         }
@@ -25,20 +26,21 @@ public class Shop {
         System.out.println("----------------------------------------------------------------------------------");
         System.out.print("Choose : ");
         pilih = in.nextInt();
+        System.out.println("");
         
         if(pilih == 1){
             int healthPCost = 200;
-            if(playerMoney < healthPCost){
+            if(player.getGold() < healthPCost){
                 System.out.println("Sorry sir,your money is not enough to buy this Health Potion");
             }
             else{
-                if (playerBP.getHealthPotion() >= 5){
+                if (player.getBackpack().getHealthPotion() >= 5){
                     System.out.println("HealthPotion Full");
                 }
                 else {
-                    playerBP.setHealthPotion(playerBP.getHealthPotion() + 1);
-                    System.out.println("Your have " + playerBP.getHealthPotion() + "Health Potion now");
-                    int afterBuy = playerMoney - healthPCost;
+                    player.getBackpack().setHealthPotion(player.getBackpack().getHealthPotion() + 1);
+                    System.out.println("Your have " + player.getBackpack().getHealthPotion() + "Health Potion now");
+                    int afterBuy = player.getGold() - healthPCost;
                     player.setGold(afterBuy);
                 }
             }
@@ -46,22 +48,24 @@ public class Shop {
 
         else if(pilih == 2){
             int manaPCost = 100;
-            if(playerMoney < manaPCost){
+            if(player.getGold() < manaPCost){
                 System.out.println("Sorry sir,your money is not enough to buy this Health Potion");
             }
             else{
-                if (playerBP.getManaPotion() >= 3){
+                if (player.getBackpack().getManaPotion() >= 3){
                     System.out.println("ManaPotion Full");
                 }
                 else {
-                    playerBP.setManaPotion(playerBP.getManaPotion()+1);
-                    System.out.println("Your have " + playerBP.getManaPotion() + "Mana Potion now");
-                    int afterBuy = playerMoney - manaPCost;
+                    player.getBackpack().setManaPotion(player.getBackpack().getManaPotion()+1);
+                    System.out.println("Your have " + player.getBackpack().getManaPotion() + " Mana Potion now");
+                    int afterBuy = player.getGold() - manaPCost;
                     player.setGold(afterBuy);
                 }
             }
         }
-
+        else if(pilih == 3){
+            System.out.println("");
+        }
         else{
             System.out.println("Your input is invalid please try again . . . ");
             System.out.println("");
