@@ -5,8 +5,10 @@ import mainclasses.Player;
 import mainclasses.Weapon;
 import mainclasses.Battle;
 public class Fighter extends Player {
+    //properties
     private Weapon weapon;
 
+    //constructors
     public Fighter(String name){
         //Nama berasal dari player
         //health awal   : 200
@@ -16,20 +18,25 @@ public class Fighter extends Player {
         this.weapon = new Weapon(getClassID());
         super.setWeapon(weapon);
     }
+    
+    //methods
+    public int multiplier() {
+        // Multiplier untuk Fighter
+        Random rand = new Random();
+        // multi memiliki nilai minimum 1 dan maksimum 6
+        int multi = rand.nextInt(4) + 1;
+        return multi;
+    }
 
     public void attack(int turnCounter, Enemy enemy) {
         System.out.println("{ You attack enemy with basic attack }");
         enemy.setHealth(enemy.getHealth() - (getAttSTR() * multiplier()));
-        if(this.getMana()<10) setMana(super.getMana()+1);
-        Battle.setTurnCounter(turnCounter += 1);
-        
+        if(getMana()<10) setMana(getMana()+1);
+        Battle.setTurnCounter(Battle.getTurnCounter()+1);
     }
 
-
-    //Heal
-    //sementara memakai turnCount karena mekanisme battle belum terbuat
     public void skill1(int turnCounter, Enemy enemy) {
-
+        // Heal
         if (this.getMana() >= 2){
             int manaCost = 2;
             System.out.println("{ You use Skill 1 : Heal (Actived) }");
@@ -39,23 +46,19 @@ public class Fighter extends Player {
             System.out.println("Your health has been healed");
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);
-
         }
         else{
             System.out.println("Your mana is not enough to use this skill");
         }
     }
 
-    
-    //WarCry
-    //sementara memakai turnCount karena mekanisme battle belum terbuat
     public void skill2(int turnCounter, Enemy enemy) {
-
+        // WarCry
         if(this.getMana() >= 3){
             int manaCost = 3;
             int replace = getAttSTR();
             System.out.println("{ You use Skill 2 : War Cry (Actived) }");
-            int counter = turnCounter+6;
+            int counter = turnCounter + 6;
             Double persenan = 0.20;
             int tambahAttSTR = (int) (getAttSTR() * persenan);
             int finaltambahSTR = getAttSTR() + tambahAttSTR;
@@ -74,8 +77,8 @@ public class Fighter extends Player {
         }
     }
 
-    //OnePUNCH
     public void skill3(int turnCounter,Enemy enemy) {
+        // OnePUNCH
         if(this.getMana() >= 7){
             int manaCost = 7;
             System.out.println("{ You use Skill 3 : OnePUNCH }");
@@ -88,17 +91,9 @@ public class Fighter extends Player {
         }
     }
 
-    //EMPTY
     public void skill4(int turnCounter, Enemy enemy) {
+        // EMPTY
         System.out.println("Your class doesn't have this skill");
-    }
-
-    //Multiplier untuk Fighter
-    public int multiplier() {
-        Random rand = new Random();
-        //multi memiliki nilai minimum 1 dan maksimum 6
-        int multi = rand.nextInt(4) + 1;
-        return multi;
     }
 
 
@@ -106,7 +101,7 @@ public class Fighter extends Player {
     public String toString() {
         return 
         "Player Stats   : \n" + 
-        "Nama           : " + getName() + "\n" +
+        "Name           : " + getName() + "\n" +
         "Health         : " + getHealth() + "\n" +
         "Mana           : " + getMana() + "\n" +
         "Attack Power   : " + getAttSTR() + "\n"+

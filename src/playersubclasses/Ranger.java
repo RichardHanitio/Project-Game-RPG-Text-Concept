@@ -5,7 +5,10 @@ import mainclasses.Player;
 import mainclasses.Weapon;
 import mainclasses.Battle;
 public class Ranger extends Player{
+    // properties
     private Weapon weapon;
+
+    // constructors
     public Ranger(String name){
         //Nama berasal dari player
         //health awal   : 80
@@ -16,6 +19,16 @@ public class Ranger extends Player{
         super.setWeapon(weapon);
     }
 
+    // methods
+    public int multiplier() {
+        // Multiplier untuk Ranger
+        Random rand = new Random();
+        // multi memiliki nilai minimum 2 dan maksimum 5
+        int multi = rand.nextInt(3) + 2;
+        return multi;
+
+    }
+
     public void attack(int turnCounter,Enemy enemy) {
         System.out.println("{ You attack enemy with basic attack } ");
         enemy.setHealth(enemy.getHealth() - (getAttSTR() * multiplier()));
@@ -24,8 +37,8 @@ public class Ranger extends Player{
         
     }
 
-    //ShockDart
     public void skill1(int turnCounter, Enemy enemy) {
+        // ShockDart
         System.out.println(getMana());
         if(this.getMana() >= 3){
             int manaCost = 3;
@@ -44,8 +57,8 @@ public class Ranger extends Player{
         }
     }
 
-    //ChargeShot
     public void skill2(int turnCounter, Enemy enemy) {
+        // ChargeShot
         if(this.getMana() >= 5){
             int manaCost = 5;
             System.out.println("{ You Use Skill 2 : ChargeShot (Actived) }");
@@ -59,8 +72,8 @@ public class Ranger extends Player{
         }
     }
     
-    //MultiShoot
     public void skill3(int turnCounter,Enemy enemy) {
+        // MultiShoot
         if(this.getMana() >= 8){
             int manaCost = 8;
             System.out.println("{ You Use Skill 3 : Multishot (Actived) }");
@@ -74,26 +87,16 @@ public class Ranger extends Player{
         }
     }
 
-    //EMPTY
     public void skill4(int turnCounter, Enemy enemy) {
+        // EMPTY
         System.out.println("Your class doesn't have this skill");
     }
 
-
-    @Override
-    //Multiplier untuk Ranger
-    public int multiplier() {
-        Random rand = new Random();
-        //multi memiliki nilai minimum 2 dan maksimum 5
-        int multi = rand.nextInt(3) + 2 ;
-        return multi;
-    
-    }
     @Override
     public String toString() {
         return 
         "Player Stats   : \n" + 
-        "Nama           : " + getName() + "\n" +
+        "Name           : " + getName() + "\n" +
         "Health         : " + getHealth() + "\n" +
         "Mana           : " + getMana() + "\n" +
         "Attack Power   : " + getAttSTR() + "\n"+

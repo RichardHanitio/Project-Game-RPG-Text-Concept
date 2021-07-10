@@ -6,7 +6,10 @@ import mainclasses.Enemy;
 import mainclasses.Battle;
 
 public class Wizard extends Player{
+    // properties
     private Weapon weapon;
+
+    // constructors
     public Wizard(String name){
         //Nama berasal dari player
         //health awal   : 100
@@ -17,6 +20,15 @@ public class Wizard extends Player{
         super.setWeapon(weapon);
     }
 
+    // methods
+    public int multiplier() {
+        // Multiplier untuk Wizard
+        Random rand = new Random();
+        // multi memiliki nilai minimum 1 dan maksimum 4
+        int multi = rand.nextInt(3) + 1;
+        return multi;
+    }
+
     public void attack(int turnCounter,Enemy enemy) {
         System.out.println("{ You attack enemy with basic attack } ");
         enemy.setHealth(enemy.getHealth() - (getAttINT() * multiplier()));
@@ -25,8 +37,8 @@ public class Wizard extends Player{
 
     }
 
-    //Meteor
     public void skill1(int turnCounter, Enemy enemy) {
+        // Meteor
         if(this.getMana() >= 2){
             int manaCost = 2;
             System.out.println("{ You Use Skill 1 : Meteor (Actived) }");
@@ -41,8 +53,9 @@ public class Wizard extends Player{
         }
     }
 
-    //LifeDrain
+
     public void skill2(int turnCounter , Enemy enemy) {
+        // LifeDrain
         if(this.getMana() >= 4){
             int manaCost = 4;
             System.out.println("{ You Use Skill 2 : LifeDrain (Actived) }");
@@ -62,8 +75,9 @@ public class Wizard extends Player{
         }
     }
 
-    //LightningSpell
+
     public void skill3(int turnCounter , Enemy enemy) {
+        // LightningSpell
         if(this.getMana() >= 3){
             int manaCost = 3;
             System.out.println("{ You Use Skill 3 : LightingSpell (Actived) }");
@@ -77,8 +91,9 @@ public class Wizard extends Player{
         }
     }
 
-    //Mirror
+
     public void skill4(int turnCounter, Enemy enemy) {
+        // Mirror
         if(this.getMana() >= 7){
             int manaCost = 7;
             System.out.println("{ You Use Skill 4 : Mirror (Actived) }");
@@ -92,22 +107,11 @@ public class Wizard extends Player{
         }
     }
 
-
-    @Override
-    //Multiplier untuk Ranger
-    public int multiplier() {
-        Random rand = new Random();
-        //multi memiliki nilai minimum 1 dan maksimum 4
-        int multi = rand.nextInt(3) + 1;
-        return multi;
-    }
-
-
     @Override
     public String toString() {
         return 
         "Player Stats   : \n" + 
-        "Nama           : " + getName() + "\n" +
+        "Name           : " + getName() + "\n" +
         "Health         : " + getHealth() + "\n" +
         "Mana           : " + getMana() + "\n" +
         "Attack Power   : " + getAttINT() + "\n"+

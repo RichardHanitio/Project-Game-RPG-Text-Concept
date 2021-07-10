@@ -2,50 +2,41 @@ package mainclasses;
 import java.util.Scanner;
 
 public class Battle {
+    //properties
     private Player player;
     private Enemy enemy;
-    
     private static int turnCounter = 0;
     Scanner in = new Scanner(System.in);
 
-
+    //getter setter
     public static int getTurnCounter() {
         return turnCounter;
     }
-
     public static void setTurnCounter(int turnCounter) {
         Battle.turnCounter = turnCounter;
     }
-    
-
     public Player getPlayer() {
         return this.player;
     }
-
     public void setPlayer(Player player) {
         this.player = player;
     }
-
     public Enemy getEnemy() {
         return this.enemy;
     }
-
     public void setEnemy(Enemy enemy) {
         this.enemy = enemy;
     }
 
-    
-
-
+    //constructors
     public Battle(Player player,Enemy enemy){
         this.player = player;
         this.enemy  = enemy;
         setTurnCounter(0);
         beginBattle();
 
-        while (player.getHealth() > 0 && enemy.getHealth() > 0){
-            midBattle();
-        }
+        while (player.getHealth() > 0 && enemy.getHealth() > 0) midBattle();
+
         if(player.getHealth() < 0 ){
             System.out.println("Your character has been slain by " + enemy.getName());
             System.out.println("GAME OVER");
@@ -57,18 +48,22 @@ public class Battle {
         }
     }
 
+    //methods
     public void beginBattle(){
+        System.out.println("=================================");
+        System.out.println("\t\tBATTLE " + player.getCurrentStage());
         System.out.println(player.toString());
         System.out.println("\t\tVS\n");
         System.out.println(enemy.toString());
         player.setGold(player.getGold()+enemy.getHealth());
-        System.out.println("=======================");
-        turnCounter++;
+        System.out.println("=================================");
+        waitingTime();
+        setTurnCounter(getTurnCounter()+1);
     }
 
     public void midBattle(){
-        int pilihan = 123;
-        int enemyPilihan = 12313;
+        int pilihan, enemyPilihan;
+        //Player's turn
         if(evenChecker() == false){
             System.out.println(player.toString());
             player.playerMenu();
@@ -79,38 +74,36 @@ public class Battle {
                 case 1:
                     player.attack(turnCounter,enemy);
                     waitingTime();
-                    System.out.println("");
-
+                    System.out.println();
                     break;
 
                 case 2:
                     player.skill1(turnCounter, enemy);
                     waitingTime();
-                    System.out.println("");
+                    System.out.println();
                     break;
 
                 case 3:
                     player.skill2(turnCounter, enemy);
                     waitingTime();
-                    System.out.println("");
+                    System.out.println();
                     break;
                 case 4:
                     player.skill3(turnCounter, enemy);
                     waitingTime();
-                    System.out.println("");
+                    System.out.println();
                     break;
                 case 5:
                     player.skill4(turnCounter, enemy);
                     waitingTime();
-                    System.out.println("");
+                    System.out.println();
                     break;
                 case 6:
                     player.openBackpack();
-                    System.out.println("");
+                    System.out.println();
                     break;
                 case 7:
-                    System.out.println("GAME OVER");
-                    waitingTime();
+                    System.out.println("YOU LOSE, GAME OVER");
                     System.exit(0);
             }
         }
@@ -123,25 +116,24 @@ public class Battle {
                 case 1:
                     enemy.attack(turnCounter, player);
                     waitingTime();
-                    System.out.println("");
+                    System.out.println();
                     break;
                 case 2:
                     enemy.skill1(turnCounter, player);
                     waitingTime();
-                    System.out.println("");
+                    System.out.println();
                     break;
                 case 3:
                     enemy.skill2(turnCounter, player);
                     waitingTime();
-                    System.out.println("");
+                    System.out.println();
                     break;
             }
         }
     }
 
     public boolean evenChecker(){
-        if(turnCounter % 2 == 1) return false;
-        else return true;
+        return turnCounter%2==0;
     }
     public void clearScreen() {
         //to clear screen
