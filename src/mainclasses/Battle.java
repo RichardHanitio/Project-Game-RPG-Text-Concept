@@ -59,6 +59,7 @@ public class Battle {
 
     public void beginBattle(){
         System.out.println(player.toString());
+        System.out.println("\t\tVS\n");
         System.out.println(enemy.toString());
         System.out.println("=======================");
         turnCounter++;
@@ -137,8 +138,4 @@ public class Battle {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
-
-
-
-
 }
