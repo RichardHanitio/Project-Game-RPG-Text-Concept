@@ -53,7 +53,6 @@ public class Battle {
         }
         else if (enemy.getHealth() < 0 ){
             System.out.println(enemy.getName() + " has been slain . . .");
-            player.setGold(player.getGold()+enemy.getHealth());
             player.setCurrentStage(player.getCurrentStage() + 1); 
         }
     }
@@ -62,6 +61,7 @@ public class Battle {
         System.out.println(player.toString());
         System.out.println("\t\tVS\n");
         System.out.println(enemy.toString());
+        player.setGold(player.getGold()+enemy.getHealth());
         System.out.println("=======================");
         turnCounter++;
     }

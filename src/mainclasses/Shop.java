@@ -20,6 +20,7 @@ public class Shop {
         System.out.println("----------------------------------------------------------------------------------");
         System.out.println("Welcome to my shop,please buy something from my shop : (Use number to choose item)");
         System.out.println("");
+        System.out.println("                                                                Gold    : " + player.getGold());
         System.out.println("1. Buy Health Potion                                            Price   : 200 Golds");
         System.out.println("2. Buy Mana Potion                                              Price   : 100 Golds");
         System.out.println("3. Exit from shop");
@@ -39,7 +40,7 @@ public class Shop {
                 }
                 else {
                     player.getBackpack().setHealthPotion(player.getBackpack().getHealthPotion() + 1);
-                    System.out.println("Your have " + player.getBackpack().getHealthPotion() + "Health Potion now");
+                    System.out.println("You have " + player.getBackpack().getHealthPotion() + " Health Potion now");
                     int afterBuy = player.getGold() - healthPCost;
                     player.setGold(afterBuy);
                 }
@@ -49,7 +50,7 @@ public class Shop {
         else if(pilih == 2){
             int manaPCost = 100;
             if(player.getGold() < manaPCost){
-                System.out.println("Sorry sir,your money is not enough to buy this Health Potion");
+                System.out.println("Sorry sir,your money is not enough to buy this Mana Potion");
             }
             else{
                 if (player.getBackpack().getManaPotion() >= 3){
@@ -57,7 +58,7 @@ public class Shop {
                 }
                 else {
                     player.getBackpack().setManaPotion(player.getBackpack().getManaPotion()+1);
-                    System.out.println("Your have " + player.getBackpack().getManaPotion() + " Mana Potion now");
+                    System.out.println("You have " + player.getBackpack().getManaPotion() + " Mana Potion now");
                     int afterBuy = player.getGold() - manaPCost;
                     player.setGold(afterBuy);
                 }
