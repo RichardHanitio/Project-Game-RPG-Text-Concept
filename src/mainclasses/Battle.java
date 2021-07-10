@@ -40,6 +40,7 @@ public class Battle {
     public Battle(Player player,Enemy enemy){
         this.player = player;
         this.enemy  = enemy;
+        setTurnCounter(0);
         beginBattle();
 
         while (player.getHealth() > 0 && enemy.getHealth() > 0){
@@ -77,25 +78,30 @@ public class Battle {
             switch(pilihan){
                 case 1:
                     player.attack(turnCounter,enemy);
+                    waitingTime();
                     System.out.println("");
 
                     break;
 
                 case 2:
                     player.skill1(turnCounter, enemy);
+                    waitingTime();
                     System.out.println("");
                     break;
 
                 case 3:
                     player.skill2(turnCounter, enemy);
+                    waitingTime();
                     System.out.println("");
                     break;
                 case 4:
                     player.skill3(turnCounter, enemy);
+                    waitingTime();
                     System.out.println("");
                     break;
                 case 5:
                     player.skill4(turnCounter, enemy);
+                    waitingTime();
                     System.out.println("");
                     break;
                 case 6:
@@ -104,6 +110,7 @@ public class Battle {
                     break;
                 case 7:
                     System.out.println("GAME OVER");
+                    waitingTime();
                     System.exit(0);
             }
         }
@@ -115,14 +122,17 @@ public class Battle {
             switch(enemyPilihan){
                 case 1:
                     enemy.attack(turnCounter, player);
+                    waitingTime();
                     System.out.println("");
                     break;
                 case 2:
                     enemy.skill1(turnCounter, player);
+                    waitingTime();
                     System.out.println("");
                     break;
                 case 3:
                     enemy.skill2(turnCounter, player);
+                    waitingTime();
                     System.out.println("");
                     break;
             }
@@ -138,4 +148,14 @@ public class Battle {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
+    public void waitingTime(){
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+
+
 }
