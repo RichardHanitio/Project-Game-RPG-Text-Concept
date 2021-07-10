@@ -42,78 +42,90 @@ public class Weapon {
             switch (this.playerClassID) {
                 // fighter
                 case 1:
-                    this.currentWeapon = fighterWeapons[++weaponLvl];
+                    if (weaponLvl < Player.getCurrentStage()-1){
+                        this.currentWeapon = fighterWeapons[++weaponLvl];
 
-                    System.out.println("Weapon upgraded successfully!!!");
-                    System.out.println(fighterWeapons[weaponLvl-1] + " => " + getCurrentWeapon());
+                        System.out.println("Weapon upgraded successfully!!!");
+                        System.out.println(fighterWeapons[weaponLvl-1] + " => " + getCurrentWeapon());
 
-                    if(weaponLvl==1){
-                        Fighter.setMaxHealth(Fighter.getMaxHealth() + 100);
-                        Fighter.setAttSTR(Fighter.getAttSTR() + 50);
-                        System.out.println(
-                            "Player stat added : \n" +
-                            "Health\t\t+100\n" + 
-                            "Attack Power\t+50"
-                        );
+                        if(weaponLvl==1){
+                            Fighter.setMaxHealth(Fighter.getMaxHealth() + 100);
+                            Fighter.setAttSTR(Fighter.getAttSTR() + 50);
+                            System.out.println(
+                                "Player stat added : \n" +
+                                "Health\t\t+100\n" + 
+                                "Attack Power\t+50"
+                            );
+                        } else {
+                            Fighter.setMaxHealth(Fighter.getHealth() + 180);
+                            Fighter.setAttSTR(Fighter.getAttSTR() + 75);
+                            System.out.println(
+                                "Player stat added : \n" +
+                                "Health\t\t+100\n" + 
+                                "Attack Power\t+50"
+                            );
+                        }
                     } else {
-                        Fighter.setMaxHealth(Fighter.getHealth() + 180);
-                        Fighter.setAttSTR(Fighter.getAttSTR() + 75);
-                        System.out.println(
-                            "Player stat added : \n" +
-                            "Health\t\t+100\n" + 
-                            "Attack Power\t+50"
-                        );
+                        System.out.println("You can't upgrade this weapon yet...Clear next stage to upgrade!");
                     }
                     break;
                 // ranger
                 case 2:
-                    this.currentWeapon = rangerWeapons[++weaponLvl];
-                    
-                    System.out.println("Weapon upgraded successfully!!!");
-                    System.out.println(rangerWeapons[weaponLvl-1] + " => " + getCurrentWeapon());
+                    if (weaponLvl < Player.getCurrentStage()-1){
+                        this.currentWeapon = rangerWeapons[++weaponLvl];
+                        
+                        System.out.println("Weapon upgraded successfully!!!");
+                        System.out.println(rangerWeapons[weaponLvl-1] + " => " + getCurrentWeapon());
 
-                    if (weaponLvl == 1) {
-                        Ranger.setMaxHealth(Ranger.getMaxHealth() + 80);
-                        Ranger.setAttSTR(Ranger.getAttSTR() + 60);
-                        System.out.println(
-                            "Player stat added : \n" +
-                            "Health\t\t+80\n" + 
-                            "Attack Power\t+60"
-                        );
+                        if (weaponLvl == 1) {
+                            Ranger.setMaxHealth(Ranger.getMaxHealth() + 80);
+                            Ranger.setAttSTR(Ranger.getAttSTR() + 60);
+                            System.out.println(
+                                "Player stat added : \n" +
+                                "Health\t\t+80\n" + 
+                                "Attack Power\t+60"
+                            );
+                        } else {
+                            Ranger.setMaxHealth(Ranger.getMaxHealth() + 120);
+                            Ranger.setAttSTR(Ranger.getAttSTR() + 100);
+                            System.out.println(
+                                "Player stat added : \n" +
+                                "Health\t\t+120\n" + 
+                                "Attack Power\t+100"
+                            );
+                        }
                     } else {
-                        Ranger.setMaxHealth(Ranger.getMaxHealth() + 120);
-                        Ranger.setAttSTR(Ranger.getAttSTR() + 100);
-                        System.out.println(
-                            "Player stat added : \n" +
-                            "Health\t\t+120\n" + 
-                            "Attack Power\t+100"
-                        );
+                        System.out.println("You can't upgrade this weapon yet...Clear next stage to upgrade!");
                     }
                     
                     break;
                 // wizard
                 case 3:
-                    this.currentWeapon = wizardWeapons[++weaponLvl];
+                    if (weaponLvl < Player.getCurrentStage()-1){
+                        this.currentWeapon = wizardWeapons[++weaponLvl];
 
-                    System.out.println("Weapon upgraded successfully!!!");
-                    System.out.println(wizardWeapons[weaponLvl-1] + " => " + getCurrentWeapon());
+                        System.out.println("Weapon upgraded successfully!!!");
+                        System.out.println(wizardWeapons[weaponLvl-1] + " => " + getCurrentWeapon());
 
-                    if (weaponLvl == 1) {
-                        Wizard.setMaxHealth(Wizard.getMaxHealth() + 40);
-                        Wizard.setAttINT(Wizard.getAttINT() + 20);
-                        System.out.println(
-                            "Player stat added : \n" +
-                            "Health\t\t+40\n" + 
-                            "Attack Power\t+20"
-                        );
+                        if (weaponLvl == 1) {
+                            Wizard.setMaxHealth(Wizard.getMaxHealth() + 40);
+                            Wizard.setAttINT(Wizard.getAttINT() + 20);
+                            System.out.println(
+                                "Player stat added : \n" +
+                                "Health\t\t+40\n" + 
+                                "Attack Power\t+20"
+                            );
+                        } else {
+                            Wizard.setMaxHealth(Wizard.getMaxHealth() + 70);
+                            Wizard.setAttINT(Wizard.getAttINT() + 40);
+                            System.out.println(
+                                "Player stat added : \n" +
+                                "Health\t\t+70\n" + 
+                                "Attack Power\t+40"
+                            );
+                        }
                     } else {
-                        Wizard.setMaxHealth(Wizard.getMaxHealth() + 70);
-                        Wizard.setAttINT(Wizard.getAttINT() + 40);
-                        System.out.println(
-                            "Player stat added : \n" +
-                            "Health\t\t+70\n" + 
-                            "Attack Power\t+40"
-                        );
+                        System.out.println("You can't upgrade this weapon yet...Clear next stage to upgrade!");
                     }
             }
         }

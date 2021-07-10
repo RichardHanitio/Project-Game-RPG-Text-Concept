@@ -15,6 +15,7 @@ public class App {
         Battle battle1 = new Battle(player1,enemy2);
         Shop shop1 = new Shop(player1);
         Battle battle2 = new Battle(player1,enemy3);
+        
         // Scanner scanner = new Scanner(System.in);
         // int choice;
         // String charName = null;

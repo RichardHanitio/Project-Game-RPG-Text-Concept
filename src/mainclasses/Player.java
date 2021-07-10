@@ -11,7 +11,7 @@ public abstract class Player{
     private Backpack backpack = new Backpack();
     private Weapon weapon;
     private int gold = 0;
-    private int currentStage = 1;
+    private static int currentStage = 1;
     private static int attSTR, attINT;
     private int classID;
     Scanner masukan = new Scanner(System.in);
@@ -65,11 +65,11 @@ public abstract class Player{
     public void setGold(int gold) {
         this.gold = gold;
     }
-    public int getCurrentStage() {
-        return this.currentStage;
+    public static int getCurrentStage() {
+        return currentStage;
     }
-    public void setCurrentStage(int currentStage) {
-        this.currentStage = currentStage;
+    public static void setCurrentStage(int currentStage) {
+        Player.currentStage = currentStage;
     }
     public int getClassID() {
         return this.classID;

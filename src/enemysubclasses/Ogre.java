@@ -20,23 +20,23 @@ public class Ogre extends Enemy{
     @Override
     public void attack(int turnCounter) {
         System.out.println("{ Ogre Attacks Player }");
-        Player.setHealth(Player.getHealth()-10);
-        Battle.setTurnCounter(Battle.getTurnCounter() + 1);
-    }
-
-    @Override
-    //Tornado Spin : damage 20
-    public void skill1(int turnCounter) {
-        System.out.println("{ Ogre Uses Skill 1 : Tornado Spin }");
         Player.setHealth(Player.getHealth()-20);
         Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
     @Override
-    //Full Power : damage 25
+    //Tornado Spin : damage 30
+    public void skill1(int turnCounter) {
+        System.out.println("{ Ogre Uses Skill 1 : Tornado Spin }");
+        Player.setHealth(Player.getHealth()-30);
+        Battle.setTurnCounter(Battle.getTurnCounter() + 1);
+    }
+
+    @Override
+    //Full Power : damage 35
     public void skill2(int turnCounter) {
         System.out.println("{ Ogre Uses Skill 2 : Full Power }");
-        Player.setHealth(Player.getHealth()-25);
+        Player.setHealth(Player.getHealth()-35);
         Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 

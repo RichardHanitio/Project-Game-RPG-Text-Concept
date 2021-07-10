@@ -19,24 +19,24 @@ public class Yeti extends Enemy{
     // methods
     @Override
     public void attack(int turnCounter) {
-        System.out.println("Yeti Attacks Player");
-        Player.setHealth(Player.getHealth()-20);
+        System.out.println("{ Yeti Attacks Player }");
+        Player.setHealth(Player.getHealth()-30);
         Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
     @Override
-    //Yeti Punch : damage 30
+    //Yeti Punch : damage 40
     public void skill1(int turnCounter) {
-        System.out.println("Yeti Skill 1 : Yeti Punch");
-        Player.setHealth(Player.getHealth()-30);
+        System.out.println("{ Yeti Uses Skill 1 : Yeti Punch }");
+        Player.setHealth(Player.getHealth()-40);
         Battle.setTurnCounter(Battle.getTurnCounter() + 1);   
     }
 
     @Override
-    //Snow Cannon : damage 35
+    //Snow Cannon : damage 50
     public void skill2(int turnCounter) {
-        System.out.println("Yeti Skill 2 : Yeti Punch");
-        Player.setHealth(Player.getHealth() - 35);
+        System.out.println("{ Yeti Uses Skill 2 : Yeti Punch }");
+        Player.setHealth(Player.getHealth() - 45);
         Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
