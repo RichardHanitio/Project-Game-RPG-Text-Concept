@@ -56,21 +56,15 @@ public class Fighter extends Player {
         // WarCry
         if(this.getMana() >= 3){
             int manaCost = 3;
-            int replace = getAttSTR();
-            System.out.println("{ You use Skill 2 : War Cry (Actived) }");
-            int counter = turnCounter + 6;
-            Double persenan = 0.20;
-            int tambahAttSTR = (int) (getAttSTR() * persenan);
-            int finaltambahSTR = getAttSTR() + tambahAttSTR;
+            System.out.println("{ You Use Skill 2 : WarCry (Actived) }");
+            enemy.setHealth(enemy.getHealth()-getAttSTR());
             setMana(getMana()-manaCost);
+
+            int counter = turnCounter + 2;
             while(turnCounter != counter){
-                setAttSTR(finaltambahSTR);
+                Battle.setTurnCounter(turnCounter += 1);
             }
-            if(turnCounter == counter){
-                setAttSTR(replace);
-            }
-            Battle.setTurnCounter(turnCounter += 1);
-            
+    
         }
         else{
             System.out.println("Your mana is not enough to use this skill");

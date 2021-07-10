@@ -1,5 +1,6 @@
 package mainclasses;
 import java.util.Scanner;
+import mainclasses.Player;
 
 public class Battle {
     //properties
@@ -44,12 +45,27 @@ public class Battle {
         }
         else if (enemy.getHealth() < 0 ){
             System.out.println(enemy.getName() + " has been slain . . .");
-            player.setCurrentStage(player.getCurrentStage() + 1); 
+            player.setCurrentStage(player.getCurrentStage() + 1);
+            Player.setHealth(Player.getMaxHealth());
+            if (player.getClassID() == 1 || player.getClassID() == 2){
+                player.setMana(0);
+            }
+            else {
+                player.setMana(5);
+            }
         }
     }
 
     //methods
     public void beginBattle(){
+        Player.setHealth(Player.getMaxHealth());
+        player.setMana(player.getMana());
+        if (player.getClassID() == 1 || player.getClassID() == 2){
+            player.setMana(0);
+        }
+        else {
+            player.setMana(5);
+        }
         System.out.println("=================================");
         System.out.println("\t\tBATTLE " + player.getCurrentStage());
         System.out.println(player.toString());
@@ -142,7 +158,7 @@ public class Battle {
     }
     public void waitingTime(){
         try {
-            Thread.sleep(2000);
+            Thread.sleep(0);
         } catch (Exception e) {
             System.out.println(e);
         }

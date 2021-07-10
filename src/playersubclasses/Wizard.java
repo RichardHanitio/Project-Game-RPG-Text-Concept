@@ -78,10 +78,10 @@ public class Wizard extends Player{
 
     public void skill3(int turnCounter , Enemy enemy) {
         // LightningSpell
-        if(this.getMana() >= 3){
-            int manaCost = 3;
+        if(this.getMana() >= 5){
+            int manaCost = 5;
             System.out.println("{ You Use Skill 3 : LightingSpell (Actived) }");
-            enemy.setHealth(enemy.getHealth() - ((getAttINT() * 50) * multiplier() * getMana()));
+            enemy.setHealth(enemy.getHealth() - ((getAttINT() * 5) * multiplier() * getMana()));
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);
 

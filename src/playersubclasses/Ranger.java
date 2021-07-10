@@ -38,7 +38,6 @@ public class Ranger extends Player{
 
     public void skill1(int turnCounter, Enemy enemy) {
         // ShockDart
-        System.out.println(getMana());
         if(this.getMana() >= 3){
             int manaCost = 3;
             System.out.println("{ You Use Skill 1 : ShockDart (Actived) }");

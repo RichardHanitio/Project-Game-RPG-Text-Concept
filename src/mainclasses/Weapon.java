@@ -52,7 +52,7 @@ public class Weapon {
                         Fighter.setAttSTR(Fighter.getAttSTR() + 50);
                         System.out.println(
                             "Player stat added : \n" +
-                            "Health\t\t\t+ 100\n" + 
+                            "Health\t\t+100\n" + 
                             "Attack Power\t+50"
                         );
                     } else {
@@ -60,7 +60,7 @@ public class Weapon {
                         Fighter.setAttSTR(Fighter.getAttSTR() + 75);
                         System.out.println(
                             "Player stat added : \n" +
-                            "Health\t\t\t+ 100\n" + 
+                            "Health\t\t+100\n" + 
                             "Attack Power\t+50"
                         );
                     }
@@ -69,12 +69,15 @@ public class Weapon {
                 case 2:
                     this.currentWeapon = rangerWeapons[++weaponLvl];
                     
+                    System.out.println("Weapon upgraded successfully!!!");
+                    System.out.println(rangerWeapons[weaponLvl-1] + " => " + getCurrentWeapon());
+
                     if (weaponLvl == 1) {
                         Ranger.setMaxHealth(Ranger.getMaxHealth() + 80);
                         Ranger.setAttSTR(Ranger.getAttSTR() + 60);
                         System.out.println(
                             "Player stat added : \n" +
-                            "Health\t\t\t+ 80\n" + 
+                            "Health\t\t+80\n" + 
                             "Attack Power\t+60"
                         );
                     } else {
@@ -82,7 +85,7 @@ public class Weapon {
                         Ranger.setAttSTR(Ranger.getAttSTR() + 100);
                         System.out.println(
                             "Player stat added : \n" +
-                            "Health\t\t\t+ 120\n" + 
+                            "Health\t\t+120\n" + 
                             "Attack Power\t+100"
                         );
                     }
@@ -91,12 +94,16 @@ public class Weapon {
                 // wizard
                 case 3:
                     this.currentWeapon = wizardWeapons[++weaponLvl];
+
+                    System.out.println("Weapon upgraded successfully!!!");
+                    System.out.println(wizardWeapons[weaponLvl-1] + " => " + getCurrentWeapon());
+
                     if (weaponLvl == 1) {
                         Wizard.setMaxHealth(Wizard.getMaxHealth() + 40);
                         Wizard.setAttINT(Wizard.getAttINT() + 20);
                         System.out.println(
                             "Player stat added : \n" +
-                            "Health\t\t\t+ 40\n" + 
+                            "Health\t\t+40\n" + 
                             "Attack Power\t+20"
                         );
                     } else {
@@ -104,7 +111,7 @@ public class Weapon {
                         Wizard.setAttINT(Wizard.getAttINT() + 40);
                         System.out.println(
                             "Player stat added : \n" +
-                            "Health\t\t\t+ 70\n" + 
+                            "Health\t\t+70\n" + 
                             "Attack Power\t+40"
                         );
                     }

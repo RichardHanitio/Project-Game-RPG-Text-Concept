@@ -8,12 +8,12 @@ public class Orochi extends Enemy{
     public Orochi() {
         /*
             Orochi
-            Health : 800
+            Health : 3000
             Attack Power : 40
             ResistINT : 50
             ResistSTR : 50
         */
-        super("Yamata no Orochi", 800, 40, 50, 50);
+        super("Yamata no Orochi", 3000, 40, 50, 50);
     }
 
     // methods

@@ -8,12 +8,12 @@ public class Ogre extends Enemy{
     public Ogre() {
         /*
             Ogre
-            Health : 400
+            Health : 600
             Attack Power : 10
             ResistINT : 10
             ResistSTR : 20
         */
-        super("Ogre", 400, 10, 10, 20);
+        super("Ogre", 600, 10, 10, 20);
     }
 
     //methods

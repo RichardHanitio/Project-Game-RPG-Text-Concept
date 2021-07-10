@@ -8,12 +8,12 @@ public class Yeti extends Enemy{
     public Yeti() {
         /*
             Yeti
-            Health : 600
+            Health : 1200
             Attack Power : 20
             ResistINT : 30
             ResistSTR : 20
         */
-        super("Yeti", 600, 20, 30, 20);
+        super("Yeti", 1200, 20, 30, 20);
     }
 
     // methods
