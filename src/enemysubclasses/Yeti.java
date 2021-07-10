@@ -4,7 +4,7 @@ import mainclasses.Player;
 import mainclasses.Battle;
 
 public class Yeti extends Enemy{
-
+    // constructors
     public Yeti() {
         /*
             Yeti
@@ -16,28 +16,28 @@ public class Yeti extends Enemy{
         super("Yeti", 600, 20, 30, 20);
     }
 
-
+    // methods
     @Override
-    public void attack(int turnCounter, Player player) {
+    public void attack(int turnCounter) {
         System.out.println("Yeti Attacks Player");
-        player.setHealth(player.getHealth()-20);
-        Battle.setTurnCounter(turnCounter += 1);
+        Player.setHealth(Player.getHealth()-20);
+        Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
     @Override
     //Yeti Punch : damage 30
-    public void skill1(int turnCounter, Player player) {
+    public void skill1(int turnCounter) {
         System.out.println("Yeti Skill 1 : Yeti Punch");
-        player.setHealth(player.getHealth()-30);
-        Battle.setTurnCounter(turnCounter += 1);   
+        Player.setHealth(Player.getHealth()-30);
+        Battle.setTurnCounter(Battle.getTurnCounter() + 1);   
     }
 
     @Override
     //Snow Cannon : damage 35
-    public void skill2(int turnCounter, Player player) {
+    public void skill2(int turnCounter) {
         System.out.println("Yeti Skill 2 : Yeti Punch");
-        player.setHealth(player.getHealth() - 35);
-        Battle.setTurnCounter(turnCounter += 1);
+        Player.setHealth(Player.getHealth() - 35);
+        Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
     @Override

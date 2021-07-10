@@ -4,6 +4,7 @@ import mainclasses.Player;
 import mainclasses.Battle;
 
 public class Ogre extends Enemy{
+    //constructors
     public Ogre() {
         /*
             Ogre
@@ -15,27 +16,28 @@ public class Ogre extends Enemy{
         super("Ogre", 400, 10, 10, 20);
     }
 
+    //methods
     @Override
-    public void attack(int turnCounter, Player player) {
+    public void attack(int turnCounter) {
         System.out.println("{ Ogre Attacks Player }");
-        player.setHealth(player.getHealth()-10);
-        Battle.setTurnCounter(turnCounter += 1);
+        Player.setHealth(Player.getHealth()-10);
+        Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
     @Override
     //Tornado Spin : damage 20
-    public void skill1(int turnCounter, Player player) {
+    public void skill1(int turnCounter) {
         System.out.println("{ Ogre Uses Skill 1 : Tornado Spin }");
-        player.setHealth(player.getHealth()-20);
-        Battle.setTurnCounter(turnCounter += 1);
+        Player.setHealth(Player.getHealth()-20);
+        Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
     @Override
     //Full Power : damage 25
-    public void skill2(int turnCounter, Player player) {
+    public void skill2(int turnCounter) {
         System.out.println("{ Ogre Uses Skill 2 : Full Power }");
-        player.setHealth(player.getHealth()-25);
-        Battle.setTurnCounter(turnCounter += 1);
+        Player.setHealth(Player.getHealth()-25);
+        Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
 

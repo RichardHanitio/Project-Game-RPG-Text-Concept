@@ -52,9 +52,9 @@ public abstract class Enemy {
     }
 
     //methods
-    public abstract void attack(int turnCounter, Player player);
-    public abstract void skill1(int turnCounter, Player player);
-    public abstract void skill2(int turnCounter, Player player);
+    public abstract void attack(int turnCounter);
+    public abstract void skill1(int turnCounter);
+    public abstract void skill2(int turnCounter);
     
     public int decisionPick() {
         return (int)Math.floor(Math.random()*(3-1+1)+1);

@@ -4,6 +4,7 @@ import mainclasses.Player;
 import mainclasses.Battle;
 
 public class Orochi extends Enemy{
+    // constructors
     public Orochi() {
         /*
             Orochi
@@ -15,28 +16,29 @@ public class Orochi extends Enemy{
         super("Yamata no Orochi", 800, 40, 50, 50);
     }
 
+    // methods
     @Override
-    public void attack(int turnCounter, Player player) {
+    public void attack(int turnCounter) {
         System.out.println("Orochi Attacks Player");
-        player.setHealth(player.getHealth()-40);    
-        Battle.setTurnCounter(turnCounter += 1);
+        Player.setHealth(Player.getHealth()-40);    
+        Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
     @Override
     //Lifesteal : 
-    public void skill1(int turnCounter, Player player) {
+    public void skill1(int turnCounter) {
         System.out.println("Orochi skill 1 : Lifesteal");  
-        player.setHealth(player.getHealth()-40);
+        Player.setHealth(Player.getHealth()-40);
         setHealth(getHealth()+20);      
-        Battle.setTurnCounter(turnCounter += 1);
+        Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
     @Override
     //Snake Bite : 
-    public void skill2(int turnCounter, Player player) {
+    public void skill2(int turnCounter) {
         System.out.println("Orochi skill 2 : Snake Bite");
-        player.setHealth(player.getHealth()-80);
-        Battle.setTurnCounter(turnCounter += 1);
+        Player.setHealth(Player.getHealth()-80);
+        Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
     @Override

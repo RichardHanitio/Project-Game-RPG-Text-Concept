@@ -10,10 +10,7 @@ public class Weapon {
     private String[] wizardWeapons = {"Mage Rod", "Mace of Destruction", "Wrath of Vulcan"};  
     private static int weaponLvl = 0;
 
-    public String getCurrentWeapon() {
-        return this.currentWeapon;
-    }
-
+    //constructors
     public Weapon() {
         
     }
@@ -35,6 +32,11 @@ public class Weapon {
         }
     }
 
+    //methods
+    public String getCurrentWeapon() {
+        return this.currentWeapon;
+    }
+
     public void upgradeWeapon() {
         if (weaponLvl<2) {
             switch (this.playerClassID) {
@@ -46,7 +48,7 @@ public class Weapon {
                     System.out.println(fighterWeapons[weaponLvl-1] + " => " + getCurrentWeapon());
 
                     if(weaponLvl==1){
-                        Fighter.setHealth(Fighter.getHealth() + 100);
+                        Fighter.setMaxHealth(Fighter.getMaxHealth() + 100);
                         Fighter.setAttSTR(Fighter.getAttSTR() + 50);
                         System.out.println(
                             "Player stat added : \n" +
@@ -54,8 +56,8 @@ public class Weapon {
                             "Attack Power\t+50"
                         );
                     } else {
-                        Fighter.setHealth(Fighter.getHealth() + 180);
-                        Fighter.setHealth(Fighter.getAttSTR() + 75);
+                        Fighter.setMaxHealth(Fighter.getHealth() + 180);
+                        Fighter.setAttSTR(Fighter.getAttSTR() + 75);
                         System.out.println(
                             "Player stat added : \n" +
                             "Health\t\t\t+ 100\n" + 
@@ -68,7 +70,7 @@ public class Weapon {
                     this.currentWeapon = rangerWeapons[++weaponLvl];
                     
                     if (weaponLvl == 1) {
-                        Ranger.setHealth(Ranger.getHealth() + 80);
+                        Ranger.setMaxHealth(Ranger.getMaxHealth() + 80);
                         Ranger.setAttSTR(Ranger.getAttSTR() + 60);
                         System.out.println(
                             "Player stat added : \n" +
@@ -76,7 +78,7 @@ public class Weapon {
                             "Attack Power\t+60"
                         );
                     } else {
-                        Ranger.setHealth(Ranger.getHealth() + 120);
+                        Ranger.setMaxHealth(Ranger.getMaxHealth() + 120);
                         Ranger.setAttSTR(Ranger.getAttSTR() + 100);
                         System.out.println(
                             "Player stat added : \n" +
@@ -90,7 +92,7 @@ public class Weapon {
                 case 3:
                     this.currentWeapon = wizardWeapons[++weaponLvl];
                     if (weaponLvl == 1) {
-                        Wizard.setHealth(Wizard.getHealth() + 40);
+                        Wizard.setMaxHealth(Wizard.getMaxHealth() + 40);
                         Wizard.setAttINT(Wizard.getAttINT() + 20);
                         System.out.println(
                             "Player stat added : \n" +
@@ -98,7 +100,7 @@ public class Weapon {
                             "Attack Power\t+20"
                         );
                     } else {
-                        Wizard.setHealth(Wizard.getHealth() + 70);
+                        Wizard.setMaxHealth(Wizard.getMaxHealth() + 70);
                         Wizard.setAttINT(Wizard.getAttINT() + 40);
                         System.out.println(
                             "Player stat added : \n" +

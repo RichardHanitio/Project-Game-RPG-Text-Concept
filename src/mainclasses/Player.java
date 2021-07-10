@@ -6,7 +6,7 @@ public abstract class Player{
     //properties
     private String name;
     private static int health;
-    private int maxHealth ;
+    private static int maxHealth ;
     private int mana;
     private Backpack backpack = new Backpack();
     private Weapon weapon;
@@ -41,11 +41,11 @@ public abstract class Player{
     public static void setHealth(int hp) {
         health = hp;
     }
-    public int getMaxHealth() {
-        return this.maxHealth;
+    public static int getMaxHealth() {
+        return maxHealth;
     }
-    public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
+    public static void setMaxHealth(int maxHealth) {
+        Player.maxHealth = maxHealth;
     }
     public int getMana() {
         return this.mana;

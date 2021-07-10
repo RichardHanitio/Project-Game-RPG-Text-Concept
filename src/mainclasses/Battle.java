@@ -35,9 +35,9 @@ public class Battle {
         setTurnCounter(0);
         beginBattle();
 
-        while (player.getHealth() > 0 && enemy.getHealth() > 0) midBattle();
+        while (Player.getHealth() > 0 && enemy.getHealth() > 0) midBattle();
 
-        if(player.getHealth() < 0 ){
+        if(Player.getHealth() < 0 ){
             System.out.println("Your character has been slain by " + enemy.getName());
             System.out.println("GAME OVER");
             System.exit(0);
@@ -114,17 +114,17 @@ public class Battle {
 
             switch(enemyPilihan){
                 case 1:
-                    enemy.attack(turnCounter, player);
+                    enemy.attack(turnCounter);
                     waitingTime();
                     System.out.println();
                     break;
                 case 2:
-                    enemy.skill1(turnCounter, player);
+                    enemy.skill1(turnCounter);
                     waitingTime();
                     System.out.println();
                     break;
                 case 3:
-                    enemy.skill2(turnCounter, player);
+                    enemy.skill2(turnCounter);
                     waitingTime();
                     System.out.println();
                     break;
