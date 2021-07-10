@@ -7,7 +7,6 @@ import mainclasses.Battle;
 public class Ranger extends Player{
     // properties
     private Weapon weapon;
-
     // constructors
     public Ranger(String name){
         //Nama berasal dari player

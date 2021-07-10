@@ -6,6 +6,7 @@ public abstract class Player{
     //properties
     private String name;
     private static int health;
+    private int maxHealth ;
     private int mana;
     private Backpack backpack = new Backpack();
     private Weapon weapon;
@@ -24,6 +25,7 @@ public abstract class Player{
         this.mana = mana;
         attSTR = STR;
         attINT = INT;
+        setMaxHealth(health);
     }
 
     //getter setter
@@ -38,6 +40,12 @@ public abstract class Player{
     }
     public static void setHealth(int hp) {
         health = hp;
+    }
+    public int getMaxHealth() {
+        return this.maxHealth;
+    }
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
     }
     public int getMana() {
         return this.mana;
@@ -93,7 +101,6 @@ public abstract class Player{
     public void openBackpack() {
         System.out.println("Menu Backpack :");
         int pilih;
-
         System.out.println("1.Use Health Potion ("+backpack.getHealthPotion()+" left)");
         System.out.println("2.Use Mana Potion ("+backpack.getManaPotion()+" left)");
         System.out.println("3.Exit");
@@ -103,17 +110,35 @@ public abstract class Player{
         
         if (pilih == 1){
             System.out.println("Using health potion.");
-            System.out.println("Health : +80 ");
-            health+=80;
-            backpack.setHealthPotion(backpack.getHealthPotion() - 1);
-            Battle.setTurnCounter(Battle.getTurnCounter()+1);
+            System.out.println("Health              : +80 ");
+            if(health + 80 > maxHealth){
+                setHealth(maxHealth);
+                backpack.setManaPotion(backpack.getManaPotion()-1);
+                Battle.setTurnCounter(Battle.getTurnCounter()+1);
+                System.out.println("player health now   : " + getHealth());
+            }
+            else{
+                health += 80;
+                backpack.setManaPotion(backpack.getManaPotion()-1);
+                Battle.setTurnCounter(Battle.getTurnCounter()+1);
+                System.out.println("player health now   : " + getHealth());
+            }
         }
         else if(pilih == 2){
             System.out.println("Using mana potion.");
-            System.out.println("Mana : +3 ");
-            mana+=80;
-            backpack.setManaPotion(backpack.getManaPotion()-1);
-            Battle.setTurnCounter(Battle.getTurnCounter()+1);
+            System.out.println("Mana            : +3 ");
+            if(mana + 3 > 10){
+                setMana(10);
+                backpack.setManaPotion(backpack.getManaPotion()-1);
+                Battle.setTurnCounter(Battle.getTurnCounter()+1);
+                System.out.println("player mana     : " + getMana());
+            }
+            else{
+                mana += 3;
+                backpack.setManaPotion(backpack.getManaPotion()-1);
+                Battle.setTurnCounter(Battle.getTurnCounter()+1);
+                System.out.println("player mana     : " + getMana());
+            }
         }
         else if(pilih == 3){
             System.out.println("Already exit");
