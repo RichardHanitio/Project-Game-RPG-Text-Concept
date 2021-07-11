@@ -5,7 +5,7 @@ import enemysubclasses.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Player player1 = new Fighter("Laplace");
+        Player player1 = new Wizard("Laplace");
         
         Enemy enemy1 = new Ogre();
         Enemy enemy2 = new Yeti();

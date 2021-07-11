@@ -1,5 +1,6 @@
 package playersubclasses;
 import java.util.Random;
+
 import mainclasses.Player;
 import mainclasses.Weapon;
 import mainclasses.Enemy;
@@ -42,7 +43,7 @@ public class Wizard extends Player{
         if(this.getMana() >= 2){
             int manaCost = 2;
             System.out.println("{ You Use Skill 1 : Meteor (Actived) }");
-            enemy.setHealth(enemy.getHealth() - ((getAttINT() + 30 ) * multiplier()));
+            enemy.setHealth(enemy.getHealth() - ((getAttINT() + 80 ) * multiplier()));
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);
 
@@ -60,13 +61,17 @@ public class Wizard extends Player{
             int manaCost = 4;
             System.out.println("{ You Use Skill 2 : LifeDrain (Actived) }");
             int enemyHealth = enemy.getHealth();
-            Double persenan = 0.15;
+            Double persenan = 0.40;
             int persenanEnemyHealth = (int)(enemyHealth * persenan); 
-
-            enemy.setHealth(enemy.getHealth() - persenanEnemyHealth);
-            setHealth(getHealth() + persenanEnemyHealth);
+            if(persenanEnemyHealth > getMaxHealth()){
+                setHealth(getMaxHealth());
+                enemy.setHealth(enemy.getHealth() - persenanEnemyHealth);
+            }
+            else{
+                enemy.setHealth(enemy.getHealth() - persenanEnemyHealth);
+                setHealth(getHealth() + persenanEnemyHealth);
+            }
             setMana(getMana()-manaCost);
-
             Battle.setTurnCounter(turnCounter += 1);
 
         }
@@ -81,7 +86,7 @@ public class Wizard extends Player{
         if(this.getMana() >= 5){
             int manaCost = 5;
             System.out.println("{ You Use Skill 3 : LightingSpell (Actived) }");
-            enemy.setHealth(enemy.getHealth() - ((getAttINT() * 5) * multiplier() * getMana()));
+            enemy.setHealth(enemy.getHealth() - ((getAttINT() * 3) * multiplier() * getMana()));
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);
 
@@ -97,7 +102,7 @@ public class Wizard extends Player{
         if(this.getMana() >= 7){
             int manaCost = 7;
             System.out.println("{ You Use Skill 4 : Mirror (Actived) }");
-            enemy.setHealth(enemy.getHealth() - (enemy.getAttackPower() * multiplier()));
+            enemy.setHealth(enemy.getHealth() - ((enemy.getAttackPower() + 10)* multiplier() * getMana()));
             setMana(getMana()-manaCost);
             Battle.setTurnCounter(turnCounter += 1);
 
@@ -121,9 +126,9 @@ public class Wizard extends Player{
     public void playerMenu(){
         System.out.println("--------------------------------------------------------------");
         System.out.println("|                       Menu                                 |");
-        System.out.println("| 1.Attack                          2.Meteor             (3) |");
-        System.out.println("| 3.LifeDrain   (5)                 4.LightningSpell     (8) |");
-        System.out.println("| 5.Mirror                          6.Open Backpack          |");
+        System.out.println("| 1.Attack                          2.Meteor             (2) |");
+        System.out.println("| 3.LifeDrain   (4)                 4.LightningSpell     (5) |");
+        System.out.println("| 5.Mirror      (7)                 6.Open Backpack          |");
         System.out.println("|              7.Surrender (Warning)                         |");
         System.out.println("--------------------------------------------------------------");
         System.out.print(" Choose  : ");
