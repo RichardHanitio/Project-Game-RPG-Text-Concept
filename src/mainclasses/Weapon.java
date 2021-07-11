@@ -78,20 +78,20 @@ public class Weapon {
                         System.out.println(rangerWeapons[weaponLvl-1] + " => " + getCurrentWeapon());
 
                         if (weaponLvl == 1) {
-                            Ranger.setMaxHealth(Ranger.getMaxHealth() + 80);
-                            Ranger.setAttSTR(Ranger.getAttSTR() + 60);
+                            Ranger.setMaxHealth(Ranger.getMaxHealth() + 70);
+                            Ranger.setAttSTR(Ranger.getAttSTR() + 45);
                             System.out.println(
                                 "Player stat added : \n" +
-                                "Health\t\t+80\n" + 
-                                "Attack Power\t+60"
+                                "Health\t\t+70\n" + 
+                                "Attack Power\t+45"
                             );
                         } else {
                             Ranger.setMaxHealth(Ranger.getMaxHealth() + 120);
-                            Ranger.setAttSTR(Ranger.getAttSTR() + 100);
+                            Ranger.setAttSTR(Ranger.getAttSTR() + 70);
                             System.out.println(
                                 "Player stat added : \n" +
-                                "Health\t\t+120\n" + 
-                                "Attack Power\t+100"
+                                "Health\t\t+120\n" +  
+                                "Attack Power\t+70"
                             );
                         }
                     } else {

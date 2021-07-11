@@ -22,8 +22,9 @@ public class Ranger extends Player{
     public int multiplier() {
         // Multiplier untuk Ranger
         Random rand = new Random();
-        // multi memiliki nilai minimum 2 dan maksimum 5
+        // multi memiliki nilai minimum 2 dan maksimum 4
         int multi = rand.nextInt(3) + 2;
+        if(multi==4) System.out.println("CRITICAL HIT !!!\tEnemy -" + getAttSTR()*4 );
         return multi;
 
     }

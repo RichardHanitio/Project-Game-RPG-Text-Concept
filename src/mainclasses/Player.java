@@ -111,7 +111,7 @@ public abstract class Player{
         if (pilih == 1){
             System.out.println("Using health potion.");
             System.out.println("Health              : +80 ");
-            if(backpack.getHealthPotion() > 0){
+            if(backpack.getHealthPotion() >= 0){
                 if(health + 80 > maxHealth){
                     setHealth(maxHealth);
                     backpack.setHealthPotion(backpack.getHealthPotion()-1);
