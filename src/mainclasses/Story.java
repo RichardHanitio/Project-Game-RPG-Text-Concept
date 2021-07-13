@@ -3,7 +3,6 @@ package mainclasses;
 import java.util.Scanner;
 import playersubclasses.*;
 import enemysubclasses.*;
-import jdk.tools.jlink.internal.SymLinkResourcePoolEntry;
 import mainclasses.Player;
 
 public class Story {
@@ -50,7 +49,7 @@ public class Story {
         pressAnyKeyToContinue();
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("\t\t\t\t\t\t\t\t\t\t       SRRC");
+        System.out.println("\t\t\t\t\t\t\t\t\t       SRRC");
         System.out.println("");
         System.out.println("\t\t\t\t\t\t\t\t\t     Presents");
         System.out.println("");
@@ -58,11 +57,10 @@ public class Story {
         System.out.println("");
         System.out.println("");
         System.out.println(
-                "---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                "------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter your character name: ");
-        System.out.println("");
         String nameInput = scanner.next();
         setName(nameInput);
         System.out.print("\033[H\033[2J");
@@ -75,7 +73,7 @@ public class Story {
         pressAnyKeyToContinue();
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("\t\t\t\t\t\t\t\t\t\t   Prologue");
+        System.out.println("\t\t\t\t\t\t\t\t\t    Prologue");
         System.out.println("");
         System.out.println("");
         System.out.println("\t\t\t\t\t\t\t\t\t The Awakening");
@@ -195,6 +193,7 @@ public class Story {
             System.out.println("What are you going to do?");
             System.out.println("1. Fight and take your sister back.");
             System.out.println("2. Give up and just watch.");
+            System.out.print("Choose : ");
 
             if (!choice.hasNextInt()) {
                 System.out.println("Please enter number(1 & 2) only.");
@@ -202,7 +201,6 @@ public class Story {
                 choice.next();
                 continue;
             } else {
-                System.out.print("Choose : ");
                 choices = choice.nextInt();
                 if (choices == 1) {
                     System.out.print("\033[H\033[2J");
@@ -282,6 +280,7 @@ public class Story {
             System.out.println("What are you going to do?");
             System.out.println("1. Go to the cave and Rest.");
             System.out.println("2. To the cliff and end this miserable life.");
+            System.out.print("Choose : ");
 
             if (!choice.hasNextInt()) {
                 System.out.println("Please enter number(1 & 2) only.");
@@ -289,7 +288,6 @@ public class Story {
                 choice.next();
                 continue;
             } else {
-                System.out.print("Choose : ");
                 choices = choice.nextInt();
                 if (choices == 1) {
                     System.out.println("");
@@ -381,6 +379,7 @@ public class Story {
             System.out.println("What are you going to do?");
             System.out.println("1. Accept his offer.");
             System.out.println("2. Reject his offer.");
+            System.out.print("Choose : ");
 
             if (!choice.hasNextInt()) {
                 System.out.println("Please enter number(1 & 2) only.");
@@ -388,7 +387,6 @@ public class Story {
                 choice.next();
                 continue;
             } else {
-                System.out.print("Choose : ");
                 choices = choice.nextInt();
                 if (choices == 1) {
                     status = false;
@@ -585,7 +583,7 @@ public class Story {
 
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("\t\t\t\t\t\t\t\t\t Chapter One");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t Chapter One");
         System.out.println("");
         System.out.println("");
         System.out.println("\t\t\t\t\t\t\t\t\t  The Beginning");
@@ -614,6 +612,7 @@ public class Story {
             System.out.println("What are you going to do?");
             System.out.println("1. Fight the Orc and save her.");
             System.out.println("2. Leave her alone.");
+            System.out.print("Choose : ");
 
             if (!choice.hasNextInt()) {
                 System.out.println("Please enter number(1 & 2) only.");
@@ -697,6 +696,7 @@ public class Story {
                 System.out.println("What are you going to do?");
                 System.out.println("1. Visit Shop.");
                 System.out.println("2. Visit Guild");
+                System.out.print("Choose : ");
 
                 if (!choice.hasNextInt()) {
                     System.out.println("Please enter number(1 & 2) only.");
@@ -732,6 +732,7 @@ public class Story {
                             System.out.println("2. Yeti Subjugation Quest.");
                             System.out.println("3. Orochi Subjugation Quest.");
                             System.out.println("4. Exit.");
+                            System.out.print("Choose : ");
                             if (!choice.hasNextInt()) {
                                 System.out.println("Please enter number(1 & 2) only.");
                                 System.out.println("");
@@ -741,11 +742,15 @@ public class Story {
                                 choices = choice.nextInt();
                                 if (choices == 1) {
                                     if(enemy1.getHealth() < 0){
-                                        System.out.println("Quest cleared");
+                                        System.out.println("");
+                                        System.out.println("-----------------");
+                                        System.out.println("| Quest cleared |");
+                                        System.out.println("-----------------");
+                                        System.out.println("");
                                     }
                                     else{
                                         System.out.println("Ogre Subjugation Quest Has Started.");
-                                        if (playerID == 1) {
+                                        if (playerID == 1||playerID == 2||playerID == 3) {
                                             Battle battle = new Battle(playeraa, enemy1);
                                             playeraa.setGold(playeraa.getGold() + 20);
                                             System.out.print("\033[H\033[2J");
@@ -764,11 +769,15 @@ public class Story {
                                 } 
                                 else if (choices == 2) {
                                     if(enemy2.getHealth() < 0){
-                                        System.out.println("Quest cleared");
+                                        System.out.println("");
+                                        System.out.println("-----------------");
+                                        System.out.println("| Quest cleared |");
+                                        System.out.println("-----------------");
+                                        System.out.println("");
                                     }
                                     else{
                                         System.out.println("Yeti Subjugation Quest Has Started.");
-                                        if (playerID == 1) {
+                                        if (playerID == 1||playerID == 2|| playerID == 3) {
                                             Battle battle = new Battle(playeraa, enemy2);
                                             playeraa.setGold(playeraa.getGold() + 40);
                                             System.out.print("\033[H\033[2J");
@@ -795,7 +804,7 @@ public class Story {
                                     }
                                     else{
                                         System.out.println("Orochi Subjugation Quest Has Started.");
-                                        if (playerID == 1) {
+                                        if (playerID == 1 || playerID == 2|| playerID == 3) {
                                             Battle battle = new Battle(playeraa, enemy3);
                                             playeraa.setGold(playeraa.getGold() + 60);
                                             System.out.print("\033[H\033[2J");
@@ -836,9 +845,9 @@ public class Story {
             }
 
             System.out.println("You have defeated Orochi.");
-            System.out.println("You have obtained the first right of the gods.");
+            System.out.println("You have obtained the first right of the gods!!!");
             System.out.println("");
-            System.out.println("To be continue.");
+            System.out.println("To be continued...");
             System.out.println("");
             pressAnyKeyToContinue();
         }

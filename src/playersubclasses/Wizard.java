@@ -13,9 +13,9 @@ public class Wizard extends Player{
     // constructors
     public Wizard(String name){
         //Nama berasal dari player
-        //health awal   : 100
+        //health awal   : 150
         //mana awal     : 10
-        super(name,100,10,0,5);
+        super(name,150,10,0,10);
         super.setClassID(3);
         this.weapon = new Weapon(getClassID());
         super.setWeapon(weapon);

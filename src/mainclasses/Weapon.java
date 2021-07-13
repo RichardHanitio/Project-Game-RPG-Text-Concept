@@ -119,12 +119,12 @@ public class Weapon {
                                 "Attack Power\t+20"
                             );
                         } else {
-                            Wizard.setMaxHealth(Wizard.getMaxHealth() + 70);
-                            Wizard.setAttINT(Wizard.getAttINT() + 40);
+                            Wizard.setMaxHealth(Wizard.getMaxHealth() + 60);
+                            Wizard.setAttINT(Wizard.getAttINT() + 30);
                             System.out.println(
                                 "Player stat added : \n" +
-                                "Health\t\t+70\n" + 
-                                "Attack Power\t+40"
+                                "Health\t\t+60\n" + 
+                                "Attack Power\t+30"
                             );
                         }
                         return true;
