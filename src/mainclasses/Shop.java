@@ -72,10 +72,11 @@ public class Shop {
                 System.out.println("Sorry sir,your money is not enough to upgrade weapon");
             }
             else {
-                int afterBuy = player.getGold() - weaponPCost;
-                player.setGold(afterBuy);
+                if(player.getWeapon().upgradeWeapon()){
+                    int afterBuy = player.getGold() - weaponPCost;
+                    player.setGold(afterBuy);
+                }
             }
-            player.getWeapon().upgradeWeapon();
         }
 
         else if(pilih == 4){

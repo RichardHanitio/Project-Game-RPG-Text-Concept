@@ -3,6 +3,7 @@ package mainclasses;
 import java.util.Scanner;
 import playersubclasses.*;
 import enemysubclasses.*;
+import jdk.tools.jlink.internal.SymLinkResourcePoolEntry;
 import mainclasses.Player;
 
 public class Story {
@@ -19,10 +20,6 @@ public class Story {
         System.out.println("->");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-    }
-
-    private void orcBattle() {
-
     }
 
     public void setName(String nameInput) {
@@ -53,7 +50,7 @@ public class Story {
         pressAnyKeyToContinue();
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("\t\t\t\t\t\t\t\t\t       SRRC");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t       SRRC");
         System.out.println("");
         System.out.println("\t\t\t\t\t\t\t\t\t     Presents");
         System.out.println("");
@@ -64,7 +61,8 @@ public class Story {
                 "---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter your character name: ");
+        System.out.print("Please enter your character name: ");
+        System.out.println("");
         String nameInput = scanner.next();
         setName(nameInput);
         System.out.print("\033[H\033[2J");
@@ -77,7 +75,7 @@ public class Story {
         pressAnyKeyToContinue();
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("\t\t\t\t\t\t\t\t\t   Prologue");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t   Prologue");
         System.out.println("");
         System.out.println("");
         System.out.println("\t\t\t\t\t\t\t\t\t The Awakening");
@@ -172,7 +170,7 @@ public class Story {
         pressAnyKeyToContinue();
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("Alice father, Alex pleaded with tears on his eyes.");
+        System.out.println("Alice's father, Alex, pleaded with tears on his eyes.");
         pressAnyKeyToContinueDialog();
         System.out.println("Alex: I don't ask for anything, but please don't take my daughter away from us.");
         pressAnyKeyToContinueDialog();
@@ -182,9 +180,9 @@ public class Story {
         pressAnyKeyToContinueDialog();
         System.out.println("");
         System.out.println("Alex and Marie keep pleading, but its useless.");
-        System.out.println("The villagers looked at the little girl like a hungry wolf looking at its prey");
+        System.out.println("The villagers looked at the little girl like a hungry wolf looking at its prey.");
         System.out.println("They drag the little girl forcefully.");
-        System.out.println("Alice cried and shout");
+        System.out.println("Alice cried and shout.");
         System.out.println("");
         pressAnyKeyToContinue();
         System.out.println("");
@@ -204,12 +202,13 @@ public class Story {
                 choice.next();
                 continue;
             } else {
+                System.out.print("Choose : ");
                 choices = choice.nextInt();
                 if (choices == 1) {
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
                     System.out.println("You've decided to risk everything to save your family.");
-                    System.out.println("and start to fight back to take your sister back.");
+                    System.out.println("And start to fight back to take your sister back.");
                     status = false;
                     pressAnyKeyToContinueDialog();
                 } else if (choices == 2) {
@@ -290,6 +289,7 @@ public class Story {
                 choice.next();
                 continue;
             } else {
+                System.out.print("Choose : ");
                 choices = choice.nextInt();
                 if (choices == 1) {
                     System.out.println("");
@@ -326,53 +326,53 @@ public class Story {
         System.out.flush();
 
         System.out.println("Suddenly a huge light appears and called you.");
-        System.out.println("??: Hey Kid still alive?");
+        System.out.println("?? : Hey Kid, still alive?");
         pressAnyKeyToContinueDialog();
-        System.out.println(getName() + ": ...");
+        System.out.println(getName() + " : ...");
         pressAnyKeyToContinueDialog();
-        System.out.println("??: Hey Kid, you there?");
+        System.out.println("?? : Hey Kid, you there?");
         pressAnyKeyToContinueDialog();
-        System.out.println(getName() + ": ...");
+        System.out.println(getName() + " : ...");
         pressAnyKeyToContinueDialog();
-        System.out.println("??: Hey Kid!!!!!!!");
+        System.out.println("?? : Hey Kid!!!!!!!");
         pressAnyKeyToContinueDialog();
-        System.out.println(getName() + ": what do you want?");
+        System.out.println(getName() + " : what do you want?");
         pressAnyKeyToContinueDialog();
-        System.out.println("??: Do you want revenge kid?");
+        System.out.println("?? : Do you want revenge kid?");
         pressAnyKeyToContinueDialog();
-        System.out.println(getName() + ": Are you joking, I'm a farmer and you ask me to fight gods?!");
+        System.out.println(getName() + " : Are you joking, I'm a farmer and you ask me to fight gods?!");
         pressAnyKeyToContinueDialog();
-        System.out.println(getName() + ": And not any god, he's the ruler of all gods!");
+        System.out.println(getName() + " : And not any god, he's the ruler of all gods!");
         pressAnyKeyToContinueDialog();
-        System.out.println("??: I can give you power and guide you to fight him.");
+        System.out.println("?? : I can give you power and guide you to fight him.");
         pressAnyKeyToContinueDialog();
-        System.out.println(getName() + ": Who are you kidding, if you're here to scam me then go away.");
+        System.out.println(getName() + " : Who are you kidding, if you're here to scam me then go away.");
         pressAnyKeyToContinueDialog();
-        System.out.println("??: Have you heard of Chronos?");
+        System.out.println("?? : Have you heard of Chronos?");
         pressAnyKeyToContinueDialog();
-        System.out.println(getName() + ": Chronos, the fallen tyrant god Chronos?");
+        System.out.println(getName() + " : Chronos, the fallen tyrant god Chronos?");
         pressAnyKeyToContinueDialog();
-        System.out.println("Chronos(?): Yes I am that Chronos.");
+        System.out.println("Chronos(?) : Yes I am that Chronos.");
         pressAnyKeyToContinueDialog();
-        System.out.println(getName() + ": as I've told you, if you want to scam go away Chronos is long gone.");
+        System.out.println(getName() + " : as I've told you, if you want to scam go away Chronos is long gone.");
         pressAnyKeyToContinueDialog();
-        System.out.println(getName() + ": He got his ass kicked and he's long gone.");
+        System.out.println(getName() + " : He got his ass kicked and he's long gone.");
         pressAnyKeyToContinueDialog();
-        System.out.println("Chronos(?): Yes kid, I'm that Chronos who got his ass kicked.");
+        System.out.println("Chronos(?) : Yes kid, I'm that Chronos who got his ass kicked.");
         pressAnyKeyToContinueDialog();
-        System.out.println("Chronos: Zeus, that shitty son of mine tried to kill me.");
+        System.out.println("Chronos : Zeus, that shitty son of mine tried to kill me.");
         pressAnyKeyToContinueDialog();
-        System.out.println("Chronos: He thought he had killed me.");
+        System.out.println("Chronos : He thought he had killed me.");
         pressAnyKeyToContinueDialog();
-        System.out.println("Chronos: And as you can see I managed to survive.");
+        System.out.println("Chronos : And as you can see I managed to survive.");
         pressAnyKeyToContinueDialog();
-        System.out.println("Chronos: So, are you going to have your revenge?");
+        System.out.println("Chronos : So, are you going to have your revenge?");
         pressAnyKeyToContinueDialog();
-        System.out.println("Chronos: If its a power you want, you'll get it.");
+        System.out.println("Chronos : If its a power you want, you'll get it.");
         pressAnyKeyToContinueDialog();
-        System.out.println("Chronos: I'll guide you to have your revenge.");
+        System.out.println("Chronos : I'll guide you to have your revenge.");
         pressAnyKeyToContinueDialog();
-        System.out.println("Chronos: So what is it?");
+        System.out.println("Chronos : So what is it?");
         pressAnyKeyToContinueDialog();
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -388,6 +388,7 @@ public class Story {
                 choice.next();
                 continue;
             } else {
+                System.out.print("Choose : ");
                 choices = choice.nextInt();
                 if (choices == 1) {
                     status = false;
@@ -722,6 +723,7 @@ public class Story {
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
                         System.out.println("You enter the guild.");
+                        status = true;
                         while (status == true) {
                             System.out.println("Welcome to the Guild.");
                             System.out.println("Here are your quest.");
@@ -738,144 +740,87 @@ public class Story {
                             } else {
                                 choices = choice.nextInt();
                                 if (choices == 1) {
-                                    System.out.println("Ogre Subjugation Quest Has Started.");
-                                    if (playerID == 1) {
-                                        Battle battle = new Battle(playeraa, enemy1);
-                                        playeraa.setGold(playeraa.getGold() + 20);
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        System.out.println("Ogre Subjugation Quest Completed");
-                                        System.out.println("");
-                                        System.out.println("Quest Reward 20 gold.");
-                                        System.out.println("");
-                                        pressAnyKeyToContinue();
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        status = false;
-                                    } else if (playerID == 2) {
-                                        Battle battle = new Battle(playeraa, enemy1);
-                                        playeraa.setGold(playeraa.getGold() + 20);
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        System.out.println("Ogre Subjugation Quest Completed");
-                                        System.out.println("");
-                                        System.out.println("Quest Reward 20 gold.");
-                                        System.out.println("");
-                                        pressAnyKeyToContinue();
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        status = false;
-                                    } else if (playerID == 3) {
-                                        Battle battle = new Battle(playeraa, enemy1);
-                                        playeraa.setGold(playeraa.getGold() + 20);
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        System.out.println("Ogre Subjugation Quest Completed");
-                                        System.out.println("");
-                                        System.out.println("Quest Reward 20 gold.");
-                                        System.out.println("");
-                                        pressAnyKeyToContinue();
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        status = false;
+                                    if(enemy1.getHealth() < 0){
+                                        System.out.println("Quest cleared");
                                     }
+                                    else{
+                                        System.out.println("Ogre Subjugation Quest Has Started.");
+                                        if (playerID == 1) {
+                                            Battle battle = new Battle(playeraa, enemy1);
+                                            playeraa.setGold(playeraa.getGold() + 20);
+                                            System.out.print("\033[H\033[2J");
+                                            System.out.flush();
+                                            System.out.println("Ogre Subjugation Quest Completed");
+                                            System.out.println("");
+                                            System.out.println("Quest Reward 20 gold.");
+                                            System.out.println("");
+                                            pressAnyKeyToContinue();
+                                            System.out.print("\033[H\033[2J");
+                                            System.out.flush();
+                                            status = false;
+                                        }
+                                    } 
 
-                                } else if (choices == 2) {
-                                    System.out.println("Yeti Subjugation Quest Has Started.");
-                                    if (playerID == 1) {
-                                        Battle battle = new Battle(playeraa, enemy2);
-                                        playeraa.setGold(playeraa.getGold() + 40);
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        System.out.println("Yeti Subjugation Quest Completed");
-                                        System.out.println("");
-                                        System.out.println("Quest Reward 40 gold.");
-                                        System.out.println("");
-                                        pressAnyKeyToContinue();
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        status = false;
-                                    } else if (playerID == 2) {
-                                        Battle battle = new Battle(playeraa, enemy2);
-                                        playeraa.setGold(playeraa.getGold() + 40);
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        System.out.println("Yeti Subjugation Quest Completed");
-                                        System.out.println("");
-                                        System.out.println("Quest Reward 40 gold.");
-                                        System.out.println("");
-                                        pressAnyKeyToContinue();
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        status = false;
-                                    } else if (playerID == 3) {
-                                        Battle battle = new Battle(playeraa, enemy2);
-                                        playeraa.setGold(playeraa.getGold() + 40);
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        System.out.println("Yeti Subjugation Quest Completed");
-                                        System.out.println("");
-                                        System.out.println("Quest Reward 40 gold.");
-                                        System.out.println("");
-                                        pressAnyKeyToContinue();
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        status = false;
+                                } 
+                                else if (choices == 2) {
+                                    if(enemy2.getHealth() < 0){
+                                        System.out.println("Quest cleared");
                                     }
+                                    else{
+                                        System.out.println("Yeti Subjugation Quest Has Started.");
+                                        if (playerID == 1) {
+                                            Battle battle = new Battle(playeraa, enemy2);
+                                            playeraa.setGold(playeraa.getGold() + 40);
+                                            System.out.print("\033[H\033[2J");
+                                            System.out.flush();
+                                            System.out.println("Yeti Subjugation Quest Completed");
+                                            System.out.println("");
+                                            System.out.println("Quest Reward 40 gold.");
+                                            System.out.println("");
+                                            pressAnyKeyToContinue();
+                                            System.out.print("\033[H\033[2J");
+                                            System.out.flush();
+                                            status = false;
+                                        } 
+                                    } 
 
-                                } else if (choices == 3) {
-                                    System.out.println("Orochi Subjugation Quest Has Started.");
-                                    if (playerID == 1) {
-                                        Battle battle = new Battle(playeraa, enemy3);
-                                        playeraa.setGold(playeraa.getGold() + 60);
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        System.out.println("Orochi Subjugation Quest Completed");
+                                } 
+                                else if (choices == 3) {
+                                    if(enemy3.getHealth() < 0){
                                         System.out.println("");
-                                        System.out.println("Quest Reward 60 gold.");
+                                        System.out.println("-----------------");
+                                        System.out.println("| Quest cleared |");
+                                        System.out.println("-----------------");
                                         System.out.println("");
-                                        pressAnyKeyToContinue();
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        status = false;
-                                        state = false;
-                                    } else if (playerID == 2) {
-                                        Battle battle = new Battle(playeraa, enemy3);
-                                        playeraa.setGold(playeraa.getGold() + 60);
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        System.out.println("Orochi Subjugation Quest Completed");
-                                        System.out.println("");
-                                        System.out.println("Quest Reward 60 gold.");
-                                        System.out.println("");
-                                        pressAnyKeyToContinue();
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        status = false;
-                                        state = false;
-                                    } else if (playerID == 3) {
-                                        Battle battle = new Battle(playeraa, enemy3);
-                                        playeraa.setGold(playeraa.getGold() + 60);
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        System.out.println("Orochi Subjugation Quest Completed");
-                                        System.out.println("");
-                                        System.out.println("Quest Reward 60 gold.");
-                                        System.out.println("");
-                                        pressAnyKeyToContinue();
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        status = false;
-                                        state = false;
-                                    } else if (playerID == 4) {
-                                        System.out.print("\033[H\033[2J");
-                                        System.out.flush();
-                                        System.out.println("Thank you very much, Please come again!");
-                                        System.out.println("");
-                                        status = false;
-                                        pressAnyKeyToContinue();
                                     }
-                                } else {
+                                    else{
+                                        System.out.println("Orochi Subjugation Quest Has Started.");
+                                        if (playerID == 1) {
+                                            Battle battle = new Battle(playeraa, enemy3);
+                                            playeraa.setGold(playeraa.getGold() + 60);
+                                            System.out.print("\033[H\033[2J");
+                                            System.out.flush();
+                                            System.out.println("Orochi Subjugation Quest Completed");
+                                            System.out.println("");
+                                            System.out.println("Quest Reward 60 gold.");
+                                            System.out.println("");
+                                            pressAnyKeyToContinue();
+                                            System.out.print("\033[H\033[2J");
+                                            System.out.flush();
+                                            status = false;
+                                            state = false;
+                                        }
+                                    }
+                                }
+                                else if(choices == 4){
+                                    System.out.print("\033[H\033[2J");
+                                    System.out.flush();
+                                    System.out.println("Thank you very much, Please come again!");
+                                    System.out.println("");
+                                    status = false;
+                                    pressAnyKeyToContinue();
+                                }
+                                else {
                                     System.out.println("Please input 1 or 2 only.");
                                     System.out.println("");
                                     pressAnyKeyToContinue();

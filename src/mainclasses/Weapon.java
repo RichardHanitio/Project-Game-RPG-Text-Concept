@@ -37,7 +37,7 @@ public class Weapon {
         return this.currentWeapon;
     }
 
-    public void upgradeWeapon() {
+    public boolean upgradeWeapon() {
         if (weaponLvl<2) {
             switch (this.playerClassID) {
                 // fighter
@@ -65,10 +65,11 @@ public class Weapon {
                                 "Attack Power\t+50"
                             );
                         }
+                        return true;
                     } else {
                         System.out.println("You can't upgrade this weapon yet...Clear next stage to upgrade!");
+                        return false;
                     }
-                    break;
                 // ranger
                 case 2:
                     if (weaponLvl < Player.getCurrentStage()-1){
@@ -94,11 +95,13 @@ public class Weapon {
                                 "Attack Power\t+70"
                             );
                         }
+                        return true;
                     } else {
                         System.out.println("You can't upgrade this weapon yet...Clear next stage to upgrade!");
+                        return false;
                     }
                     
-                    break;
+                    
                 // wizard
                 case 3:
                     if (weaponLvl < Player.getCurrentStage()-1){
@@ -124,11 +127,13 @@ public class Weapon {
                                 "Attack Power\t+40"
                             );
                         }
+                        return true;
                     } else {
                         System.out.println("You can't upgrade this weapon yet...Clear next stage to upgrade!");
+                        return false;
                     }
             }
-        }
+        }return false;
     }
 
 

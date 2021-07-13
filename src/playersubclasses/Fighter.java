@@ -13,7 +13,7 @@ public class Fighter extends Player {
         //Nama berasal dari player
         //health awal   : 270
         //mana awal     : 0
-        super(name,270,0,25,0);
+        super(name,270,0,2500,0);
         super.setClassID(1);
         this.weapon = new Weapon(getClassID());
         super.setWeapon(weapon);
