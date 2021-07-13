@@ -704,6 +704,7 @@ public class Story {
                     continue;
                 } else {
                     choices = choice.nextInt();
+                    
                     if (choices == 1) {
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
@@ -716,7 +717,8 @@ public class Story {
                             Shop shop = new Shop(playeraa);
                         }
 
-                    } else if (choices == 2) {
+                    } 
+                    else if (choices == 2) {
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
                         System.out.println("You enter the guild.");
@@ -852,7 +854,7 @@ public class Story {
                                         status = false;
                                         state = false;
                                     } else if (playerID == 3) {
-                                        Battle battle = new Battle(playeraa, enemy1);
+                                        Battle battle = new Battle(playeraa, enemy3);
                                         playeraa.setGold(playeraa.getGold() + 60);
                                         System.out.print("\033[H\033[2J");
                                         System.out.flush();
