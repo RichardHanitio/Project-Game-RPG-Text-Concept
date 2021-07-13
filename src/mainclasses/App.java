@@ -2,20 +2,15 @@ package mainclasses;
 import java.util.Scanner;
 import playersubclasses.*;
 import enemysubclasses.*;
-
+import mainclasses.Story;
 public class App {
     public static void main(String[] args) throws Exception {
-        Player player1 = new Ranger("Laplace");
-        
-        Enemy enemy1 = new Ogre();
-        Enemy enemy2 = new Yeti();
-        Enemy enemy3 = new Orochi();
-        Battle battle = new Battle(player1, enemy1);
-        Shop shop = new Shop(player1);
-        Battle battle1 = new Battle(player1,enemy2);
-        Shop shop1 = new Shop(player1);
-        Battle battle2 = new Battle(player1,enemy3);
-        
+        // Player player1 = new Fighter("bambnag");
+        // Enemy enemy1 = new Ogre();
+        // Battle battle = new Battle(player1,enemy1);
+        Story story = new Story();
+        // story.story1();
+        story.story2();
         // Scanner scanner = new Scanner(System.in);
         // int choice;
         // String charName = null;
