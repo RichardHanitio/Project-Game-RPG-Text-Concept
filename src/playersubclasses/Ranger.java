@@ -12,7 +12,7 @@ public class Ranger extends Player{
         //Nama berasal dari player
         //health awal   : 80
         //mana awal     : 0
-        super(name,80,0,45,0);
+        super(name,80,0,55,0);
         super.setClassID(2);
         this.weapon = new Weapon(getClassID());
         super.setWeapon(weapon);

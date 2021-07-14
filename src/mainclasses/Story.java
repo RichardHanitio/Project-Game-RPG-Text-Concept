@@ -669,10 +669,7 @@ public class Story {
                     pressAnyKeyToContinue();
                 }
             }
-            System.out.print("\033[H\033[2J");
             System.out.flush();
-            System.out.println("Obtained 20 gold!");
-
             System.out.println("You decided to go to the village.");
             System.out.println("");
             pressAnyKeyToContinue();
