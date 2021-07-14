@@ -6,19 +6,21 @@ import enemysubclasses.*;
 import mainclasses.Player;
 
 public class Story {
-    static String name;
-    static int playerID;
+    private String name;
+    private int playerID;
 
     private void pressAnyKeyToContinue() {
         System.out.println("Press Enter Key to Continue. . . ");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
+        scanner.close();
     }
 
     private void pressAnyKeyToContinueDialog() {
         System.out.println("->");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
+        scanner.close();
     }
 
     public void setName(String nameInput) {
@@ -59,6 +61,7 @@ public class Story {
         System.out.println(
                 "------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
+        choice.close();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter your character name: ");
         String nameInput = scanner.next();
@@ -188,6 +191,7 @@ public class Story {
         System.out.println("Alice: " + getName() + " please help me!!!!");
         System.out.println("");
         System.out.println("");
+        scanner.close();
 
         while (status == true) {
             System.out.println("What are you going to do?");
@@ -494,6 +498,7 @@ public class Story {
         return player;
     }
 
+
     public void story2() {
         Player playeraa = story1();
         Enemy enemy1 = new Ogre();
@@ -607,7 +612,7 @@ public class Story {
         System.err.println("");
         System.err.println("");
         System.out.println("On your way to the village, you met a grandma who's attacked by an orc.");
-
+        choice.close();
         while (status == true) {
             System.out.println("What are you going to do?");
             System.out.println("1. Fight the Orc and save her.");
@@ -625,14 +630,7 @@ public class Story {
                     System.out.println("Grandma: Help Me!!!!!!!!!");
                     System.out.println("");
                     pressAnyKeyToContinue();
-
-                    if (playerID == 1) {
-                        Battle battle = new Battle(playeraa, enemy1);
-                    } else if (playerID == 2) {
-                        Battle battle = new Battle(playeraa, enemy1);
-                    } else if (playerID == 3) {
-                        Battle battle = new Battle(playeraa, enemy1);
-                    }
+                    Battle battle = new Battle(playeraa, enemy1);
                     status = false;
                     pressAnyKeyToContinue();
                     System.out.print("\033[H\033[2J");
@@ -642,16 +640,8 @@ public class Story {
                     System.out.println("Grandma: What a great noble hero you are.");
                     pressAnyKeyToContinueDialog();
                     System.out.println("Grandma: Here are some gold for you young hero.");
-                    if (playerID == 1) {
-                        playeraa.setGold(playeraa.getGold() + 20);
-                        System.out.println("Obtained 20 gold!");
-                    } else if (playerID == 2) {
-                        playeraa.setGold(playeraa.getGold() + 20);
-                        System.out.println("Obtained 20 gold!");
-                    } else if (playerID == 3) {
-                        playeraa.setGold(playeraa.getGold() + 20);
-                        System.out.println("Obtained 20 gold!");
-                    }
+                    playeraa.setGold(playeraa.getGold() + 120);
+                    System.out.println("Obtained 120 gold!");
                     System.out.println(getName() + ": Thank you Grandma.");
                     System.out.println("");
                     pressAnyKeyToContinue();
@@ -749,12 +739,11 @@ public class Story {
                                         System.out.println("Ogre Subjugation Quest Has Started.");
                                         if (playerID == 1||playerID == 2||playerID == 3) {
                                             Battle battle = new Battle(playeraa, enemy1);
-                                            playeraa.setGold(playeraa.getGold() + 20);
                                             System.out.print("\033[H\033[2J");
                                             System.out.flush();
                                             System.out.println("Ogre Subjugation Quest Completed");
                                             System.out.println("");
-                                            System.out.println("Quest Reward 20 gold.");
+                                            System.out.println("Quest Reward "+enemy1.getHealth()+" gold.");
                                             System.out.println("");
                                             pressAnyKeyToContinue();
                                             System.out.print("\033[H\033[2J");
@@ -776,12 +765,11 @@ public class Story {
                                         System.out.println("Yeti Subjugation Quest Has Started.");
                                         if (playerID == 1||playerID == 2|| playerID == 3) {
                                             Battle battle = new Battle(playeraa, enemy2);
-                                            playeraa.setGold(playeraa.getGold() + 40);
                                             System.out.print("\033[H\033[2J");
                                             System.out.flush();
                                             System.out.println("Yeti Subjugation Quest Completed");
                                             System.out.println("");
-                                            System.out.println("Quest Reward 40 gold.");
+                                            System.out.println("Quest Reward "+enemy2.getHealth()+" gold.");
                                             System.out.println("");
                                             pressAnyKeyToContinue();
                                             System.out.print("\033[H\033[2J");
@@ -803,12 +791,11 @@ public class Story {
                                         System.out.println("Orochi Subjugation Quest Has Started.");
                                         if (playerID == 1 || playerID == 2|| playerID == 3) {
                                             Battle battle = new Battle(playeraa, enemy3);
-                                            playeraa.setGold(playeraa.getGold() + 60);
                                             System.out.print("\033[H\033[2J");
                                             System.out.flush();
                                             System.out.println("Orochi Subjugation Quest Completed");
                                             System.out.println("");
-                                            System.out.println("Quest Reward 60 gold.");
+                                            System.out.println("Quest Reward "+enemy3.getHealth()+" gold.");
                                             System.out.println("");
                                             pressAnyKeyToContinue();
                                             System.out.print("\033[H\033[2J");
