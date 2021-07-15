@@ -13,14 +13,12 @@ public class Story {
         System.out.println("Press Enter Key to Continue. . . ");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-        scanner.close();
     }
 
     private void pressAnyKeyToContinueDialog() {
         System.out.println("->");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-        scanner.close();
     }
 
     public void setName(String nameInput) {
@@ -61,7 +59,6 @@ public class Story {
         System.out.println(
                 "------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        choice.close();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter your character name: ");
         String nameInput = scanner.next();
@@ -191,7 +188,6 @@ public class Story {
         System.out.println("Alice: " + getName() + " please help me!!!!");
         System.out.println("");
         System.out.println("");
-        scanner.close();
 
         while (status == true) {
             System.out.println("What are you going to do?");
@@ -588,7 +584,7 @@ public class Story {
 
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("\t\t\t\t\t\t\t\t\t\t Chapter One");
+        System.out.println("\t\t\t\t\t\t\t\t\tChapter One");
         System.out.println("");
         System.out.println("");
         System.out.println("\t\t\t\t\t\t\t\t\t  The Beginning");
@@ -612,7 +608,7 @@ public class Story {
         System.err.println("");
         System.err.println("");
         System.out.println("On your way to the village, you met a grandma who's attacked by an orc.");
-        choice.close();
+
         while (status == true) {
             System.out.println("What are you going to do?");
             System.out.println("1. Fight the Orc and save her.");
