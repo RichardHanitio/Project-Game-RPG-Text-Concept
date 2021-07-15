@@ -30,7 +30,7 @@ public class Story {
     }
 
     public Player story1() {
-        Player player = new Wizard ("BAMBANG");
+        Player player = new Wizard("BAMBANG");
 
         boolean status = true;
         int choices;
@@ -494,19 +494,16 @@ public class Story {
         return player;
     }
 
-
     public void story2() {
         Player playeraa = story1();
         Enemy enemy1 = new Ogre();
         Enemy enemy2 = new Yeti();
         Enemy enemy3 = new Orochi();
-    
+
         boolean status = true;
         boolean state = true;
         int choices;
         Scanner choice = new Scanner(System.in);
-
-
 
         System.out.println("Chronos: Congratulations " + getName() + ", you're now qualified to fight.");
         pressAnyKeyToContinueDialog();
@@ -547,7 +544,7 @@ public class Story {
         pressAnyKeyToContinueDialog();
         System.out.println("Chronos: Yes, There are various guardians.");
         pressAnyKeyToContinueDialog();
-        System.out.println("Chronos: Fenrir, Orochi, Lupus, Basilisk, and more");
+        System.out.println("Chronos: Fenrir, Orochi, Kraken, Phoenix");
         pressAnyKeyToContinueDialog();
         System.out.println(getName() + ": Orochi?! Isn't that. . . ");
         pressAnyKeyToContinueDialog();
@@ -688,7 +685,7 @@ public class Story {
                     continue;
                 } else {
                     choices = choice.nextInt();
-                    
+
                     if (choices == 1) {
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
@@ -701,8 +698,7 @@ public class Story {
                             Shop shop = new Shop(playeraa);
                         }
 
-                    } 
-                    else if (choices == 2) {
+                    } else if (choices == 2) {
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
                         System.out.println("You enter the guild.");
@@ -724,74 +720,69 @@ public class Story {
                             } else {
                                 choices = choice.nextInt();
                                 if (choices == 1) {
-                                    if(enemy1.getHealth() < 0){
+                                    if (enemy1.getHealth() < 0) {
                                         System.out.println("");
                                         System.out.println("-----------------");
                                         System.out.println("| Quest cleared |");
                                         System.out.println("-----------------");
                                         System.out.println("");
-                                    }
-                                    else{
+                                    } else {
                                         System.out.println("Ogre Subjugation Quest Has Started.");
-                                        if (playerID == 1||playerID == 2||playerID == 3) {
+                                        if (playerID == 1 || playerID == 2 || playerID == 3) {
                                             Battle battle = new Battle(playeraa, enemy1);
                                             System.out.print("\033[H\033[2J");
                                             System.out.flush();
                                             System.out.println("Ogre Subjugation Quest Completed");
                                             System.out.println("");
-                                            System.out.println("Quest Reward "+enemy1.getHealth()+" gold.");
+                                            System.out.println("Quest Reward " + enemy1.getHealth() + " gold.");
                                             System.out.println("");
                                             pressAnyKeyToContinue();
                                             System.out.print("\033[H\033[2J");
                                             System.out.flush();
                                             status = false;
                                         }
-                                    } 
+                                    }
 
-                                } 
-                                else if (choices == 2) {
-                                    if(enemy2.getHealth() < 0){
+                                } else if (choices == 2) {
+                                    if (enemy2.getHealth() < 0) {
                                         System.out.println("");
                                         System.out.println("-----------------");
                                         System.out.println("| Quest cleared |");
                                         System.out.println("-----------------");
                                         System.out.println("");
-                                    }
-                                    else{
+                                    } else {
                                         System.out.println("Yeti Subjugation Quest Has Started.");
-                                        if (playerID == 1||playerID == 2|| playerID == 3) {
+                                        if (playerID == 1 || playerID == 2 || playerID == 3) {
                                             Battle battle = new Battle(playeraa, enemy2);
                                             System.out.print("\033[H\033[2J");
                                             System.out.flush();
                                             System.out.println("Yeti Subjugation Quest Completed");
                                             System.out.println("");
-                                            System.out.println("Quest Reward "+enemy2.getHealth()+" gold.");
+                                            System.out.println("Quest Reward " + enemy2.getHealth() + " gold.");
                                             System.out.println("");
                                             pressAnyKeyToContinue();
                                             System.out.print("\033[H\033[2J");
                                             System.out.flush();
                                             status = false;
-                                        } 
-                                    } 
+                                        }
+                                    }
 
-                                } 
-                                else if (choices == 3) {
-                                    if(enemy3.getHealth() < 0){
+                                } else if (choices == 3) {
+                                    if (enemy3.getHealth() < 0) {
                                         System.out.println("");
                                         System.out.println("-----------------");
                                         System.out.println("| Quest cleared |");
                                         System.out.println("-----------------");
                                         System.out.println("");
-                                    }
-                                    else{
+                                    } else {
                                         System.out.println("Orochi Subjugation Quest Has Started.");
-                                        if (playerID == 1 || playerID == 2|| playerID == 3) {
+                                        if (playerID == 1 || playerID == 2 || playerID == 3) {
                                             Battle battle = new Battle(playeraa, enemy3);
                                             System.out.print("\033[H\033[2J");
                                             System.out.flush();
                                             System.out.println("Orochi Subjugation Quest Completed");
                                             System.out.println("");
-                                            System.out.println("Quest Reward "+enemy3.getHealth()+" gold.");
+                                            System.out.println("Quest Reward " + enemy3.getHealth() + " gold.");
                                             System.out.println("");
                                             pressAnyKeyToContinue();
                                             System.out.print("\033[H\033[2J");
@@ -800,16 +791,14 @@ public class Story {
                                             state = false;
                                         }
                                     }
-                                }
-                                else if(choices == 4){
+                                } else if (choices == 4) {
                                     System.out.print("\033[H\033[2J");
                                     System.out.flush();
                                     System.out.println("Thank you very much, Please come again!");
                                     System.out.println("");
                                     status = false;
                                     pressAnyKeyToContinue();
-                                }
-                                else {
+                                } else {
                                     System.out.println("Please input 1 or 2 only.");
                                     System.out.println("");
                                     pressAnyKeyToContinue();
