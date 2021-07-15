@@ -53,7 +53,7 @@ public class Story {
         System.out.println("");
         System.out.println("\t\t\t\t\t\t\t\t\t     Presents");
         System.out.println("");
-        System.out.println("\t\t\t\t\t\t\t\t\t   CHRONOS ZERO");
+        System.out.println("\t\t\t\t\t\t\t\t\t   CHRONO ZERO");
         System.out.println("");
         System.out.println("");
         System.out.println(
