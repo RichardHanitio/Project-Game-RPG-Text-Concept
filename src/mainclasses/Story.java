@@ -734,7 +734,7 @@ public class Story {
                                             System.out.flush();
                                             System.out.println("Ogre Subjugation Quest Completed");
                                             System.out.println("");
-                                            System.out.println("Quest Reward " + enemy1.getHealth() + " gold.");
+                                            System.out.println("Quest Reward 600 gold.");
                                             System.out.println("");
                                             pressAnyKeyToContinue();
                                             System.out.print("\033[H\033[2J");
@@ -758,7 +758,7 @@ public class Story {
                                             System.out.flush();
                                             System.out.println("Yeti Subjugation Quest Completed");
                                             System.out.println("");
-                                            System.out.println("Quest Reward " + enemy2.getHealth() + " gold.");
+                                            System.out.println("Quest Reward 1200 gold.");
                                             System.out.println("");
                                             pressAnyKeyToContinue();
                                             System.out.print("\033[H\033[2J");
@@ -782,7 +782,7 @@ public class Story {
                                             System.out.flush();
                                             System.out.println("Orochi Subjugation Quest Completed");
                                             System.out.println("");
-                                            System.out.println("Quest Reward " + enemy3.getHealth() + " gold.");
+                                            System.out.println("Quest Reward 3000 gold.");
                                             System.out.println("");
                                             pressAnyKeyToContinue();
                                             System.out.print("\033[H\033[2J");
