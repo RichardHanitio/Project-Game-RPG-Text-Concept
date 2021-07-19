@@ -9,3 +9,37 @@
 4. Setiawan Junior (03082180037) [Github](https://github.com/Silverlake86)
 
 
+
+All
+-Pembuatan Class Sort [19 July 2021]
+-Pembuatan Subclass Enemy Slime (Ricky) [19 July 2021]
+
+
+
+Ricky
+-Pembuatan Class Slime (1.tambahkan subclass) [19 July 2021]
+-Penambahan method overloading (2.buat method overloading pada subclass) [19 July 2021]
+-
+-
+-Penambahan method didalam Class Sort, selectionSort (5.tambahkan fitur sort data) [19 July 2021]
+
+Richard
+-
+-
+-
+-
+-
+
+Calvin
+-
+-
+-
+-
+-
+
+Setiawan
+-
+-
+-
+-
+-

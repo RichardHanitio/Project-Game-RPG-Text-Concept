@@ -1,14 +1,28 @@
 package mainclasses;
+import java.util.ArrayList;
 import java.util.Scanner;
 import playersubclasses.*;
 import enemysubclasses.*;
 public class App {
     public static void main(String[] args) throws Exception {
+         // Story story = new Story();
+        // story.story2();
+        // Enemy slime = new Slime();
+        // Player a = new Fighter("aaaa");
+        // Battle abc = new Battle(a,slime);
+        Sort sort = new Sort();
 
-        Story story = new Story();
-        story.story2();
-        
-       }
+        Enemy enemy1 = new Ogre();
+        Enemy enemy2 = new Yeti();
+        Enemy enemy3 = new Orochi();
+        Enemy enemy4 = new Slime();
+
+        Enemy listENEMY[] = {enemy1,enemy2,enemy3,enemy4};
+        Enemy sorted[] = sort.selectionSort(listENEMY);
+        for(Enemy a : sorted){
+            System.out.println(a.toString());
+        }
+    }
     
     public static void clearScreen() {
         //to clear screen
