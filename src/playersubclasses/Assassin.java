@@ -15,10 +15,10 @@ public class Assassin extends Player{
 
     // constructors
     public Assassin(String name){
-        // health  : 70
+        // health  : 90
         // STR dmg : 80
         // mana    : 0
-        super(name,1000,0,80,0);
+        super(name,90,0,80,0);
         super.setClassID(1); //weapon assassin sama dengan weapon fighter
         this.weapon = new Weapon(getClassID());
         super.setWeapon(weapon);

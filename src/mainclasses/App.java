@@ -1,8 +1,4 @@
 package mainclasses;
-import java.util.ArrayList;
-import java.util.Scanner;
-import playersubclasses.*;
-import enemysubclasses.*;
 public class App {
     public static void main(String[] args) throws Exception {
          // Story story = new Story();
@@ -23,9 +19,9 @@ public class App {
         //     System.out.println(a.toString());
         // }
 
-        Player player = new Assassin("Ninja");
-        Enemy enemy = new Orochi();
-        Battle battle = new Battle(player, enemy);
+        // Player player = new Assassin("Ninja");
+        // Enemy enemy = new Orochi();
+        // Battle battle = new Battle(player, enemy);
     }
     
     public static void clearScreen() {
