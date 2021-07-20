@@ -10,18 +10,22 @@ public class App {
         // Enemy slime = new Slime();
         // Player a = new Fighter("aaaa");
         // Battle abc = new Battle(a,slime);
-        Sort sort = new Sort();
+        // Sort sort = new Sort();
 
-        Enemy enemy1 = new Ogre();
-        Enemy enemy2 = new Yeti();
-        Enemy enemy3 = new Orochi();
-        Enemy enemy4 = new Slime();
+        // Enemy enemy1 = new Ogre();
+        // Enemy enemy2 = new Yeti();
+        // Enemy enemy3 = new Orochi();
+        // Enemy enemy4 = new Slime();
 
-        Enemy listENEMY[] = {enemy1,enemy2,enemy3,enemy4};
-        Enemy sorted[] = sort.selectionSort(listENEMY);
-        for(Enemy a : sorted){
-            System.out.println(a.toString());
-        }
+        // Enemy listENEMY[] = {enemy1,enemy2,enemy3,enemy4};
+        // Enemy sorted[] = sort.selectionSort(listENEMY);
+        // for(Enemy a : sorted){
+        //     System.out.println(a.toString());
+        // }
+
+        Player player = new Assassin("Ninja");
+        Enemy enemy = new Orochi();
+        Battle battle = new Battle(player, enemy);
     }
     
     public static void clearScreen() {

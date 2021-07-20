@@ -24,7 +24,7 @@ Ricky
 -Penambahan method didalam Class Sort, selectionSort (5.tambahkan fitur sort data) [19 July 2021]
 
 Richard
--
+-Pembuatan Class Assassin (subclass dari Player)
 -
 -
 -

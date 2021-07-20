@@ -20,7 +20,7 @@ public class Yeti extends Enemy{
     @Override
     public void attack(int turnCounter) {
         System.out.println("{ Yeti Attacks Player }");
-        Player.setHealth(Player.getHealth()-30);
+        Player.setHealth(Player.getHealth()-getAttackPower());
         Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 

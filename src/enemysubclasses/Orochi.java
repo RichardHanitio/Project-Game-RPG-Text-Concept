@@ -20,7 +20,7 @@ public class Orochi extends Enemy{
     @Override
     public void attack(int turnCounter) {
         System.out.println("{ Orochi Attacks Player }");
-        Player.setHealth(Player.getHealth()-40);    
+        Player.setHealth(Player.getHealth()-getAttackPower());    
         Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 

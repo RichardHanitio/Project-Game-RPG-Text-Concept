@@ -20,7 +20,7 @@ public class Ogre extends Enemy{
     @Override
     public void attack(int turnCounter) {
         System.out.println("{ Ogre Attacks Player }");
-        Player.setHealth(Player.getHealth()-20);
+        Player.setHealth(Player.getHealth()-getAttackPower());
         Battle.setTurnCounter(Battle.getTurnCounter() + 1);
     }
 
