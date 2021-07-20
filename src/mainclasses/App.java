@@ -1,4 +1,8 @@
 package mainclasses;
+import mainclasses.*;
+import playersubclasses.*;
+import enemysubclasses.*;
+
 public class App {
     public static void main(String[] args) throws Exception {
          // Story story = new Story();
@@ -22,6 +26,20 @@ public class App {
         // Player player = new Assassin("Ninja");
         // Enemy enemy = new Orochi();
         // Battle battle = new Battle(player, enemy);
+        
+        // Sort sort = new Sort();
+        // Player assassin = new Assassin("Assassin");
+        // Player fighter = new Fighter("Fighter");
+        // Player ranger = new Ranger("Ranger");
+        // Player wizard = new Wizard("Wizard");
+        // Player[] players = {assassin, fighter, ranger, wizard};
+        // Player[] sortedPlayers = sort.bubbleSort(players);
+        // int i = 1;
+        // System.out.println("LARGEST TO SMALLEST PLAYER HEALTH : ");
+        // for(Player p : sortedPlayers){
+        //     System.out.println(i+ ". \n" + p.printOriginalString()+"\n");
+        //     i++;
+        // }
     }
     
     public static void clearScreen() {

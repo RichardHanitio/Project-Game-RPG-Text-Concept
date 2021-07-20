@@ -103,6 +103,14 @@ public class Fighter extends Player {
 
     }
 
+    @Override
+    public String printOriginalString() {
+        return "Player Stats   : \n" + "Name           : " + getName() + "\n" + "Health         : "
+                + getClassOriginalHealth() + "\n" + "Mana           : " + getMana() + "\n" + "Attack Power   : "
+                + getAttSTR() + "\n" + "Weapon         : " + weapon.toString();
+
+    }
+
     public void playerMenu(){
         System.out.println("------------------------------------------------------");
         System.out.println("|                     Menu                           |");

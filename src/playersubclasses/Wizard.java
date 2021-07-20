@@ -14,8 +14,8 @@ public class Wizard extends Player{
     public Wizard(String name){
         //Nama berasal dari player
         //health awal   : 150
-        //mana awal     : 10
-        super(name,150,10,0,10);
+        //mana awal     : 5
+        super(name,150,5,0,10);
         super.setClassID(3);
         this.weapon = new Weapon(getClassID());
         super.setWeapon(weapon);
@@ -121,6 +121,14 @@ public class Wizard extends Player{
         "Mana           : " + getMana() + "\n" +
         "Attack Power   : " + getAttINT() + "\n"+
         "Weapon         : " + weapon.toString();
+    }
+
+    @Override
+    public String printOriginalString() {
+        return "Player Stats   : \n" + "Name           : " + getName() + "\n" + "Health         : "
+                + getClassOriginalHealth() + "\n" + "Mana           : " + getMana() + "\n" + "Attack Power   : "
+                + getAttSTR() + "\n" + "Weapon         : " + weapon.toString();
+
     }
 
     public void playerMenu(){

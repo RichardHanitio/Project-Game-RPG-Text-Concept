@@ -14,6 +14,9 @@ public abstract class Player{
     private static int currentStage = 1;
     private static int attSTR, attINT;
     private int classID;
+    
+    private int classOriginalHealth;
+
     Scanner masukan = new Scanner(System.in);
 
     // constructors
@@ -26,9 +29,17 @@ public abstract class Player{
         attSTR = STR;
         attINT = INT;
         setMaxHealth(health);
+        setClassHealth(health);
     }
 
     //getter setter
+    public int getClassOriginalHealth() {
+        return this.classOriginalHealth;
+    }
+    public void setClassHealth(int classHealth) {
+        this.classOriginalHealth = classHealth;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -170,5 +181,7 @@ public abstract class Player{
     public abstract int multiplier();
 
     public void playerMenu(){}
+
+    public abstract String printOriginalString();
 
 }
