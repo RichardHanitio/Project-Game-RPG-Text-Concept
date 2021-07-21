@@ -40,6 +40,9 @@ public class App {
         //     System.out.println(i+ ". \n" + p.printOriginalString()+"\n");
         //     i++;
         // }
+
+        StoryUAS storyuas = new StoryUAS();
+        storyuas.story2();
     }
     
     public static void clearScreen() {
@@ -48,13 +51,5 @@ public class App {
         System.out.flush();
     }
 
-    public static boolean isNumeric(String str) {
-        int intValue;
-        try {
-            intValue = Integer.parseInt(str); //error apabila merupakan abjad
-        } catch (NumberFormatException nfe) {
-            return false;
-        }
-        return true;
-    }
+
 }

@@ -11,9 +11,10 @@
 
 ---
 ### UAS Pemrograman Berbasis Objek :
+0. All
+    * Penambahan exception handling untuk semua input pada class StoryUAS
 
 1. Calvin Wendy
-    * -
     * -
     * -
     * -
@@ -24,17 +25,14 @@
     * Penambahan method overloading pada skill 2 class Slime
     * Penambahan method didalam Class Sort, selectionSort (Sorting ranking enemy berdasarkan health)
     * -
-    * -
 
 3. Richard Hanitio
     * Pembuatan Class Assassin (subclass dari Player)
     * Penambahan method overloading pada skill 1 class Assassin
     * Penambahan method dalam class Sort, bubbleSort (Sorting ranking player berdasarkan health)
     * -
-    * -
 
 4. Setiawan Junior
-    * -
     * -
     * -
     * -
