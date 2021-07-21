@@ -7,9 +7,9 @@ public class App {
     public static void main(String[] args) throws Exception {
          // Story story = new Story();
         // story.story2();
-        // Enemy slime = new Slime();
-        // Player a = new Fighter("aaaa");
-        // Battle abc = new Battle(a,slime);
+        Enemy slime = new Slime();
+        Player a = new Fighter("aaaa");
+        Battle abc = new Battle(a,slime);
         // Sort sort = new Sort();
 
         // Enemy enemy1 = new Ogre();
@@ -41,8 +41,10 @@ public class App {
         //     i++;
         // }
 
-        StoryUAS storyuas = new StoryUAS();
-        storyuas.story2();
+        // StoryUAS storyuas = new StoryUAS();
+        // storyuas.story2();
+
+
     }
     
     public static void clearScreen() {

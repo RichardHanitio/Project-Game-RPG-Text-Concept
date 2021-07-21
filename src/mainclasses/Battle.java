@@ -1,4 +1,5 @@
 package mainclasses;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Battle {
@@ -77,13 +78,32 @@ public class Battle {
     }
 
     public void midBattle(){
-        int pilihan, enemyPilihan;
+        int pilihan = 100;
+        int enemyPilihan;
+        boolean wentToCatch = true;
         //Player's turn
         if(evenChecker() == false){
             System.out.println(player.toString());
             player.playerMenu();
-            pilihan = in.nextInt();
+
+            do {
+                try {
+                    wentToCatch = false;
+                    pilihan = in.nextInt();
+                } catch (InputMismatchException e){
+                    in.next();
+                    System.err.println("\nInput harus berupa angka . . .");
+                    System.out.println("");
+                    System.out.println(player.toString());
+                    player.playerMenu();
+                    wentToCatch = true;
+                }catch (Exception e){
+                    System.out.println(e);
+                }
+            } while (wentToCatch == true);
+
             System.out.println("");
+            
 
             switch(pilihan){
                 case 1:
@@ -120,6 +140,8 @@ public class Battle {
                 case 7:
                     System.out.println("YOU LOSE, GAME OVER");
                     System.exit(0);
+                default :
+                    System.out.println("aaaa");
             }
         }
 

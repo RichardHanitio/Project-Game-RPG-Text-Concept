@@ -18,6 +18,8 @@ import mainclasses.Player;
 
     Nama : Setiawan Junior
     NIM : 03082180037
+
+    Jika salah menginput maka program akan otomatis keluar dari system.
 */
 
 public class StoryUAS {
@@ -214,14 +216,17 @@ public class StoryUAS {
             System.out.println("1. Fight and take your sister back.");
             System.out.println("2. Give up and just watch.");
             System.out.print("Choose : ");
-
-            if (!choice.hasNextInt()) {
-                System.out.println("Please enter number(1 & 2) only.");
-                System.out.println("");
+            choices = 0;
+            try {
+                choices = choice.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("ERROR : Input angka saja");
+                System.exit(1);
+            }
+            if (!verifyInputMenu(choices)) {
                 choice.next();
                 continue;
             } else {
-                choices = choice.nextInt();
                 if (choices == 1) {
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
@@ -301,14 +306,18 @@ public class StoryUAS {
             System.out.println("1. Go to the cave and Rest.");
             System.out.println("2. To the cliff and end this miserable life.");
             System.out.print("Choose : ");
+            choices = 0;
+            try {
+                choices = choice.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("ERROR : Input angka saja");
+                System.exit(1);
+            }
 
-            if (!choice.hasNextInt()) {
-                System.out.println("Please enter number(1 & 2) only.");
-                System.out.println("");
+            if (!verifyInputMenu(choices)) {
                 choice.next();
                 continue;
             } else {
-                choices = choice.nextInt();
                 if (choices == 1) {
                     System.out.println("");
                     System.out.println("You decided to go to the cave and think about your life.");
@@ -400,14 +409,18 @@ public class StoryUAS {
             System.out.println("1. Accept his offer.");
             System.out.println("2. Reject his offer.");
             System.out.print("Choose : ");
+            choices = 0;
+            try {
+                choices = choice.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("ERROR : Input angka saja");
+                System.exit(1);
+            }
 
-            if (!choice.hasNextInt()) {
-                System.out.println("Please enter number(1 & 2) only.");
-                System.out.println("");
+            if (!verifyInputMenu(choices)) {
                 choice.next();
                 continue;
             } else {
-                choices = choice.nextInt();
                 if (choices == 1) {
                     status = false;
                     System.out.println("");
@@ -636,14 +649,17 @@ public class StoryUAS {
             System.out.println("1. Fight the Orc and save her.");
             System.out.println("2. Leave her alone.");
             System.out.print("Choose : ");
-
-            if (!choice.hasNextInt()) {
-                System.out.println("Please enter number(1 & 2) only.");
-                System.out.println("");
+            choices = 0;
+            try {
+                choices = choice.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("ERROR : Input angka saja");
+                System.exit(1);
+            }
+            if (!verifyInputMenu(choices)) {
                 choice.next();
                 continue;
             } else {
-                choices = choice.nextInt();
                 if (choices == 1) {
                     System.out.println("Grandma: Help Me!!!!!!!!!");
                     System.out.println("");
@@ -702,15 +718,19 @@ public class StoryUAS {
                 System.out.println("1. Visit Shop.");
                 System.out.println("2. Visit Guild");
                 System.out.print("Choose : ");
-
-                if (!choice.hasNextInt()) {
+                choices = 0;
+                try {
+                    choices = choice.nextInt();
+                } catch (InputMismatchException e) {
+                    System.out.println("ERROR : Input angka saja");
+                    System.exit(1);
+                }
+                if (!verifyInputMenu(choices)) {
                     System.out.println("Please enter number(1 & 2) only.");
                     System.out.println("");
                     choice.next();
                     continue;
                 } else {
-                    choices = choice.nextInt();
-
                     if (choices == 1) {
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
@@ -876,6 +896,18 @@ public class StoryUAS {
         }
         catch (Exception e){
             System.out.println("ERROR : " + e);
+            System.exit(1);
+            return false;
+        }
+    }
+
+    public boolean verifyInputMenu(int x) throws Exception{
+        try {
+            if (x<1 || x>2) throw new Exception("Input harus berada dalam range 1-2");
+            return true;
+        } catch (Exception e) {
+            System.out.println("ERROR : " + e);
+            System.exit(1);
             return false;
         }
     }
