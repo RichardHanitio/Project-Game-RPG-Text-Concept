@@ -24,7 +24,7 @@
     * Pembuatan Class Slime (subclass dari Enemy)
     * Penambahan method overloading pada skill 2 class Slime
     * Penambahan method didalam Class Sort, selectionSort (Sorting ranking enemy berdasarkan health)
-    * -
+    * Penambahan Class EnemyFile untuk menyimpan data Enemy (Read and Write data)
 
 3. Richard Hanitio
     * Pembuatan Class Assassin (subclass dari Player)

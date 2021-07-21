@@ -2,14 +2,15 @@ package mainclasses;
 import mainclasses.*;
 import playersubclasses.*;
 import enemysubclasses.*;
+import fileClasses.EnemyFile;
 
 public class App {
     public static void main(String[] args) throws Exception {
          // Story story = new Story();
         // story.story2();
-        Enemy slime = new Slime();
-        Player a = new Fighter("aaaa");
-        Battle abc = new Battle(a,slime);
+        // Enemy slime = new Slime();
+        // Player a = new Fighter("aaaa");
+        // Battle abc = new Battle(a,slime);
         // Sort sort = new Sort();
 
         // Enemy enemy1 = new Ogre();
@@ -43,8 +44,12 @@ public class App {
 
         // StoryUAS storyuas = new StoryUAS();
         // storyuas.story2();
-
-
+        
+        EnemyFile enemyDatas = new EnemyFile();
+        // for (int i =0; i < 4; i++){
+        //     enemyDatas.writeEnemyData(sorted[i]);
+        // }
+        enemyDatas.readEnemyData();
     }
     
     public static void clearScreen() {

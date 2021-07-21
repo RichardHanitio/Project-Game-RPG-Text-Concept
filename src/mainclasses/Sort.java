@@ -1,6 +1,4 @@
 package mainclasses;
-import mainclasses.*;
-import playersubclasses.*;
 
 public class Sort {
     

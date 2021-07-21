@@ -1,0 +1,28 @@
+Enemy  Stats   : 
+Nama           : Yamata no Orochi
+Health         : 3000
+Resist STR     : 50
+Resist INT     : 50
+Attack Power   : 40
+|
+Enemy  Stats   : 
+Nama           : Yeti
+Health         : 1200
+Resist STR     : 30
+Resist INT     : 20
+Attack Power   : 20
+|
+Enemy  Stats   : 
+Nama           : Ogre
+Health         : 600
+Resist STR     : 10
+Resist INT     : 20
+Attack Power   : 10
+|
+Enemy  Stats   : 
+Nama           : Slime
+Health         : 10
+Resist STR     : 10
+Resist INT     : 10
+Attack Power   : 10
+|
