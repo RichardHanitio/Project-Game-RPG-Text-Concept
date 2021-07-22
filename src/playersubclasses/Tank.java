@@ -36,7 +36,7 @@ public class Tank extends Player{
     
     //methods
     public int multiplier() {
-        // Multiplier untuk Fighter
+        // Multiplier untuk Tank
         Random rand = new Random();
         // multi memiliki nilai minimum 1 dan maksimum 6
         int multi = rand.nextInt(4) + 1;
@@ -53,7 +53,7 @@ public class Tank extends Player{
     public void skill1(int turnCounter, Enemy enemy) {
         // Armored up
         if (this.getMana() >= 1){
-            int manaCost = 2;
+            int manaCost = 1;
             System.out.println("{ You use Skill 1 : Armored up (Actived) }");
             int tambahHealth = (getHealth()*2);
             setHealth(getHealth()+tambahHealth);
@@ -68,7 +68,7 @@ public class Tank extends Player{
 
     //Method overload skill1
     public void skill1(int manaCost, int turnCounter, Enemy enemy) {
-        // Heal
+        // Armored up
         if (this.getMana() >= manaCost){
             System.out.println("{ You use Skill 1 : Armored up (Actived) }");
             int tambahHealth = (getHealth()*2);
@@ -89,6 +89,7 @@ public class Tank extends Player{
             System.out.println("{ You Use Skill 2 : Damage up (Actived) }");
             enemy.setHealth(enemy.getHealth()-100);
             setMana(getMana()-manaCost);
+            Battle.setTurnCounter(turnCounter += 1);
         }
         else{
             System.out.println("Your mana is not enough to use this skill");
@@ -140,8 +141,8 @@ public class Tank extends Player{
     public void playerMenu(){
         System.out.println("------------------------------------------------------");
         System.out.println("|                     Menu                           |");
-        System.out.println("| 1.Attack                        2.Heal         (2) |");
-        System.out.println("| 3.WarCry    (3)                 4.OnePUNCH     (7) |");
+        System.out.println("| 1.Attack                        2.Armored up       (1) |");
+        System.out.println("| 3.Damage up    (3)              4.Full armor       (5) |");
         System.out.println("| 5.EMPTY                         6.Open Backpack    |");
         System.out.println("|             7.Surrender (Warning)                  |");
         System.out.println("------------------------------------------------------");
