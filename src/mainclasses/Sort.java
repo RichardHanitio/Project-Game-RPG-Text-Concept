@@ -2,7 +2,7 @@ package mainclasses;
 
 public class Sort {
     
-    //Sort by Enemy Health from the biggest to the smallest
+    //Sort by Enemy Health from the biggest to the smallest with Selection Sort
     //Nama  : Ricky
     //NIM   : 03082200012
     public Enemy[] selectionSort(Enemy[] enemy){

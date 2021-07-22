@@ -12,11 +12,12 @@ public class EnemyFile {
     public File enemyDat;
     public ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
 
-
+    //Contrcutor yang bekerja untuk check apakah file sudah ada atau tidak ketika di jalankan
     public EnemyFile(){
         enemyDat = createFile();
     }
 
+    //Membuat file jika belum buat dan memberi notifikasi jika sudah ada
     public File createFile(){
         File enemyData = new File("EnemyData.txt");
 
@@ -36,7 +37,7 @@ public class EnemyFile {
         return enemyData;
     }
 
-
+    //Method untuk menuliskan data kenemy kedalam File
     public void writeEnemyData(Enemy enemy){
         try {
             BufferedWriter writeData = new BufferedWriter(new FileWriter(enemyDat,true));
@@ -49,6 +50,7 @@ public class EnemyFile {
         }
     }
 
+    //Method untuk membaca data Enemy yang ada didalam file
     public void readEnemyData(){
         try {
             BufferedReader readData = new BufferedReader(new FileReader(enemyDat));
@@ -63,6 +65,7 @@ public class EnemyFile {
         }
     }
 
+    //Method membaca file untuk dijadikan object enemy
     public void toEnemyObject(){
         try {
             BufferedReader readData = new BufferedReader(new FileReader(enemyDat));
@@ -120,6 +123,7 @@ public class EnemyFile {
                     enemyList.add(slime);
                 }
             }
+            readData.close();
 
         } catch (IOException e) {
             System.out.println("ERROR : ");
