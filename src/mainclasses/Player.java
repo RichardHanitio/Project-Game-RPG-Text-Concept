@@ -16,6 +16,8 @@ public abstract class Player{
     private int classID;
     
     private int classOriginalHealth;
+    private int classOriginalSTR;
+    private int classOriginalINT;
 
     Scanner masukan = new Scanner(System.in);
 
@@ -29,15 +31,17 @@ public abstract class Player{
         attSTR = STR;
         attINT = INT;
         setMaxHealth(health);
-        setClassHealth(health);
+        setClassOriginalHealth(health);
+        setClassOriginalSTR(STR);
+        setClassOriginalINT(INT);
     }
 
     //getter setter
     public int getClassOriginalHealth() {
         return this.classOriginalHealth;
     }
-    public void setClassHealth(int classHealth) {
-        this.classOriginalHealth = classHealth;
+    public void setClassOriginalHealth(int classOriginalHealth) {
+        this.classOriginalHealth = classOriginalHealth;
     }
 
     public String getName() {
@@ -105,6 +109,22 @@ public abstract class Player{
     }
     public Weapon getWeapon() {
         return this.weapon;
+    }
+
+    public int getClassOriginalSTR() {
+        return this.classOriginalSTR;
+    }
+
+    public void setClassOriginalSTR(int classOriginalSTR) {
+        this.classOriginalSTR = classOriginalSTR;
+    }
+
+    public int getClassOriginalINT() {
+        return this.classOriginalINT;
+    }
+
+    public void setClassOriginalINT(int classOriginalINT) {
+        this.classOriginalINT = classOriginalINT;
     }
 
     
@@ -184,4 +204,5 @@ public abstract class Player{
 
     public abstract String printOriginalString();
 
+    public abstract String toSaveString();
 }

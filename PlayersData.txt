@@ -1,0 +1,4 @@
+Assassin-90-0-80-0
+Fighter-270-0-25-0
+Ranger-80-0-55-0
+Wizard-150-5-0-10

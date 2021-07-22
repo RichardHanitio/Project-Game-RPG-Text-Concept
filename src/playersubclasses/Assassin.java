@@ -24,6 +24,18 @@ public class Assassin extends Player{
         super.setWeapon(weapon);
     }
 
+
+
+    public Assassin(String name, int health, int mana, int attSTR, int attINT) {
+        setName(name);
+        setClassOriginalHealth(health);
+        setMana(mana);
+        setClassOriginalINT(attINT);
+        setClassOriginalSTR(attSTR);
+    }
+
+
+
     // methods
     @Override
     public int multiplier() {
@@ -113,9 +125,7 @@ public class Assassin extends Player{
     @Override
     public String printOriginalString() {
         return "Player Stats   : \n" + "Name           : " + getName() + "\n" + "Health         : " + getClassOriginalHealth() + "\n"
-                + "Mana           : " + getMana() + "\n" + "Attack Power   : " + getAttSTR() + "\n"
-                + "Weapon         : " + weapon.toString();
-
+                + "Mana           : " + getMana() + "\n" + "Attack Power   : " + getClassOriginalSTR() + "\n";
     }
 
     public void playerMenu() {
@@ -128,5 +138,10 @@ public class Assassin extends Player{
         System.out.println("------------------------------------------------------");
         System.out.print(" Choose  : ");
     }
-    
+
+    @Override
+    public String toSaveString() {
+        return getName() + "-" + getClassOriginalHealth() + "-" + getMana() + "-" + getClassOriginalSTR() + "-"
+                + getClassOriginalINT();
+    }
 }

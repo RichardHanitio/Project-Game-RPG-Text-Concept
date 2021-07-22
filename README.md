@@ -30,7 +30,7 @@
     * Pembuatan Class Assassin (subclass dari Player)
     * Penambahan method overloading pada skill 1 class Assassin
     * Penambahan method dalam class Sort, bubbleSort (Sorting ranking player berdasarkan health)
-    * -
+    * Penambahan Class PlayerFile untuk menyimpan data Player (Read and Write data)
 
 4. Setiawan Junior
     * -

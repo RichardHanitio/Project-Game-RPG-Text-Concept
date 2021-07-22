@@ -19,6 +19,14 @@ public class Fighter extends Player {
         super.setWeapon(weapon);
     }
     
+    public Fighter(String name, int health, int mana, int attSTR, int attINT) {
+        setName(name);
+        setClassOriginalHealth(health);
+        setMana(mana);
+        setClassOriginalINT(attINT);
+        setClassOriginalSTR(attSTR);
+    }
+
     //methods
     public int multiplier() {
         // Multiplier untuk Fighter
@@ -107,7 +115,7 @@ public class Fighter extends Player {
     public String printOriginalString() {
         return "Player Stats   : \n" + "Name           : " + getName() + "\n" + "Health         : "
                 + getClassOriginalHealth() + "\n" + "Mana           : " + getMana() + "\n" + "Attack Power   : "
-                + getAttSTR() + "\n" + "Weapon         : " + weapon.toString();
+                + getClassOriginalSTR() + "\n";
 
     }
 
@@ -121,6 +129,12 @@ public class Fighter extends Player {
         System.out.println("------------------------------------------------------");
         System.out.print(" Choose  : ");
 
+    }
+
+    @Override
+    public String toSaveString() {
+        return getName() + "-" + getClassOriginalHealth() + "-" + getMana() + "-" + getClassOriginalSTR() + "-"
+                + getClassOriginalINT();
     }
     
 }

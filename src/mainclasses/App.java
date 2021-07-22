@@ -1,8 +1,11 @@
 package mainclasses;
 import mainclasses.*;
 import playersubclasses.*;
+
+import java.util.ArrayList;
+
 import enemysubclasses.*;
-import fileClasses.EnemyFile;
+import fileClasses.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -28,19 +31,19 @@ public class App {
         // Enemy enemy = new Orochi();
         // Battle battle = new Battle(player, enemy);
         
-        // // Sort sort = new Sort();
-        // Player assassin = new Assassin("Assassin");
-        // // Player fighter = new Fighter("Fighter");
-        // // Player ranger = new Ranger("Ranger");
-        // // Player wizard = new Wizard("Wizard");
-        // // Player[] players = {assassin, fighter, ranger, wizard};
-        // // Player[] sortedPlayers = sort.bubbleSort(players);
-        // // int i = 1;
-        // // System.out.println("LARGEST TO SMALLEST PLAYER HEALTH : ");
-        // // for(Player p : sortedPlayers){
-        // //     System.out.println(i+ ". \n" + p.printOriginalString()+"\n");
-        // //     i++;
-        // // }
+        // Sort sort = new Sort();
+        Player assassin = new Assassin("Assassin");
+        Player fighter = new Fighter("Fighter");
+        Player ranger = new Ranger("Ranger");
+        Player wizard = new Wizard("Wizard");
+        // Player[] players = {assassin, fighter, ranger, wizard};
+        // Player[] sortedPlayers = sort.bubbleSort(players);
+        // int i = 1;
+        // System.out.println("LARGEST TO SMALLEST PLAYER HEALTH : ");
+        // for(Player p : sortedPlayers){
+        //     System.out.println(i+ ". \n" + p.printOriginalString()+"\n");
+        //     i++;
+        // }
 
         // // StoryUAS storyuas = new StoryUAS();
         // // storyuas.story2();
@@ -57,6 +60,22 @@ public class App {
         // Battle test= new Battle (assassin,baru);
 
         // System.out.println(enemyDatas.enemyList.get(1).toString());
+        
+        PlayerFile pf = new PlayerFile();
+        ArrayList<Player> arrlistPlayers = new ArrayList<Player>();
+        arrlistPlayers.add(assassin);
+        arrlistPlayers.add(fighter);
+        arrlistPlayers.add(ranger);
+        arrlistPlayers.add(wizard);
+
+        pf.writePlayerData(arrlistPlayers);
+        pf.readPlayerData();
+        pf.convertPlayerDataToObject();
+
+        for(Player ply : pf.retrievePlayer()){
+            System.out.println(ply.printOriginalString());
+        }
+
     }
     
     public static void clearScreen() {
