@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class PlayerFile {
 
     private ArrayList<Player> listPlayers = new ArrayList<Player>();
-    public ArrayList<Player> loadPlayers = new ArrayList<Player>();
+    private ArrayList<Player> loadPlayers = new ArrayList<Player>();
     
     // function untuk write data ke file
     // create file secara otomatis apabila tidak ada
@@ -87,7 +87,7 @@ public class PlayerFile {
 
     //ambil objek2nya
     public ArrayList<Player> retrievePlayer() {
-        return loadPlayers;
+        return this.loadPlayers;
     }
 
 }
