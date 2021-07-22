@@ -20,6 +20,23 @@ public class Sort {
         return sortedEnemyList;
     }
 
+    //Sort by Player Health from the biggest to the smallest with Selection Sort (Method Overloading)
+    //Nama  : Ricky
+    //NIM   : 03082200012
+    public Player[] selectionSort(Player[] player){
+        Player sortedPlayerList[] = player;
+        for(int i = 0 ; i < sortedPlayerList.length ; i++){
+            for (int j = i + 1 ; j <= sortedPlayerList.length-1 ; j++){
+                if(sortedPlayerList[i].getClassOriginalHealth() < sortedPlayerList[j].getClassOriginalHealth()){
+                    Player tampungan = sortedPlayerList[i];
+                    sortedPlayerList[i] = sortedPlayerList[j];
+                    sortedPlayerList[j] = tampungan;
+                }
+            }
+        }
+        return sortedPlayerList;
+    }
+
 
     //Sort Player Health from largest to smallest with bubble sort
     /*
