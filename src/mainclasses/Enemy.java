@@ -59,4 +59,8 @@ public abstract class Enemy {
     public int decisionPick() {
         return (int)Math.floor(Math.random()*(3-1+1)+1);
     }
+    
+    public String saveString(){
+        return "";
+    }
 }

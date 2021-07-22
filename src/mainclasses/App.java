@@ -28,28 +28,35 @@ public class App {
         // Enemy enemy = new Orochi();
         // Battle battle = new Battle(player, enemy);
         
-        // Sort sort = new Sort();
+        // // Sort sort = new Sort();
         // Player assassin = new Assassin("Assassin");
-        // Player fighter = new Fighter("Fighter");
-        // Player ranger = new Ranger("Ranger");
-        // Player wizard = new Wizard("Wizard");
-        // Player[] players = {assassin, fighter, ranger, wizard};
-        // Player[] sortedPlayers = sort.bubbleSort(players);
-        // int i = 1;
-        // System.out.println("LARGEST TO SMALLEST PLAYER HEALTH : ");
-        // for(Player p : sortedPlayers){
-        //     System.out.println(i+ ". \n" + p.printOriginalString()+"\n");
-        //     i++;
-        // }
+        // // Player fighter = new Fighter("Fighter");
+        // // Player ranger = new Ranger("Ranger");
+        // // Player wizard = new Wizard("Wizard");
+        // // Player[] players = {assassin, fighter, ranger, wizard};
+        // // Player[] sortedPlayers = sort.bubbleSort(players);
+        // // int i = 1;
+        // // System.out.println("LARGEST TO SMALLEST PLAYER HEALTH : ");
+        // // for(Player p : sortedPlayers){
+        // //     System.out.println(i+ ". \n" + p.printOriginalString()+"\n");
+        // //     i++;
+        // // }
 
-        // StoryUAS storyuas = new StoryUAS();
-        // storyuas.story2();
+        // // StoryUAS storyuas = new StoryUAS();
+        // // storyuas.story2();
         
-        EnemyFile enemyDatas = new EnemyFile();
-        // for (int i =0; i < 4; i++){
-        //     enemyDatas.writeEnemyData(sorted[i]);
-        // }
-        enemyDatas.readEnemyData();
+        // EnemyFile enemyDatas = new EnemyFile();
+        // // for (int i =0; i < 4; i++){
+        // //     enemyDatas.writeEnemyData(sorted[i]);
+        // // }
+        // // enemyDatas.readEnemyData();
+        // enemyDatas.toEnemyObject();
+        // for(Enemy a : enemyDatas.enemyList){System.out.println(a.toString());}
+
+        // Enemy baru = enemyDatas.enemyList.get(0);
+        // Battle test= new Battle (assassin,baru);
+
+        // System.out.println(enemyDatas.enemyList.get(1).toString());
     }
     
     public static void clearScreen() {

@@ -17,6 +17,10 @@ public class Slime extends Enemy{
         super("Slime", 10, 10, 10, 10);
     }
 
+    public Slime(String nama, int health, int attackP, int resistSTR, int resistINT) {
+        super(nama, health, attackP, resistSTR, resistINT);
+    }
+
     //Method
     @Override
     //Basic Attack
@@ -66,4 +70,10 @@ public class Slime extends Enemy{
         "Resist INT     : " + getResistINT() + "\n" + 
         "Attack Power   : " + getAttackPower() + "\n";
     }
+
+    public String saveString(){
+        return
+        getName()+"-"+getHealth()+"-"+getAttackPower()+"-"+getResistSTR()+"-"+getResistINT();
+    }
+
 }

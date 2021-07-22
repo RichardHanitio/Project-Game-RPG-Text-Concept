@@ -16,6 +16,10 @@ public class Yeti extends Enemy{
         super("Yeti", 1200, 20, 30, 20);
     }
 
+    public Yeti(String nama, int health, int attackP, int resistSTR, int resistINT) {
+        super(nama, health, attackP, resistSTR, resistINT);
+    }
+
     // methods
     @Override
     public void attack(int turnCounter) {
@@ -51,4 +55,8 @@ public class Yeti extends Enemy{
         "Attack Power   : " + getAttackPower() + "\n";
     }
 
+    public String saveString(){
+        return
+        getName()+"-"+getHealth()+"-"+getAttackPower()+"-"+getResistSTR()+"-"+getResistINT();
+    }
 }

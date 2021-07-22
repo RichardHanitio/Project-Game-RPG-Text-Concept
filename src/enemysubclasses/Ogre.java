@@ -16,6 +16,10 @@ public class Ogre extends Enemy{
         super("Ogre", 600, 10, 10, 20);
     }
 
+    public Ogre(String nama, int health, int attackP, int resistSTR, int resistINT) {
+        super(nama, health, attackP, resistSTR, resistINT);
+    }
+
     //methods
     @Override
     public void attack(int turnCounter) {
@@ -50,6 +54,11 @@ public class Ogre extends Enemy{
         "Resist STR     : " + getResistSTR() + "\n" +
         "Resist INT     : " + getResistINT() + "\n" + 
         "Attack Power   : " + getAttackPower() + "\n";
+    }
+
+    public String saveString(){
+        return
+        getName()+"-"+getHealth()+"-"+getAttackPower()+"-"+getResistSTR()+"-"+getResistINT();
     }
 
 }

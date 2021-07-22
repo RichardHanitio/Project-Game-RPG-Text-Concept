@@ -16,6 +16,10 @@ public class Orochi extends Enemy{
         super("Yamata no Orochi", 3000, 40, 50, 50);
     }
 
+    public Orochi(String nama, int health, int attack, int STR, int INT) {
+        super(nama, health, attack, STR, INT);
+    }
+
     // methods
     @Override
     public void attack(int turnCounter) {
@@ -51,4 +55,10 @@ public class Orochi extends Enemy{
         "Resist INT     : " + getResistINT() + "\n" + 
         "Attack Power   : " + getAttackPower() + "\n";
     }
+
+    public String saveString(){
+        return
+        getName()+"-"+getHealth()+"-"+getAttackPower()+"-"+getResistSTR()+"-"+getResistINT();
+    }
+
 }
