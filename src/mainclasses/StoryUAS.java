@@ -9,16 +9,12 @@ import mainclasses.Player;
 /*
     Nama : Calvin Wendy
     NIM : 03082200010
-
     Nama : Ricky
     NIM : 03082200012
-
     Nama : Richard Hanitio
     NIM : 03082200014
-
     Nama : Setiawan Junior
     NIM : 03082180037
-
     Jika salah menginput maka program akan otomatis keluar dari system.
 */
 
@@ -80,7 +76,6 @@ public class StoryUAS {
         System.out.print("Please enter your character name: ");
         String nameInput = scanner.nextLine();
 
-        
         nameIsBlank(nameInput);
 
         setName(nameInput);
@@ -467,14 +462,14 @@ public class StoryUAS {
             System.out.print("You choose : ");
             choices = 0;
 
-            //EXCEPTION HANDLING UNTUK MISMATCH INPUT
+            // EXCEPTION HANDLING UNTUK MISMATCH INPUT
             try {
-               choices = choice.nextInt();
-            } catch(InputMismatchException e){
+                choices = choice.nextInt();
+            } catch (InputMismatchException e) {
                 System.out.println("ERROR : Input angka saja");
                 System.exit(1);
             }
-            
+
             if (!verifyInputClass(choices)) {
                 continue;
             } else {
@@ -717,6 +712,7 @@ public class StoryUAS {
                 System.out.println("What are you going to do?");
                 System.out.println("1. Visit Shop.");
                 System.out.println("2. Visit Guild");
+                System.out.println("3. Visit Casino");
                 System.out.print("Choose : ");
                 choices = 0;
                 try {
@@ -850,8 +846,19 @@ public class StoryUAS {
                                 }
                             }
                         }
+                    } else if (choices == 3) {
+                        System.out.print("\033[H\033[2J");
+                        System.out.flush();
+                        System.out.println("You enter the casino.");
+                        if (playerID == 1) {
+                            Casino casinos = new Casino(playeraa);
+                        } else if (playerID == 2) {
+                            Casino casinos = new Casino(playeraa);
+                        } else if (playerID == 3) {
+                            Casino casinos = new Casino(playeraa);
+                        }
                     } else {
-                        System.out.println("Please input 1 or 2 only.");
+                        System.out.println("Please input 1, 2, or 3 only.");
                         System.out.println("");
                         pressAnyKeyToContinue();
                     }
@@ -867,43 +874,43 @@ public class StoryUAS {
         }
     }
 
-    //EXCEPTION HANDLING UNTUK INPUT NAMA
-    //NAMA TIDAK BOLEH KOSONG
-    //NAMA HANYA BOLEH TDD 1 KATA
+    // EXCEPTION HANDLING UNTUK INPUT NAMA
+    // NAMA TIDAK BOLEH KOSONG
+    // NAMA HANYA BOLEH TDD 1 KATA
     public void nameIsBlank(String str) throws Exception {
         try {
-            if(str.isEmpty()){
-                throw new Exception ("Nama tidak boleh kosong atau spasi!!!");
-            }
-            else {
-                if(str.contains(" ")){
-                    throw new Exception ("Nama hanya boleh terdiri dari satu kata");
+            if (str.isEmpty()) {
+                throw new Exception("Nama tidak boleh kosong atau spasi!!!");
+            } else {
+                if (str.contains(" ")) {
+                    throw new Exception("Nama hanya boleh terdiri dari satu kata");
                 }
             }
-        } catch (Exception e){
-            System.out.println("ERROR : "+e.getMessage());
+        } catch (Exception e) {
+            System.out.println("ERROR : " + e.getMessage());
             System.exit(1);
         }
     }
 
-    //EXCEPTION HANDLING UNTUK CHOOSE CLASS PLAYER
-    //TIDAK BOLEH <0 ATAU >3
-    //TIDAK BOLEH BERUPA ABJAD
+    // EXCEPTION HANDLING UNTUK CHOOSE CLASS PLAYER
+    // TIDAK BOLEH <0 ATAU >3
+    // TIDAK BOLEH BERUPA ABJAD
     public boolean verifyInputClass(int x) throws Exception {
         try {
-            if (x<0 || x>3) throw new Exception("Input harus berada dalam range 0-3");
+            if (x < 0 || x > 3)
+                throw new Exception("Input harus berada dalam range 0-3");
             return true;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("ERROR : " + e);
             System.exit(1);
             return false;
         }
     }
 
-    public boolean verifyInputMenu(int x) throws Exception{
+    public boolean verifyInputMenu(int x) throws Exception {
         try {
-            if (x<1 || x>2) throw new Exception("Input harus berada dalam range 1-2");
+            if (x < 1 || x > 2)
+                throw new Exception("Input harus berada dalam range 1-2");
             return true;
         } catch (Exception e) {
             System.out.println("ERROR : " + e);
