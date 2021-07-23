@@ -15,6 +15,7 @@ public class Casino {
     int playerGold = player.getGold();
 
     public static String slot_machine(int chips, int win, int lose) {
+        //Method Slot Machine
         boolean run = true;
         System.out.println("You need 20 chips to play.");
 
@@ -89,6 +90,7 @@ public class Casino {
     }
 
     public static String blackjack(int chips, int win, int lose) {
+        //Method Blackjack
         boolean run = true;
         boolean state = false;
         String anotherCard, choice;
@@ -229,6 +231,7 @@ public class Casino {
     }
 
     public void menu() {
+        //Method menu casino
         System.out.println("----------------------------------------------------------------------------------");
         System.out.println("Welcome to the Casino!(Use number to choose item)");
         System.out.println("");
