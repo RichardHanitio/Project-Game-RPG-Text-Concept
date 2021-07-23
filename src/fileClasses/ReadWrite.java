@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
-public class ReadWrite {
     // Nama : Setiawan Junior
     // NIM : 03082180037
     // method penyimpanan data (data chip, data menang, data kalah) untuk casino
-
+public class ReadWrite {
+    //Membaca data di record.txt
     public int read_data(int data) {
         String path = "Record.txt";
         String line = "";
@@ -34,6 +34,7 @@ public class ReadWrite {
     }
 
     public static void write_data(String data) {
+        //Menulis data tanpa overwrite di record.txt
         try {
             FileWriter fileWriter = new FileWriter("record.txt", true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
@@ -48,6 +49,7 @@ public class ReadWrite {
     }
 
     public static void write_data_overwrite(String data) {
+        //Menulis data dengan overwrite di record.txt
         try {
             FileWriter myWriter = new FileWriter("record.txt");
             myWriter.write(data);
