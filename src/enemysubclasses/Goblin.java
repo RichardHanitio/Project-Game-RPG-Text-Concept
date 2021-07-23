@@ -5,6 +5,9 @@ import mainclasses.Player;
 import mainclasses.Battle;
 
 public class Goblin extends Enemy {
+
+    // Nama : Setiawan Junior
+    // NIM : 03082180037
     String goblin_name;
     int goblin_attackPower;
     int goblin_resistINT;
