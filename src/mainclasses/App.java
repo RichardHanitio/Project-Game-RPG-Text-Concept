@@ -54,7 +54,17 @@ public class App {
         // //     i++;
         // // }
         
-
+        //--Test Sort Shell Sort
+        // Sort sort = new Sort();
+        // Enemy enemy1 = new Ogre();
+        // Enemy enemy2 = new Yeti();
+        // Enemy enemy3 = new Orochi();
+        // Enemy enemy4 = new Slime();
+        // Enemy listENEMY[] = {enemy1,enemy2,enemy3,enemy4};
+        // Enemy sorted[] = sort.shellSort(listENEMY);
+        // for(Enemy a : sorted){
+        //     System.out.println(a.toString());
+        // }
 
 
         //--Test Exception Handling StoryUAS--
@@ -100,6 +110,20 @@ public class App {
         //     System.out.println(ply.printOriginalString());
         // }
 
+
+        // --Test Read & Write Ogre--
+        // Ogre ogre1 = new Ogre("Ricky");
+        // Ogre ogre2 = new Ogre("Richard");
+        // Ogre ogre3 = new Ogre("Setiawan");
+        // Ogre ogre4 = new Ogre("Calvin");
+        // OgreFile ogreDatas = new OgreFile();
+        // // ogreDatas.writeOgreData(ogre1);
+        // // ogreDatas.writeOgreData(ogre2);
+        // // ogreDatas.writeOgreData(ogre3);
+        // // ogreDatas.writeOgreData(ogre4);
+        // ogreDatas.readOgreData();
+        // ogreDatas.toOgreObject();
+        // for(Enemy a : ogreDatas.ogreList){System.out.println(a.toString());}
     }
     
     public static void clearScreen() {

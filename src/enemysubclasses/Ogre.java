@@ -20,6 +20,10 @@ public class Ogre extends Enemy{
         super(nama, health, attackP, resistSTR, resistINT);
     }
 
+    public Ogre(String nama) {
+        super(nama, 600, 10, 10, 20);
+    }
+
     //methods
     @Override
     public void attack(int turnCounter) {

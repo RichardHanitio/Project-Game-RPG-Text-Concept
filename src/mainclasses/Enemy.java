@@ -17,6 +17,10 @@ public abstract class Enemy {
         this.resistSTR = resistSTR;
         this.resistINT = resistINT;
     }
+
+    public Enemy(String name){
+        this.name = name;
+    }
     
 
     //getter setter

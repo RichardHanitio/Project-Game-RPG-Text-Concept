@@ -141,8 +141,8 @@ public class Tank extends Player{
     public void playerMenu(){
         System.out.println("------------------------------------------------------");
         System.out.println("|                     Menu                           |");
-        System.out.println("| 1.Attack                        2.Armored up       (1) |");
-        System.out.println("| 3.Damage up    (3)              4.Full armor       (5) |");
+        System.out.println("| 1.Attack                        2.Armored up   (1) |");
+        System.out.println("| 3.Damage up    (3)              4.Full armor   (5) |");
         System.out.println("| 5.EMPTY                         6.Open Backpack    |");
         System.out.println("|             7.Surrender (Warning)                  |");
         System.out.println("------------------------------------------------------");

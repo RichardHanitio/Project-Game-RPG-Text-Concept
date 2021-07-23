@@ -57,4 +57,27 @@ public class Sort {
         }
         return sortedPlayerList;
     }
+
+    //Sort Enemy Health from smallest to largest with shell sort
+    /*
+    Nama : Calvin Wendy
+    NIM : 03082200010
+    */
+    public Enemy[] shellSort(Enemy[] enemy) {
+        int n = enemy.length;
+        Enemy[] musuh = enemy;
+    
+        for (int gap = n / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < n; i++) {
+                Enemy key = musuh[i];
+                int j = i;
+                while (j >= gap && musuh[j - gap].getHealth() > key.getHealth()) {
+                    musuh[j] = musuh[j - gap];
+                    j -= gap;
+                }
+                musuh[j] = key;
+            }
+        }
+        return musuh;
+    }
 }

@@ -15,10 +15,10 @@
     * Penambahan exception handling untuk semua input pada class StoryUAS
 
 1. Calvin Wendy
-    * -
-    * -
-    * -
-    * -
+    * Pembuatan Class Tank (subclass dari Player)
+    * Penambahan method overloading pada skill 1 class Tank
+    * Penambahan method didalam Class Sort, shellSort (Sorting ranking enemy berdasarkan health)
+    * Penambahan Class OgreFile untuk menyimpan data Ogre (Read and Write data)
 
 2. Ricky
     * Pembuatan Class Slime (subclass dari Enemy)
