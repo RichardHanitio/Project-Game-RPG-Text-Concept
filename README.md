@@ -33,7 +33,9 @@
     * Penambahan Class PlayerFile untuk menyimpan data Player (Read and Write data)
 
 4. Setiawan Junior
-    * -
-    * -
-    * -
-    * -
+    * Pembuatan Class Goblin (subclass dari Enemy)
+    * Penambahan method overloading skill 2 untuk class Goblin
+    * Pembuatan Class Casino (Main Class Baru)
+    * Penambahan fitur casino pada class StoryUAS
+    * Penambahan Class ReadWrite untuk save dan load progress casino
+    * Penambahan method didalam Class Sort, insertion sort (Sorting ranking enemy berdasarkan health dan sorting ranking character class berdasarkan strength (STR))
