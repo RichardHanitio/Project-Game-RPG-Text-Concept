@@ -9,6 +9,7 @@ import java.util.ArrayList;
     Nama : Richard Hanitio
     NIM : 03082200014
 */
+//Menyimpan data-data player yang telah dibuat
 public class PlayerFile {
 
     private ArrayList<Player> listPlayers = new ArrayList<Player>();
